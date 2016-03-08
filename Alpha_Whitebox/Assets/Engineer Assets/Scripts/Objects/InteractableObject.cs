@@ -1,0 +1,189 @@
+﻿using UnityEngine;
+using System.Collections;
+using HighlightingSystem;
+
+[RequireComponent(typeof(AudioSource))]
+[RequireComponent(typeof(Highlighter))]
+
+public class InteractableObject : MonoBehaviour 
+{
+	/*
+	 * Jonathon Wigley, 2/21
+	 */
+
+	private ObjectBehavior behavior;
+	private AudioSource constantSound;
+	public AudioClip collisionSound;
+
+	//Sound delay threshold is the time that has to pass before the collision sound will play again
+	[SerializeField]
+	private float soundDelayThreshold = 0.75f;
+	private float soundDelayer = 0;
+
+	private BarController barController;
+	private ResetController resetController;
+	private RadioController radioController;
+	private FireplaceController fireplaceController;
+	private LightMissionController lightController;
+
+	void Start() 
+	{
+		//set references to the object's traits and collision sound
+		behavior = GetComponent<ObjectBehavior>();
+		constantSound = GetComponent<AudioSource>();
+
+		if(collisionSound == null)
+			collisionSound = constantSound.clip;
+
+		// Send this object's transform to the volume controller
+		if(behavior.trait_Holdable)
+			GameObject.FindGameObjectWithTag("GameController").GetComponent<VolumeController>().sendTransform(transform);
+
+		barController = GameObject.Find("BarController").GetComponent<BarController>();
+		resetController = GameObject.Find("ResetSwitch").GetComponent<ResetController>();
+		radioController = GameObject.FindGameObjectWithTag("Radio").GetComponent<RadioController>();
+		fireplaceController = GameObject.Find("FireplaceController").GetComponent<FireplaceController>();
+
+		try
+		{
+			lightController = transform.parent.GetComponentInChildren<LightMissionController>();
+		}catch
+		{
+
+		}
+
+	}
+
+	void Update()
+	{
+		if(soundDelayer <= soundDelayThreshold)
+		{
+			soundDelayer += Time.deltaTime;
+		}
+	}
+
+	//When this object collides with something, play the collision sound
+	void OnCollisionEnter(Collision other)
+	{
+		// If the sound hasn't already played within the soundDelayThreshold
+		if(soundDelayer > soundDelayThreshold)
+		{
+			constantSound.PlayOneShot(collisionSound);
+			soundDelayer = 0;
+		}
+	}
+
+	//determine what interaction to occur based on what object the player is holding
+	public void specialInteract(GameObject heldObj)
+	{
+		//if the player is holding an object, run through the interaction between objects
+		if(heldObj != null)
+		{
+			ObjectBehavior otherBehavior = heldObj.transform.gameObject.GetComponent<ObjectBehavior>();
+
+			//if player is holding a flame, set the object on fire
+			if(behavior.trait_Flammable && otherBehavior.trait_Flame)
+			{
+				//set this object on fire and set flame child to true
+				behavior.trait_Flame = true;
+				transform.FindChild("Flame").gameObject.SetActive(true);
+			}
+
+			//if player is holding something sharp, cut this object
+			if(behavior.trait_Severable && otherBehavior.trait_Sharp)
+			{
+				behavior.trait_Severable = false;
+				GetComponent<Rigidbody>().isKinematic = false;
+
+				GameObject.FindGameObjectWithTag("Frankie").GetComponent<LivingMovement>().TransitionPath();
+			}
+		}
+
+		// If this object is a flame, toggle the fire
+		if(behavior.trait_Flammable)
+		{
+			//set this object on fire and set flame child to true
+			behavior.trait_Flame = !behavior.trait_Flame;
+			transform.FindChild("Flame").gameObject.SetActive(behavior.trait_Flame);
+			constantSound.PlayOneShot(collisionSound);
+
+			if (gameObject.name == "fireplace")
+			{
+				fireplaceController.CheckFrankie();
+			}
+		}
+
+		// If this object is a power source, toggle it on and off
+		if(behavior.trait_PowerSource)
+		{
+			// Toggle the power and set any child lights to inactive
+			behavior.trait_Powered = !behavior.trait_Powered;
+
+			//if(lightController != null)
+				//lightController.CheckLights();
+			if(GetComponent<SwitchBase>())
+				GetComponent<SwitchBase>().SwitchToggled();
+
+			if(name != "CircuitBreaker_MDL_PDH")
+			{
+				for(int i = 0; i < transform.childCount; i++)
+				{
+					transform.GetChild(i).gameObject.SetActive(behavior.trait_Powered);
+				}
+
+			}
+			else
+			{
+				transform.FindChild("LightsOn").gameObject.SetActive(behavior.trait_Powered);
+				transform.FindChild("LightsOff").gameObject.SetActive(!behavior.trait_Powered);
+			}
+
+			constantSound.PlayOneShot(collisionSound);
+		}
+
+		// If this object is noisy, play its sound
+		if(behavior.trait_Noisy)
+		{
+			// Make noise
+			constantSound.PlayOneShot(collisionSound);
+
+			behavior.trait_Powered = !behavior.trait_Powered;
+
+			if(behavior.trait_Powered)
+			{
+				constantSound.Play();
+				constantSound.loop = true;
+			}
+			else
+			{
+				constantSound.Stop();
+			}
+
+			if (gameObject.tag == "Radio")
+			{
+				radioController.LureFrankie();
+			}
+		}
+
+		if (gameObject.tag == "BarLightSwitch")
+		{
+			barController.ToggleLights(gameObject);
+		}
+		else if (gameObject.tag == "BarLightResetSwitch")
+		{
+			resetController.ResetBarLights();
+		}
+	}
+
+	public void blastInteract()
+	{
+		// Put out the fire
+		if(behavior.trait_Flame)
+		{
+			behavior.trait_Flame = false;
+			transform.FindChild("Flame").gameObject.SetActive(false);
+		}
+
+	}
+
+}
