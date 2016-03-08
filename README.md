@@ -5,12 +5,11 @@ HOW TO USE THE GITHUB:
 DO NOT FORK ANYTHING EVER; ONLY BRANCH
 
 Setup (THIS IS ONLY APPLICABLE IF YOU HAVE NO WORKING PROJECT ON YOUR MACHINE)
-1. Download the GitHub Desktop Application
-2. Once logged in, click the + icon in the top left corner
-3. Choose Clone and choose Cold-Hell-Hotel-Post-Alpha
-4. Once it is done cloning, create a branch (the little two prong thing with the dots at the top)
-5. Name this branch FirstInitial_LastName (M_Wilson as an example)
-6. This branch will be the only area you work on. All final work will be pushed to master. 
+1. In a browser, navigate to the repository
+2. Click the dropdown menu to select a branch and create a new branch with the name "FirstInitial_LastName" (mine would be M_Wilson)
+3. This branch will be the only area you work on; no one should be working on the raw master branch
+2. Download the GitHub Desktop Application
+//WIP 
 
 Setup (USE THIS IF YOU ALREADY HAVE A WORKING PROJECT BUT HAVE NOT ACCESSED THE REPO BEFORE)
 1. Follow all of the original setup instructions
