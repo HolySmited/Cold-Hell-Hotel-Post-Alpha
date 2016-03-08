@@ -1,0 +1,6 @@
+Instructions on setting up Unity for Git:
+Make sure you perform all of the following steps the first time you open the project.
+
+In the Unity Editor open your project and:
+Switch to Visible Meta Files in Edit → Project Settings → Editor → Version Control Mode
+Switch to Force Text in Edit → Project Settings → Editor → Asset Serialization Mode
