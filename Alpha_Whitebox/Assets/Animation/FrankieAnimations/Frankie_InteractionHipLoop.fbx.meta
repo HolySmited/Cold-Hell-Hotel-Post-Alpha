@@ -1,0 +1,649 @@
+fileFormatVersion: 2
+guid: cd070d73b81b39d41b1579b7cb974535
+timeCreated: 1456537011
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: jnt_Frankie_head01
+    100004: jnt_Frankie_jaw01
+    100006: jnt_Frankie_left_index01
+    100008: jnt_Frankie_left_middle01
+    100010: jnt_Frankie_left_pinky01
+    100012: jnt_Frankie_left_ring01
+    100014: jnt_Frankie_left_thumb01
+    100016: jnt_Frankie_left_toe01
+    100018: jnt_Frankie_right_index01
+    100020: jnt_Frankie_right_middle01
+    100022: jnt_Frankie_right_pinky01
+    100024: jnt_Frankie_right_ring01
+    100026: jnt_Frankie_right_thumb01
+    100028: jnt_Frankie_right_toe01
+    100030: jnt_left_eye
+    100032: jnt_right_eye
+    100034: nurbs_bot_lip01
+    100036: nurbs_hair01
+    100038: nurbs_left_bot_eyeLid01
+    100040: nurbs_left_brow01
+    100042: nurbs_left_cheek01
+    100044: nurbs_left_nostril01
+    100046: nurbs_left_up_eyeLid01
+    100048: nurbs_nose01
+    100050: nurbs_right_bot_eyeLid01
+    100052: nurbs_right_brow01
+    100054: nurbs_right_cheek01
+    100056: nurbs_right_nostril01
+    100058: nurbs_right_up_eyeLid01
+    100060: nurbs_up_lip01
+    100062: rig_center_bot_lip01
+    100064: rig_center_up_lip01
+    100066: rig_Frankie_head01
+    100068: rig_Frankie_jaw01
+    100070: rig_Frankie_left_ankle01
+    100072: rig_Frankie_left_ball01
+    100074: rig_Frankie_left_clavicle01
+    100076: rig_Frankie_left_elbow01
+    100078: rig_Frankie_left_forearm01
+    100080: rig_Frankie_left_index01
+    100082: rig_Frankie_left_index02
+    100084: rig_Frankie_left_index03
+    100086: rig_Frankie_left_knee01
+    100088: rig_Frankie_left_leg01
+    100090: rig_Frankie_left_middle01
+    100092: rig_Frankie_left_middle02
+    100094: rig_Frankie_left_middle03
+    100096: rig_Frankie_left_pinky01
+    100098: rig_Frankie_left_pinky02
+    100100: rig_Frankie_left_pinky03
+    100102: rig_Frankie_left_ring01
+    100104: rig_Frankie_left_ring02
+    100106: rig_Frankie_left_ring03
+    100108: rig_Frankie_left_shoulder01
+    100110: rig_Frankie_left_thumb01
+    100112: rig_Frankie_left_thumb02
+    100114: rig_Frankie_left_thumb03
+    100116: rig_Frankie_left_wrist01
+    100118: rig_Frankie_neck01
+    100120: rig_Frankie_pelvis01
+    100122: rig_Frankie_right_ankle01
+    100124: rig_Frankie_right_ball01
+    100126: rig_Frankie_right_clavicle01
+    100128: rig_Frankie_right_elbow01
+    100130: rig_Frankie_right_forearm01
+    100132: rig_Frankie_right_index01
+    100134: rig_Frankie_right_index02
+    100136: rig_Frankie_right_index03
+    100138: rig_Frankie_right_knee01
+    100140: rig_Frankie_right_leg01
+    100142: rig_Frankie_right_middle01
+    100144: rig_Frankie_right_middle02
+    100146: rig_Frankie_right_middle03
+    100148: rig_Frankie_right_pinky01
+    100150: rig_Frankie_right_pinky02
+    100152: rig_Frankie_right_pinky03
+    100154: rig_Frankie_right_ring01
+    100156: rig_Frankie_right_ring02
+    100158: rig_Frankie_right_ring03
+    100160: rig_Frankie_right_shoulder01
+    100162: rig_Frankie_right_thumb01
+    100164: rig_Frankie_right_thumb02
+    100166: rig_Frankie_right_thumb03
+    100168: rig_Frankie_right_wrist01
+    100170: rig_Frankie_spine01
+    100172: rig_Frankie_spine02
+    100174: rig_Frankie_spine03
+    100176: rig_Frankie_spine04
+    100178: rig_hair01
+    100180: rig_hair02
+    100182: rig_hair03
+    100184: rig_left_bot_eyeLid01
+    100186: rig_left_bot_eyeLid02
+    100188: rig_left_bot_eyeLid03
+    100190: rig_left_bot_lip01
+    100192: rig_left_bot_lip02
+    100194: rig_left_brow01
+    100196: rig_left_brow02
+    100198: rig_left_brow03
+    100200: rig_left_brow04
+    100202: rig_left_cheek01
+    100204: rig_left_cheek02
+    100206: rig_left_cheek03
+    100208: rig_left_eye
+    100210: rig_left_nostril01
+    100212: rig_left_nostril02
+    100214: rig_left_nostril03
+    100216: rig_left_up_eyeLid01
+    100218: rig_left_up_eyeLid02
+    100220: rig_left_up_eyeLid03
+    100222: rig_left_up_lip01
+    100224: rig_left_up_lip02
+    100226: rig_nose01
+    100228: rig_nose02
+    100230: rig_nose03
+    100232: rig_nose04
+    100234: rig_nose05
+    100236: rig_right_bot_eyeLid01
+    100238: rig_right_bot_eyeLid02
+    100240: rig_right_bot_eyeLid03
+    100242: rig_right_bot_lip01
+    100244: rig_right_bot_lip02
+    100246: rig_right_brow01
+    100248: rig_right_brow02
+    100250: rig_right_brow03
+    100252: rig_right_brow04
+    100254: rig_right_cheek01
+    100256: rig_right_cheek02
+    100258: rig_right_cheek03
+    100260: rig_right_eye
+    100262: rig_right_nostril01
+    100264: rig_right_nostril02
+    100266: rig_right_nostril03
+    100268: rig_right_up_eyeLid01
+    100270: rig_right_up_eyeLid02
+    100272: rig_right_up_eyeLid03
+    100274: rig_right_up_lip01
+    100276: rig_right_up_lip02
+    400000: //RootNode
+    400002: jnt_Frankie_head01
+    400004: jnt_Frankie_jaw01
+    400006: jnt_Frankie_left_index01
+    400008: jnt_Frankie_left_middle01
+    400010: jnt_Frankie_left_pinky01
+    400012: jnt_Frankie_left_ring01
+    400014: jnt_Frankie_left_thumb01
+    400016: jnt_Frankie_left_toe01
+    400018: jnt_Frankie_right_index01
+    400020: jnt_Frankie_right_middle01
+    400022: jnt_Frankie_right_pinky01
+    400024: jnt_Frankie_right_ring01
+    400026: jnt_Frankie_right_thumb01
+    400028: jnt_Frankie_right_toe01
+    400030: jnt_left_eye
+    400032: jnt_right_eye
+    400034: nurbs_bot_lip01
+    400036: nurbs_hair01
+    400038: nurbs_left_bot_eyeLid01
+    400040: nurbs_left_brow01
+    400042: nurbs_left_cheek01
+    400044: nurbs_left_nostril01
+    400046: nurbs_left_up_eyeLid01
+    400048: nurbs_nose01
+    400050: nurbs_right_bot_eyeLid01
+    400052: nurbs_right_brow01
+    400054: nurbs_right_cheek01
+    400056: nurbs_right_nostril01
+    400058: nurbs_right_up_eyeLid01
+    400060: nurbs_up_lip01
+    400062: rig_center_bot_lip01
+    400064: rig_center_up_lip01
+    400066: rig_Frankie_head01
+    400068: rig_Frankie_jaw01
+    400070: rig_Frankie_left_ankle01
+    400072: rig_Frankie_left_ball01
+    400074: rig_Frankie_left_clavicle01
+    400076: rig_Frankie_left_elbow01
+    400078: rig_Frankie_left_forearm01
+    400080: rig_Frankie_left_index01
+    400082: rig_Frankie_left_index02
+    400084: rig_Frankie_left_index03
+    400086: rig_Frankie_left_knee01
+    400088: rig_Frankie_left_leg01
+    400090: rig_Frankie_left_middle01
+    400092: rig_Frankie_left_middle02
+    400094: rig_Frankie_left_middle03
+    400096: rig_Frankie_left_pinky01
+    400098: rig_Frankie_left_pinky02
+    400100: rig_Frankie_left_pinky03
+    400102: rig_Frankie_left_ring01
+    400104: rig_Frankie_left_ring02
+    400106: rig_Frankie_left_ring03
+    400108: rig_Frankie_left_shoulder01
+    400110: rig_Frankie_left_thumb01
+    400112: rig_Frankie_left_thumb02
+    400114: rig_Frankie_left_thumb03
+    400116: rig_Frankie_left_wrist01
+    400118: rig_Frankie_neck01
+    400120: rig_Frankie_pelvis01
+    400122: rig_Frankie_right_ankle01
+    400124: rig_Frankie_right_ball01
+    400126: rig_Frankie_right_clavicle01
+    400128: rig_Frankie_right_elbow01
+    400130: rig_Frankie_right_forearm01
+    400132: rig_Frankie_right_index01
+    400134: rig_Frankie_right_index02
+    400136: rig_Frankie_right_index03
+    400138: rig_Frankie_right_knee01
+    400140: rig_Frankie_right_leg01
+    400142: rig_Frankie_right_middle01
+    400144: rig_Frankie_right_middle02
+    400146: rig_Frankie_right_middle03
+    400148: rig_Frankie_right_pinky01
+    400150: rig_Frankie_right_pinky02
+    400152: rig_Frankie_right_pinky03
+    400154: rig_Frankie_right_ring01
+    400156: rig_Frankie_right_ring02
+    400158: rig_Frankie_right_ring03
+    400160: rig_Frankie_right_shoulder01
+    400162: rig_Frankie_right_thumb01
+    400164: rig_Frankie_right_thumb02
+    400166: rig_Frankie_right_thumb03
+    400168: rig_Frankie_right_wrist01
+    400170: rig_Frankie_spine01
+    400172: rig_Frankie_spine02
+    400174: rig_Frankie_spine03
+    400176: rig_Frankie_spine04
+    400178: rig_hair01
+    400180: rig_hair02
+    400182: rig_hair03
+    400184: rig_left_bot_eyeLid01
+    400186: rig_left_bot_eyeLid02
+    400188: rig_left_bot_eyeLid03
+    400190: rig_left_bot_lip01
+    400192: rig_left_bot_lip02
+    400194: rig_left_brow01
+    400196: rig_left_brow02
+    400198: rig_left_brow03
+    400200: rig_left_brow04
+    400202: rig_left_cheek01
+    400204: rig_left_cheek02
+    400206: rig_left_cheek03
+    400208: rig_left_eye
+    400210: rig_left_nostril01
+    400212: rig_left_nostril02
+    400214: rig_left_nostril03
+    400216: rig_left_up_eyeLid01
+    400218: rig_left_up_eyeLid02
+    400220: rig_left_up_eyeLid03
+    400222: rig_left_up_lip01
+    400224: rig_left_up_lip02
+    400226: rig_nose01
+    400228: rig_nose02
+    400230: rig_nose03
+    400232: rig_nose04
+    400234: rig_nose05
+    400236: rig_right_bot_eyeLid01
+    400238: rig_right_bot_eyeLid02
+    400240: rig_right_bot_eyeLid03
+    400242: rig_right_bot_lip01
+    400244: rig_right_bot_lip02
+    400246: rig_right_brow01
+    400248: rig_right_brow02
+    400250: rig_right_brow03
+    400252: rig_right_brow04
+    400254: rig_right_cheek01
+    400256: rig_right_cheek02
+    400258: rig_right_cheek03
+    400260: rig_right_eye
+    400262: rig_right_nostril01
+    400264: rig_right_nostril02
+    400266: rig_right_nostril03
+    400268: rig_right_up_eyeLid01
+    400270: rig_right_up_eyeLid02
+    400272: rig_right_up_eyeLid03
+    400274: rig_right_up_lip01
+    400276: rig_right_up_lip02
+    7400000: FrankieInteractHipLoopAnim
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: FrankieInteractHipLoopAnim
+      takeName: Take 001
+      firstFrame: 2
+      lastFrame: 31
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: rig_Frankie_pelvis01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_left_leg01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_left_leg01/rig_Frankie_left_knee01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_left_leg01/rig_Frankie_left_knee01/rig_Frankie_left_ankle01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_left_leg01/rig_Frankie_left_knee01/rig_Frankie_left_ankle01/rig_Frankie_left_ball01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_left_leg01/rig_Frankie_left_knee01/rig_Frankie_left_ankle01/rig_Frankie_left_ball01/jnt_Frankie_left_toe01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_right_leg01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_right_leg01/rig_Frankie_right_knee01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_right_leg01/rig_Frankie_right_knee01/rig_Frankie_right_ankle01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_right_leg01/rig_Frankie_right_knee01/rig_Frankie_right_ankle01/rig_Frankie_right_ball01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_right_leg01/rig_Frankie_right_knee01/rig_Frankie_right_ankle01/rig_Frankie_right_ball01/jnt_Frankie_right_toe01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_left_clavicle01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_left_clavicle01/rig_Frankie_left_shoulder01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_left_clavicle01/rig_Frankie_left_shoulder01/rig_Frankie_left_elbow01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_left_clavicle01/rig_Frankie_left_shoulder01/rig_Frankie_left_elbow01/rig_Frankie_left_forearm01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_left_clavicle01/rig_Frankie_left_shoulder01/rig_Frankie_left_elbow01/rig_Frankie_left_wrist01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_left_clavicle01/rig_Frankie_left_shoulder01/rig_Frankie_left_elbow01/rig_Frankie_left_wrist01/rig_Frankie_left_index01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_left_clavicle01/rig_Frankie_left_shoulder01/rig_Frankie_left_elbow01/rig_Frankie_left_wrist01/rig_Frankie_left_index01/rig_Frankie_left_index02
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_left_clavicle01/rig_Frankie_left_shoulder01/rig_Frankie_left_elbow01/rig_Frankie_left_wrist01/rig_Frankie_left_index01/rig_Frankie_left_index02/rig_Frankie_left_index03
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_left_clavicle01/rig_Frankie_left_shoulder01/rig_Frankie_left_elbow01/rig_Frankie_left_wrist01/rig_Frankie_left_index01/rig_Frankie_left_index02/rig_Frankie_left_index03/jnt_Frankie_left_index01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_left_clavicle01/rig_Frankie_left_shoulder01/rig_Frankie_left_elbow01/rig_Frankie_left_wrist01/rig_Frankie_left_middle01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_left_clavicle01/rig_Frankie_left_shoulder01/rig_Frankie_left_elbow01/rig_Frankie_left_wrist01/rig_Frankie_left_middle01/rig_Frankie_left_middle02
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_left_clavicle01/rig_Frankie_left_shoulder01/rig_Frankie_left_elbow01/rig_Frankie_left_wrist01/rig_Frankie_left_middle01/rig_Frankie_left_middle02/rig_Frankie_left_middle03
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_left_clavicle01/rig_Frankie_left_shoulder01/rig_Frankie_left_elbow01/rig_Frankie_left_wrist01/rig_Frankie_left_middle01/rig_Frankie_left_middle02/rig_Frankie_left_middle03/jnt_Frankie_left_middle01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_left_clavicle01/rig_Frankie_left_shoulder01/rig_Frankie_left_elbow01/rig_Frankie_left_wrist01/rig_Frankie_left_pinky01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_left_clavicle01/rig_Frankie_left_shoulder01/rig_Frankie_left_elbow01/rig_Frankie_left_wrist01/rig_Frankie_left_pinky01/rig_Frankie_left_pinky02
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_left_clavicle01/rig_Frankie_left_shoulder01/rig_Frankie_left_elbow01/rig_Frankie_left_wrist01/rig_Frankie_left_pinky01/rig_Frankie_left_pinky02/rig_Frankie_left_pinky03
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_left_clavicle01/rig_Frankie_left_shoulder01/rig_Frankie_left_elbow01/rig_Frankie_left_wrist01/rig_Frankie_left_pinky01/rig_Frankie_left_pinky02/rig_Frankie_left_pinky03/jnt_Frankie_left_pinky01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_left_clavicle01/rig_Frankie_left_shoulder01/rig_Frankie_left_elbow01/rig_Frankie_left_wrist01/rig_Frankie_left_ring01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_left_clavicle01/rig_Frankie_left_shoulder01/rig_Frankie_left_elbow01/rig_Frankie_left_wrist01/rig_Frankie_left_ring01/rig_Frankie_left_ring02
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_left_clavicle01/rig_Frankie_left_shoulder01/rig_Frankie_left_elbow01/rig_Frankie_left_wrist01/rig_Frankie_left_ring01/rig_Frankie_left_ring02/rig_Frankie_left_ring03
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_left_clavicle01/rig_Frankie_left_shoulder01/rig_Frankie_left_elbow01/rig_Frankie_left_wrist01/rig_Frankie_left_ring01/rig_Frankie_left_ring02/rig_Frankie_left_ring03/jnt_Frankie_left_ring01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_left_clavicle01/rig_Frankie_left_shoulder01/rig_Frankie_left_elbow01/rig_Frankie_left_wrist01/rig_Frankie_left_thumb01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_left_clavicle01/rig_Frankie_left_shoulder01/rig_Frankie_left_elbow01/rig_Frankie_left_wrist01/rig_Frankie_left_thumb01/rig_Frankie_left_thumb02
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_left_clavicle01/rig_Frankie_left_shoulder01/rig_Frankie_left_elbow01/rig_Frankie_left_wrist01/rig_Frankie_left_thumb01/rig_Frankie_left_thumb02/rig_Frankie_left_thumb03
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_left_clavicle01/rig_Frankie_left_shoulder01/rig_Frankie_left_elbow01/rig_Frankie_left_wrist01/rig_Frankie_left_thumb01/rig_Frankie_left_thumb02/rig_Frankie_left_thumb03/jnt_Frankie_left_thumb01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/jnt_Frankie_head01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/nurbs_hair01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/nurbs_left_bot_eyeLid01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/nurbs_left_brow01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/nurbs_left_cheek01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/nurbs_left_nostril01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/nurbs_left_up_eyeLid01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/nurbs_nose01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/nurbs_right_bot_eyeLid01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/nurbs_right_brow01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/nurbs_right_cheek01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/nurbs_right_nostril01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/nurbs_right_up_eyeLid01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/nurbs_up_lip01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_center_up_lip01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_Frankie_jaw01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_Frankie_jaw01/jnt_Frankie_jaw01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_Frankie_jaw01/nurbs_bot_lip01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_Frankie_jaw01/rig_center_bot_lip01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_Frankie_jaw01/rig_left_bot_lip01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_Frankie_jaw01/rig_left_bot_lip02
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_Frankie_jaw01/rig_right_bot_lip01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_Frankie_jaw01/rig_right_bot_lip02
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_hair01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_hair02
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_hair03
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_left_bot_eyeLid01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_left_bot_eyeLid02
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_left_bot_eyeLid03
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_left_brow01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_left_brow02
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_left_brow03
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_left_brow04
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_left_cheek01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_left_cheek02
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_left_cheek03
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_left_eye
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_left_eye/jnt_left_eye
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_left_nostril01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_left_nostril02
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_left_nostril03
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_left_up_eyeLid01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_left_up_eyeLid02
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_left_up_eyeLid03
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_left_up_lip01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_left_up_lip02
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_nose01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_nose02
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_nose03
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_nose04
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_nose05
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_right_bot_eyeLid01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_right_bot_eyeLid02
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_right_bot_eyeLid03
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_right_brow01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_right_brow02
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_right_brow03
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_right_brow04
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_right_cheek01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_right_cheek02
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_right_cheek03
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_right_eye
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_right_eye/jnt_right_eye
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_right_nostril01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_right_nostril02
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_right_nostril03
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_right_up_eyeLid01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_right_up_eyeLid02
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_right_up_eyeLid03
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_right_up_lip01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_neck01/rig_Frankie_head01/rig_right_up_lip02
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_right_clavicle01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_right_clavicle01/rig_Frankie_right_shoulder01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_right_clavicle01/rig_Frankie_right_shoulder01/rig_Frankie_right_elbow01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_right_clavicle01/rig_Frankie_right_shoulder01/rig_Frankie_right_elbow01/rig_Frankie_right_forearm01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_right_clavicle01/rig_Frankie_right_shoulder01/rig_Frankie_right_elbow01/rig_Frankie_right_wrist01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_right_clavicle01/rig_Frankie_right_shoulder01/rig_Frankie_right_elbow01/rig_Frankie_right_wrist01/rig_Frankie_right_index01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_right_clavicle01/rig_Frankie_right_shoulder01/rig_Frankie_right_elbow01/rig_Frankie_right_wrist01/rig_Frankie_right_index01/rig_Frankie_right_index02
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_right_clavicle01/rig_Frankie_right_shoulder01/rig_Frankie_right_elbow01/rig_Frankie_right_wrist01/rig_Frankie_right_index01/rig_Frankie_right_index02/rig_Frankie_right_index03
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_right_clavicle01/rig_Frankie_right_shoulder01/rig_Frankie_right_elbow01/rig_Frankie_right_wrist01/rig_Frankie_right_index01/rig_Frankie_right_index02/rig_Frankie_right_index03/jnt_Frankie_right_index01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_right_clavicle01/rig_Frankie_right_shoulder01/rig_Frankie_right_elbow01/rig_Frankie_right_wrist01/rig_Frankie_right_middle01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_right_clavicle01/rig_Frankie_right_shoulder01/rig_Frankie_right_elbow01/rig_Frankie_right_wrist01/rig_Frankie_right_middle01/rig_Frankie_right_middle02
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_right_clavicle01/rig_Frankie_right_shoulder01/rig_Frankie_right_elbow01/rig_Frankie_right_wrist01/rig_Frankie_right_middle01/rig_Frankie_right_middle02/rig_Frankie_right_middle03
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_right_clavicle01/rig_Frankie_right_shoulder01/rig_Frankie_right_elbow01/rig_Frankie_right_wrist01/rig_Frankie_right_middle01/rig_Frankie_right_middle02/rig_Frankie_right_middle03/jnt_Frankie_right_middle01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_right_clavicle01/rig_Frankie_right_shoulder01/rig_Frankie_right_elbow01/rig_Frankie_right_wrist01/rig_Frankie_right_pinky01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_right_clavicle01/rig_Frankie_right_shoulder01/rig_Frankie_right_elbow01/rig_Frankie_right_wrist01/rig_Frankie_right_pinky01/rig_Frankie_right_pinky02
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_right_clavicle01/rig_Frankie_right_shoulder01/rig_Frankie_right_elbow01/rig_Frankie_right_wrist01/rig_Frankie_right_pinky01/rig_Frankie_right_pinky02/rig_Frankie_right_pinky03
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_right_clavicle01/rig_Frankie_right_shoulder01/rig_Frankie_right_elbow01/rig_Frankie_right_wrist01/rig_Frankie_right_pinky01/rig_Frankie_right_pinky02/rig_Frankie_right_pinky03/jnt_Frankie_right_pinky01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_right_clavicle01/rig_Frankie_right_shoulder01/rig_Frankie_right_elbow01/rig_Frankie_right_wrist01/rig_Frankie_right_ring01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_right_clavicle01/rig_Frankie_right_shoulder01/rig_Frankie_right_elbow01/rig_Frankie_right_wrist01/rig_Frankie_right_ring01/rig_Frankie_right_ring02
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_right_clavicle01/rig_Frankie_right_shoulder01/rig_Frankie_right_elbow01/rig_Frankie_right_wrist01/rig_Frankie_right_ring01/rig_Frankie_right_ring02/rig_Frankie_right_ring03
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_right_clavicle01/rig_Frankie_right_shoulder01/rig_Frankie_right_elbow01/rig_Frankie_right_wrist01/rig_Frankie_right_ring01/rig_Frankie_right_ring02/rig_Frankie_right_ring03/jnt_Frankie_right_ring01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_right_clavicle01/rig_Frankie_right_shoulder01/rig_Frankie_right_elbow01/rig_Frankie_right_wrist01/rig_Frankie_right_thumb01
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_right_clavicle01/rig_Frankie_right_shoulder01/rig_Frankie_right_elbow01/rig_Frankie_right_wrist01/rig_Frankie_right_thumb01/rig_Frankie_right_thumb02
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_right_clavicle01/rig_Frankie_right_shoulder01/rig_Frankie_right_elbow01/rig_Frankie_right_wrist01/rig_Frankie_right_thumb01/rig_Frankie_right_thumb02/rig_Frankie_right_thumb03
+        weight: 1
+      - path: rig_Frankie_pelvis01/rig_Frankie_spine01/rig_Frankie_spine02/rig_Frankie_spine03/rig_Frankie_spine04/rig_Frankie_right_clavicle01/rig_Frankie_right_shoulder01/rig_Frankie_right_elbow01/rig_Frankie_right_wrist01/rig_Frankie_right_thumb01/rig_Frankie_right_thumb02/rig_Frankie_right_thumb03/jnt_Frankie_right_thumb01
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
