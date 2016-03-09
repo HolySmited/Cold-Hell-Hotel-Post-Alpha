@@ -8,14 +8,14 @@ Setup (THIS IS ONLY APPLICABLE IF YOU HAVE NO WORKING PROJECT ON YOUR MACHINE)
 1. In a browser, navigate to the repository
 2. Click the dropdown menu to select a branch and create a new branch with the name "FirstInitial_LastName" (mine would be M_Wilson)
 3. This branch will be the only area you work on; no one should be working on the raw master branch
-2. Download the GitHub Desktop Application
-//WIP 
+4. Download the GitHub Desktop Application
+5. Switch your active branch to the branch you made online
 
 Setup (USE THIS IF YOU ALREADY HAVE A WORKING PROJECT BUT HAVE NOT ACCESSED THE REPO BEFORE)
 1. Follow all of the original setup instructions
 2. Find your local branch repo in the File Explorer
 3. Delete everything from that folder
-4. Move your working project into this folder (it should the look the same as it was before you deleted the old one)
+4. Move the Assets and Project Settings subfolders of your working project into this folder, wrapped inside a folder with the same name as the project
 5. Skip to the "Updating Your Branch" section of this README
 
 Beginning To Work (THIS MUST BE DONE EVERY TIME YOU GO TO WORK ON THE PROJECT)
