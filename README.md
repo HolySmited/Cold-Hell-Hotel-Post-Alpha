@@ -1,6 +1,8 @@
 # Cold-Hell-Hotel-Post-Alpha
 Post-Alpha Cold Hell Hotel official repo
 
+For formatting purposes, view this in RAW
+
 HOW TO USE THE GITHUB:
 DO NOT FORK ANYTHING EVER; ONLY BRANCH
 
@@ -20,6 +22,7 @@ Setup (USE THIS IF YOU ALREADY HAVE A WORKING PROJECT BUT HAVE NOT ACCESSED THE 
 
 Beginning To Work (THIS MUST BE DONE EVERY TIME YOU GO TO WORK ON THE PROJECT)
 1. Before you start working on your branch, click the Update From Master button to make sure you have the most up-to-date project
+2. Click Sync to update your remote branch
 2. Work on whatever it is you need to work on
 
 Updating Your Branch
@@ -29,8 +32,16 @@ Updating Your Branch
 4. Click the commit button
 
 Updating The Master (THIS SHOULD BE DONE AFTER FINISHING ANY WORK)
-1. Once you've updated your branch, click the Pull Request button (top right)
-2. Make sure it is set to "from (your branch) into master"
-3. Add a title and description, same as when you committed changes to your branch
-4. Click Send Pull Request
-5. An admin will approve the request and the master copy will be updated with your changes
+1. To make sure nothing changed while you worked, click Update From Master
+2. Once that's done, click Sync to finish updating your branch (this does not affect the files you worked on)
+3. Once you've updated your branch, click the Pull Request button (top right)
+4. Make sure it is set to "from (your branch) into master"
+5. Add a title and description, same as when you committed changes to your branch
+6. Click Send Pull Request
+7. An admin will approve the request and the master copy will be updated with your changes
+
+Ensuring Your Branch is Up-to-Date
+If at any time you are unsure if you're working in the most up-to-date project, follow these instructions
+1. On the Desktop Application, click Update From Master
+2. Click Sync
+If you are still unsure, check the networking graph and commit history on the Github website
