@@ -16,7 +16,7 @@ public class KillFrankie : MonoBehaviour
 	{
 		if(startGameoverTimer && timeLimit < (timer += Time.deltaTime))
 		{
-			GameObject.FindObjectOfType<GameEndScreen>().activateGameOverScreen();
+			GameObject.FindObjectOfType<GameEndUI>().open_Lose();
 			timer = 0;
 			gameOver = true;
 		}
