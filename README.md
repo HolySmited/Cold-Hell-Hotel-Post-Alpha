@@ -1,6 +1,8 @@
 # Cold-Hell-Hotel-Post-Alpha
 Post-Alpha Cold Hell Hotel official repo
 
+For formatting purposes, view this in RAW
+
 HOW TO USE THE GITHUB:
 DO NOT FORK ANYTHING EVER; ONLY BRANCH
 
@@ -19,8 +21,11 @@ Setup (USE THIS IF YOU ALREADY HAVE A WORKING PROJECT BUT HAVE NOT ACCESSED THE 
 5. Skip to the "Updating Your Branch" section of this README
 
 Beginning To Work (THIS MUST BE DONE EVERY TIME YOU GO TO WORK ON THE PROJECT)
-1. Before you start working on your branch, click the Update From Master button to make sure you have the most up-to-date project
-2. Work on whatever it is you need to work on
+1. Make sure your local master copy is updated by selecting it as the active branch and clicking Sync (GitHub Desktop Application)
+2. Switch your active branch back to your personal branch
+3. Before you start working on your branch, click the Update From Master button to make sure you have the most up-to-date project
+4. Click Sync to update your remote branch
+5. Work on whatever it is you need to work on
 
 Updating Your Branch
 1. After working, when you go back to the Desktop Application, there should be a list of changes
@@ -29,8 +34,20 @@ Updating Your Branch
 4. Click the commit button
 
 Updating The Master (THIS SHOULD BE DONE AFTER FINISHING ANY WORK)
-1. Once you've updated your branch, click the Pull Request button (top right)
-2. Make sure it is set to "from (your branch) into master"
-3. Add a title and description, same as when you committed changes to your branch
-4. Click Send Pull Request
-5. An admin will approve the request and the master copy will be updated with your changes
+1. Make sure your local master copy is updated by selecting it as the active branch and clicking Sync (GitHub Desktop Application)
+2. Switch your active branch back to your personal branch
+3. To make sure nothing changed while you worked, click Update From Master
+4. Once that's done, click Sync to finish updating your branch (this does not affect the files you worked on)
+5. Once you've updated your branch, click the Pull Request button (top right)
+6. Make sure it is set to "from (your branch) into master"
+7. Add a title and description, same as when you committed changes to your branch
+8. Click Send Pull Request
+9. An admin will approve the request and the master copy will be updated with your changes
+
+Ensuring Your Branch is Up-to-Date
+If at any time you are unsure if you're working in the most up-to-date project, follow these instructions
+1. Make sure your local master copy is updated by selecting it as the active branch and clicking Sync (GitHub Desktop Application)
+2. Switch your active branch back to your personal branch
+3. Click Update From Master
+4. Click Sync
+If you are still unsure, check the networking graph and commit history on the Github website
