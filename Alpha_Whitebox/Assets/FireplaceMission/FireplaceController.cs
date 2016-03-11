@@ -16,7 +16,7 @@ public class FireplaceController : MonoBehaviour
 	private FrankieInvestigateNoise noiseController;
 
 	private float hintTimer;
-	private LevelTips tipScript;
+	//private LevelTips tipScript;
 	private bool hintDisplayed;
 
     void Start ()
@@ -24,7 +24,7 @@ public class FireplaceController : MonoBehaviour
         frankie = GameObject.FindGameObjectWithTag("Frankie");
         AImovement = GameObject.FindGameObjectWithTag("Frankie").GetComponent<LivingMovement>();
 		master = GameObject.FindGameObjectWithTag("GameController").GetComponent<MasterMissionControl>();
-		tipScript = GameObject.Find("LevelGUI").GetComponent<LevelTips>();
+		//tipScript = GameObject.Find("LevelGUI").GetComponent<LevelTips>();
 		noiseController = frankie.GetComponent<FrankieInvestigateNoise>();
         isSolved = false;
 		hintDisplayed = false;
@@ -40,7 +40,7 @@ public class FireplaceController : MonoBehaviour
 
 			if (hintTimer <= 0f && !hintDisplayed)
 			{
-				tipScript.displayTip(2);
+				//tipScript.displayTip(2);
 				hintDisplayed = true;
 			}
 		}
@@ -67,7 +67,7 @@ public class FireplaceController : MonoBehaviour
 						isActive = false;
 						master.Increment();
 						AImovement.TransitionPath();
-						tipScript.hideTip();
+						//tipScript.hideTip();
 						noiseController.PlayTheSound();
 					}
 				}

@@ -16,7 +16,7 @@ public class RadioController : MonoBehaviour
 
 	private LivingMovement AImovement;
 
-	public LevelTips tipScript;
+	//public LevelTips tipScript;
 
 	private Highlighter highlighter;
 
@@ -27,13 +27,13 @@ public class RadioController : MonoBehaviour
 		fireplaceContol = GameObject.Find("FireplaceController").GetComponent<FireplaceController>();
 		AImovement = GameObject.FindGameObjectWithTag("Frankie").GetComponent<LivingMovement>();
 		frankie = GameObject.FindGameObjectWithTag("Frankie");
-		tipScript = GameObject.Find("LevelGUI").GetComponent<LevelTips>();
+		//tipScript = GameObject.Find("LevelGUI").GetComponent<LevelTips>();
 		highlighter = gameObject.GetComponent<Highlighter>();
 
         firstOn = true;
         radioOn = false;
 
-		tipScript.displayTip(3);
+		//tipScript.displayTip(3);
     }
 
 	void Update()
@@ -76,6 +76,6 @@ public class RadioController : MonoBehaviour
 		sightScript.LightReaction(radioToggleWaypoint, gameObject);
 		firstOn = false;
 		highlighter.ConstantOff();
-		tipScript.hideTip();
+		//tipScript.hideTip();
     }
 }

@@ -10,7 +10,7 @@ public class HackDoorScript : MonoBehaviour {
 
 	public float speed = 3f;
 
-	private LevelTips tipScript;
+	//private LevelTips tipScript;
 
 	private bool isDone;
 	private bool doorOpen;
@@ -20,7 +20,7 @@ public class HackDoorScript : MonoBehaviour {
 	void Start () {
 		timer = 13f;
 		chandelierControl = GameObject.Find("ChandelierController").GetComponent<ChandelierController>();
-		tipScript = GameObject.Find("LevelGUI").GetComponent<LevelTips>();
+		//tipScript = GameObject.Find("LevelGUI").GetComponent<LevelTips>();
 		isDone = false;
 		doorOpen = false;
 		hintTimer = 90f;
@@ -48,7 +48,7 @@ public class HackDoorScript : MonoBehaviour {
 
 				if (hintTimer <= 0f)
 				{
-					tipScript.displayTip(1);
+					//tipScript.displayTip(1);
 					isDone = true;
 				}
 			}

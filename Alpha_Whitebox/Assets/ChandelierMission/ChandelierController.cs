@@ -18,7 +18,7 @@ public class ChandelierController : MonoBehaviour {
 
 	public MasterMissionControl master;
 
-	private LevelTips tipScript;
+	//private LevelTips tipScript;
 
 	private FrankieInvestigateNoise noiseController;
 	private AudioSource claraSource;
@@ -39,7 +39,7 @@ public class ChandelierController : MonoBehaviour {
 
 		master = GameObject.FindGameObjectWithTag("GameController").GetComponent<MasterMissionControl>();
 
-		tipScript = GameObject.Find("LevelGUI").GetComponent<LevelTips>();
+		//tipScript = GameObject.Find("LevelGUI").GetComponent<LevelTips>();
 
 		noiseController = GameObject.FindGameObjectWithTag("Frankie").GetComponent<FrankieInvestigateNoise>();
     }
@@ -62,7 +62,7 @@ public class ChandelierController : MonoBehaviour {
         {
             if (!chandelierScript.trait_Severable && master.index == 4)
             {
-				tipScript.hideTip();
+				//tipScript.hideTip();
 				noiseController.PlayTheSound();
                 moveScript.TransitionPath();
 				master.Increment();
@@ -70,8 +70,8 @@ public class ChandelierController : MonoBehaviour {
             }
         }
 
-		if (YOUWIN)
-			FindObjectOfType<GameEndScreen>().activateCongratsScreen();
+		//if (YOUWIN)
+			//FindObjectOfType<GameEndScreen>().activateCongratsScreen();
 
     }
 }
