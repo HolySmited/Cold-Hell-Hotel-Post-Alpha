@@ -22,15 +22,12 @@ public class LivingSight : MonoBehaviour {
 	private LivingState state;
 	private LivingAnimation anim;
 	private BoxCollider col;
-	
-	private FrankieInvestigateNoise noiseController;
 
 	//Gets references of objects
 	void Start(){
 		settings = this.GetComponent<LivingSettings> ();
 		state = this.GetComponent<LivingState> ();
 		anim = this.GetComponent<LivingAnimation> ();
-		noiseController = GameObject.FindGameObjectWithTag("Frankie").GetComponent<FrankieInvestigateNoise>();
 	}
 
 	//temporary check to see if it is startled
@@ -106,7 +103,6 @@ public class LivingSight : MonoBehaviour {
 	}
 
 	public void Murder(){
-		noiseController.PlayTheSound(5);
 		settings.dead = true;
 		settings.health = 0;
 		anim.StartGenericAnim (2);
