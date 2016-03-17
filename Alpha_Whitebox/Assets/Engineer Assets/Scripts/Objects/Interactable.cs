@@ -2,6 +2,11 @@
 using System.Collections;
 using HighlightingSystem;
 
+[RequireComponent(typeof(ObjectTraits))]
+[RequireComponent(typeof(ObjectSettings))]
+[RequireComponent(typeof(Highlighter))]
+[RequireComponent(typeof(AudioSource))]
+
 public class Interactable : MonoBehaviour, IInteractableObject 
 {
 	/* Jonathon Wigley, 3/11/16*/

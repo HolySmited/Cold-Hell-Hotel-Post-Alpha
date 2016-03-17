@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using HighlightingSystem;
 
 public class Room : MonoBehaviour , IRoom
 {
@@ -32,12 +33,8 @@ public class Room : MonoBehaviour , IRoom
 	{
 		// Add this room to the list of rooms in RoomController
 		controller = GameObject.FindGameObjectWithTag("GameController").GetComponent<RoomController>();
-		controller.AddRoom(col);
-	}
-
-	void Start () 
-	{
 		col = GetComponent<Collider>();
+		controller.AddRoom(col);
 	}
 
 	void Update () 
@@ -102,7 +99,7 @@ public class Room : MonoBehaviour , IRoom
 	public float GetLightLevel()
 	{
 		// Total number of light sources in the room
-		int lightsOn, lightsOff;
+		int lightsOn = 0, lightsOff = 0;
 
 		// Get the number of lights in the room
 		foreach(GameObject obj in objectsInRoom)

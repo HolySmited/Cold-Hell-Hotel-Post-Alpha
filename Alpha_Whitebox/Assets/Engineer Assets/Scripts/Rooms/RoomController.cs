@@ -48,5 +48,8 @@ public class RoomController : MonoBehaviour
 				return room.gameObject;
 			}
 		}
+
+		Debug.Log("Current Room not set");
+		return null;
 	}
 }
