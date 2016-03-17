@@ -18,7 +18,7 @@ public class Interactable : MonoBehaviour, IInteractableObject
 	Camera playerCamera;
 
 	RoomController roomController;
-	public GameObject currentRoom {get; set;}
+	public GameObject currentRoom;// {get; set;}
 
 	// Names of audio clips and traits
 	public const int Small=0, Medium=1, Large=2, Severable=3, Sharp=4, Flame=5, Electric=6, On=7, Movable=8, FlammableLiquid=9;
@@ -33,7 +33,13 @@ public class Interactable : MonoBehaviour, IInteractableObject
 
 	// Gets set to true when this object is interacted with, then resets to false
 	bool interactedPlayer, interactedNPC;
+	public bool IsInteractedWithByPlayer{get{return interactedPlayer;} set{interactedPlayer = value;}}
+	public bool IsInteractedWithByNPC{get{return interactedNPC;} set{interactedNPC = value;}}
+
+	// Used to check if the object is being held by the player or NPC
 	bool heldPlayer, heldNPC;
+	public bool IsHeldByPlayer{get{return heldPlayer;} set{heldPlayer = value;}}
+	public bool IsHeldByNPC{get{return heldNPC;} set{heldNPC = value;}}
 
 	// Different highlight variable
 	bool highlightPermanent;
@@ -45,7 +51,18 @@ public class Interactable : MonoBehaviour, IInteractableObject
 	Quaternion startRotation;
 
 	// Timer utility variables
-	float timeCount = 0;
+	double timeCount = 0;
+	double timeStart, timeEnd;
+
+	// Booleans to tell which function is running
+	bool highForTime,
+	highColorForTime,
+	highAfterTime,
+	highColorAfterTime,
+	highAfterTimeForTime,
+	highColorAfterTimeForTime,
+	beenHigh;
+	float showTime;
 
 	void Start () 
 	{
@@ -61,17 +78,19 @@ public class Interactable : MonoBehaviour, IInteractableObject
 
 		roomController = GameObject.FindGameObjectWithTag("GameController").GetComponent<RoomController>();
 		currentRoom = roomController.GetCurrentRoom(this.gameObject);
-		currentRoom.GetComponent<Room>().AddObjectToRoom(this.gameObject);
+		currentRoom.GetComponent<Room>().AddObjectToRoomAtStart(this.gameObject);
+
+		if(IsType(Flame) || IsType(Electric))
+		{
+			if(IsType(On))
+				TurnOn(true);
+			else
+				TurnOn(false);
+		}
 	}
 
 	void Update () 
 	{
-		// Reset interacted to false right after it has been interacted with
-		if(interactedPlayer)
-			interactedPlayer = false;
-		if(interactedNPC)
-			interactedNPC = false;
-
 		// Timing
 		timeCount += Time.deltaTime;
 
@@ -79,6 +98,50 @@ public class Interactable : MonoBehaviour, IInteractableObject
 			highlight.ConstantOnImmediate();
 		if(highlightPermanentColor)
 			highlight.ConstantOnImmediate(permColor);
+
+		// Room Updating
+		if(currentRoom == null)
+		{
+			if(roomController.GetCurrentRoom(this.gameObject) != null)
+			{
+				currentRoom = roomController.GetCurrentRoom(this.gameObject);
+				currentRoom.GetComponent<Room>().objectJustEntered = true;
+				currentRoom.GetComponent<Room>().mostRecentEnter = this.gameObject;
+			}
+		}
+
+		// Reset interacted to false right after it has been interacted with
+		if(interactedPlayer)
+			interactedPlayer = false;
+		if(interactedNPC)
+			interactedNPC = false;
+
+		// Highlighting
+		if(highForTime)
+		{
+			if(timeCount > timeEnd)
+				HighlightForTime(1);
+		}else if(highColorForTime)
+		{
+			if(timeCount > timeEnd)
+				HighlightColorForTime(1, Color.yellow);
+		}else if(highAfterTime)
+		{
+			if(timeCount > timeEnd)
+				HighlightAfterTime(1);
+		}else if(highColorAfterTime)
+		{
+			if(timeCount > timeEnd)
+				HighlightColorAfterTime(1, Color.yellow);
+		}else if(highAfterTimeForTime)
+		{
+			if(timeCount > timeEnd)
+				HighlightAfterTimeForTime(1, 1);
+		}else if(highColorAfterTimeForTime)
+		{
+			if(timeCount > timeEnd)
+				HighlightColorAfterTimeForTime(1, 1, Color.yellow);
+		}
 	}
 
 	// Turn on the object, e.g. light the flame flip the switch
@@ -92,8 +155,11 @@ public class Interactable : MonoBehaviour, IInteractableObject
 			// Enable or Disable all the light components in the object's children
 			foreach(Light light in GetComponentsInChildren<Light>())
 			{
-				light.enabled = onOff;
+				light.enabled = traits.trait_On;
 			}
+
+			if(traits.trait_Flame)
+				transform.FindChild("Flame").gameObject.SetActive(traits.trait_On);
 
 		}else
 		{
@@ -114,6 +180,10 @@ public class Interactable : MonoBehaviour, IInteractableObject
 			{
 				light.enabled = traits.trait_On;
 			}
+
+			if(traits.trait_Flame)
+				transform.FindChild("Flame").gameObject.SetActive(traits.trait_On);
+
 		}else
 		{
 			Debug.Log("You tried to TOGGLE something that doesn't have an on/off state.");
@@ -124,20 +194,6 @@ public class Interactable : MonoBehaviour, IInteractableObject
 	public bool isOn()
 	{
 		return traits.trait_On;
-	}
-	
-	// Return true if the object has just been interacted with by the player
-	// Should be placed in a script's Update()
-	public bool IsInteractedWithByPlayer()
-	{
-		return interactedPlayer;
-	}
-	
-	// Returns true if the object has just been interacted with by an NPC
-	// Should be placed in a script's Update()
-	public bool IsInteractedWithByNPC()
-	{
-		return interactedNPC;
 	}
 	
 	// Return true if the object has the given trait/type
@@ -254,37 +310,136 @@ public class Interactable : MonoBehaviour, IInteractableObject
 	// Highlight default color for the given time
 	public void HighlightForTime(float time)
 	{
+		if(!highForTime)
+		{
+			timeStart = timeCount;
+			timeEnd = timeCount + time;
+			highForTime = true;
+		}else
+			highForTime = false;
 
+		if(timeCount < timeEnd)
+		{
+			HighlightPermanent();
+		}else
+		{
+			HighlightOff();
+		}
 	}
 	
 	// Highlight given color for the given amount of time
 	public void HighlightColorForTime(float time, Color color)
 	{
-
+		if(!highColorForTime)
+		{
+			timeStart = timeCount;
+			timeEnd = timeCount + time;
+			highColorForTime = true;
+		}else
+			highColorForTime = false;
+		
+		if(timeCount < timeEnd)
+		{
+			HighlightPermanentColor(color);
+		}else
+		{
+			HighlightOff();
+		}
 	}
 	
 	// Highlight the default color after the given amount of time
-	public void HighlightAfterTime()
+	public void HighlightAfterTime(float time)
 	{
-
+		if(!highAfterTime)
+		{
+			timeStart = timeCount;
+			timeEnd = timeCount + time;
+			highAfterTime = true;
+		}else
+			highAfterTime = false;
+		
+		if(timeCount > timeEnd)
+		{
+			HighlightPermanent();
+		}else
+		{
+			HighlightOff();
+		}
 	}
 	
 	// Highlight the given color after the given amount of time
-	public void HighlightColorAfterTime()
+	public void HighlightColorAfterTime(float time, Color color)
 	{
-
+		if(!highColorAfterTime)
+		{
+			timeStart = timeCount;
+			timeEnd = timeCount + time;
+			highColorAfterTime = true;
+			permColor = color;
+		}else
+			highColorAfterTime = false;
+		
+		if(timeCount > timeEnd)
+		{
+			HighlightPermanentColor(permColor);
+		}
 	}
 	
 	// Highlight the default color after the given time "timeWait", for the given time "timeShow"
-	public void HighlightAfterTimeForTime()
+	public void HighlightAfterTimeForTime(float timeWait, float timeShow)
 	{
-
+		if(!highAfterTimeForTime)
+		{
+			timeStart = timeCount;
+			timeEnd = timeCount + timeWait;
+			highAfterTimeForTime = true;
+			showTime = timeShow;
+		}else if(!beenHigh)
+		{
+			timeEnd += showTime;
+			beenHigh = true;
+		}else
+		{
+			highAfterTimeForTime = false;
+			beenHigh = false;
+		}
+		
+		if(beenHigh)
+		{
+			HighlightPermanent();
+		}else if(!highAfterTimeForTime && !beenHigh)
+		{
+			HighlightOff();
+		}
 	}
 	
 	// Highlight the given color after the given time "timeWait", for the given time "timeShow"
-	public void HighLightColorAfterTimeForTime(float timeWait, float timeShow, Color color)
+	public void HighlightColorAfterTimeForTime(float timeWait, float timeShow, Color color)
 	{
-
+		if(!highColorAfterTimeForTime)
+		{
+			timeStart = timeCount;
+			timeEnd = timeCount + timeWait;
+			highColorAfterTimeForTime = true;
+			showTime = timeShow;
+			permColor = color;
+		}else if(!beenHigh)
+		{
+			timeEnd += showTime;
+			beenHigh = true;
+		}else
+		{
+			highColorAfterTimeForTime = false;
+			beenHigh = false;
+		}
+		
+		if(beenHigh)
+		{
+			HighlightPermanentColor(permColor);
+		}else if(!highColorAfterTimeForTime && !beenHigh)
+		{
+			HighlightOff();
+		}
 	}
 	
 	// Turn the highlighter off
@@ -329,17 +484,5 @@ public class Interactable : MonoBehaviour, IInteractableObject
 	public bool IsInViewOfPlayer()
 	{
 		return GetComponent<Renderer>().isVisible;
-	}
-	
-	// Returns true if this is the currently held object
-	public bool IsHeldByPlayer()
-	{
-		return heldPlayer;
-	}
-	
-	// Returns true if this is currently held by and NPC
-	public bool IsHeldByNPC()
-	{
-		return heldNPC;
 	}
 }

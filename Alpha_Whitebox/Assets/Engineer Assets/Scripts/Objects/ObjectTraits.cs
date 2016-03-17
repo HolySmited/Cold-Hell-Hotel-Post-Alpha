@@ -13,7 +13,7 @@ public class ObjectTraits : MonoBehaviour
 	public const int TRAITS_SIZE = 10;  //  Very Important That This is Accurrate!!!
 	//  traitNames can be static as the names of the traits won't vary
 	public static string[] traitNames = new string[TRAITS_SIZE] { "Small", "Medium", "Large",
-		"Severable", "Sharp", "Flame", "Electric", "On", "Movable", "Flammable Liquid" };
+		"Severable", "Sharp", "Flame", "Electric", "On", "Moveable", "Flammable Liquid" };
 	[SerializeField]
 	bool[] traits = new bool[TRAITS_SIZE];
 	

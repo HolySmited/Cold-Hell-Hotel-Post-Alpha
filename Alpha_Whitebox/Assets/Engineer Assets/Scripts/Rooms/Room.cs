@@ -14,7 +14,7 @@ public class Room : MonoBehaviour , IRoom
 	Collider col; // The rooms trigger collider
 
 	// Stores the most recent object to enter/exit
-	public GameObject mostRecentExit{get; set;}
+	public GameObject mostRecentExit;
 	public GameObject mostRecentEnter; 
 
 	// Marked true if an object entered in the last frame
@@ -22,8 +22,8 @@ public class Room : MonoBehaviour , IRoom
 	public bool objectJustEntered{get; set;}
 	public bool objectJustExited{get; set;} 
 
-	List<GameObject> objectsInRoomAtStart; // Stores a list of all objects that were in the room at the start of the game
-	List<GameObject> objectsInRoom;	// Stores a list of all objects currently in the room
+	public List<GameObject> objectsInRoomAtStart; // Stores a list of all objects that were in the room at the start of the game
+	public List<GameObject> objectsInRoom;	// Stores a list of all objects currently in the room
 	bool objectCheck;	// Whether or not all the objects in the room have been checked
 
 	List<Light> lightsInRoom;
@@ -35,6 +35,13 @@ public class Room : MonoBehaviour , IRoom
 		controller = GameObject.FindGameObjectWithTag("GameController").GetComponent<RoomController>();
 		col = GetComponent<Collider>();
 		controller.AddRoom(col);
+	}
+
+	void Start()
+	{
+		objectsInRoomAtStart = new List<GameObject>();
+		objectsInRoom = objectsInRoomAtStart;
+		lightsInRoom = new List<Light>();
 	}
 
 	void Update () 
@@ -124,7 +131,7 @@ public class Room : MonoBehaviour , IRoom
 		if(other.gameObject.layer == LayerMask.NameToLayer("Items_Interactable"))
 		{
 			 /* 
-			 * If the objects was not in the room before and is in the room now,
+			 * If the object was not in the room before and is in the room now,
 			 * the object has entered the room
 			 *
 			 * NOTE: This takes care of managing the room the object left as well
@@ -153,6 +160,27 @@ public class Room : MonoBehaviour , IRoom
 				objectJustEntered = true;
 				mostRecentEnter = other.gameObject;
 			}
+			else if(!objectsInRoom.Contains(other.gameObject) && 
+			        controller.GetCurrentRoom(other.gameObject) == null)
+			{
+
+				// Reference to the room the object just left
+				Room otherRoom = other.gameObject.GetComponent<Interactable>().currentRoom.GetComponent<Room>();
+
+				// Remove the object from the room it left
+				otherRoom.RemoveObjectFromRoom(other.gameObject);
+				
+				// Tell the other room that this object has just left
+				otherRoom.objectJustExited = true;
+				otherRoom.mostRecentExit = other.gameObject;
+				
+				// Set the object's current room as null
+				other.gameObject.GetComponent<Interactable>().currentRoom = null;
+				
+				// Tell this room an object just entered
+				objectJustEntered = true;
+				mostRecentEnter = other.gameObject;
+			}
 		}
 	}
 
@@ -160,6 +188,12 @@ public class Room : MonoBehaviour , IRoom
 	public void AddObjectToRoom(GameObject obj)
 	{
 		objectsInRoom.Add(obj);
+	}
+
+	// Adds an object to the list of objects in the room at the start
+	public void AddObjectToRoomAtStart(GameObject obj)
+	{
+		objectsInRoomAtStart.Add(obj);
 	}
 
 	// Removes an object to the list of objects currently in the room

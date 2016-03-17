@@ -30,8 +30,8 @@ public class InteractableObject : MonoBehaviour
 			collisionSound = constantSound.clip;
 
 		// Send this object's transform to the volume controller
-		if(behavior.trait_Holdable)
-			GameObject.FindGameObjectWithTag("GameController").GetComponent<VolumeController>().sendTransform(transform);
+		/*if(behavior.trait_Holdable)
+			GameObject.FindGameObjectWithTag("GameController").GetComponent<VolumeController>().sendTransform(transform);*/
 	}
 
 	void Update()

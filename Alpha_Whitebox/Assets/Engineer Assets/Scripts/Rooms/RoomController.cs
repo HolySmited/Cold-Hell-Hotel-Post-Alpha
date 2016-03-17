@@ -6,14 +6,9 @@ public class RoomController : MonoBehaviour
 {
 	List<Collider> rooms;
 
-	void Start () 
+	void Awake()
 	{
-		
-	}
-
-	void Update () 
-	{
-	
+		rooms = new List<Collider>();
 	}
 
 	// Adds a room to the overall list of rooms
