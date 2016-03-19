@@ -10,6 +10,9 @@ public class PCAbilities : MonoBehaviour
     [SerializeField]
     float cdTimer_Blast = 0, cdTimer_Interact = 0;
 
+	[SerializeField]
+	AudioClip blastSound;
+
     public GameObject heldObj = null;
     GameObject lastHit = null;
     float heldDist = 0;
@@ -24,10 +27,16 @@ public class PCAbilities : MonoBehaviour
     {
         try
         {
-            if ((!interacting || heldObj.GetComponent<ObjectBehavior>().trait_Sharp) && cdTimer_Interact <= 0)
-                objInRange = checkForObjInRange();
+            if ((!interacting) && cdTimer_Interact <= 0)
+			{
+				objInRange = checkForObjInRange();
+			}
+                
             if (heldObj != null)
-                manageHeldObject();
+			{
+				manageHeldObject();
+			}
+                
         }
         catch (System.NullReferenceException)
         {
@@ -74,17 +83,7 @@ public class PCAbilities : MonoBehaviour
             lastHit = hitInfo.transform.gameObject;
 
             // Activate the highlighting on the object when it is interactable, based on object type
-            if (hitInfo.transform.GetComponent<ObjectBehavior>().trait_Severable)
-                highlight.ConstantOn(Color.magenta);
-            else if (hitInfo.transform.GetComponent<ObjectBehavior>().trait_Flammable)
-                highlight.ConstantOn(Color.red);
-            else if (hitInfo.transform.GetComponent<ObjectBehavior>().trait_PowerSource)
-                highlight.ConstantOn(Color.green);
-            else if (hitInfo.transform.GetComponent<ObjectBehavior>().trait_Sharp)
-                highlight.ConstantOn(Color.magenta);
-            else
-                highlight.ConstantOn(Color.yellow);
-            highlight.SeeThroughOff();
+			highlightColors(hitInfo, highlight);
 
             //check to see if the object is touching the player collider
             bool objectTouchingPlayer = hitInfo.transform.GetComponent<Collider>().bounds.Contains(GetComponent<Collider>().ClosestPointOnBounds(hitInfo.transform.position));
@@ -115,52 +114,38 @@ public class PCAbilities : MonoBehaviour
         float rayDist = PCSettings.staticRef.interactReach;
         RaycastHit hitInfo;
 
-        // HARD CODED SHARP TAG INTO LIMITS. REMOVE AND MAKE BETTER.
+		// If the player is holding an object, drop the object
         if (heldObj != null)
         {
-            if (!heldObj.GetComponent<ObjectBehavior>().trait_Sharp)
-            {
-                dropObject(); return;
-            }
-            else
-            {
-                if (Physics.Raycast(rayOrigin, rayDir, out hitInfo, rayDist, PCSettings.staticRef.interactableObjectsLM))
-                {
-                    // Special Interact
-                    if (hitInfo.transform.GetComponent<ObjectBehavior>().trait_SpecialInteraction)
-                    {
-                        hitInfo.transform.GetComponent<InteractableObject>().specialInteract(heldObj);
-                    }
-                }
-                else
-                {
-                    dropObject(); return;
-                }
-            }
-
-
+        	dropObject(); 
+			return;
         }
+
+		// If nothing is in range, the player is interacting, or the cooldown is in effect
+		// then do nothing
         if (!objInRange || interacting || cdTimer_Interact > 0)
         {
             return;
         }
 
+		// If an object is in range, perform interactions
         if (Physics.Raycast(rayOrigin, rayDir, out hitInfo, rayDist, PCSettings.staticRef.interactableObjectsLM))
         {
-            // Special Interact
-            if (hitInfo.transform.GetComponent<ObjectBehavior>().trait_SpecialInteraction)
-            {
-                hitInfo.transform.GetComponent<InteractableObject>().specialInteract(heldObj);
-            }
-            else if (!(hitInfo.transform.GetComponent<ObjectBehavior>() == null || hitInfo.transform.GetComponent<InteractableObject>() == null ||
+			hitInfo.transform.GetComponent<Interactable>().IsInteractedWithByPlayer = true;
+
+			// If this is not a moveable object, then it has some other interaction
+			if(!hitInfo.transform.GetComponent<ObjectTraits>().trait_Moveable)
+			{
+				hitInfo.transform.GetComponent<Interactable>().Toggle();
+			}
+			// Make sure the the object meets all necessary requirements to be picked up
+            else if (!(hitInfo.transform.GetComponent<ObjectTraits>() == null || hitInfo.transform.GetComponent<Interactable>() == null ||
               hitInfo.transform.GetComponent<Rigidbody>() == null || hitInfo.transform.GetComponent<ObjectSettings>() == null) &&
-              hitInfo.transform.GetComponent<ObjectBehavior>().trait_Holdable)
+              hitInfo.transform.GetComponent<ObjectTraits>().trait_Moveable)
             {
                 heldObj = hitInfo.transform.gameObject;
+				heldObj.GetComponent<Interactable>().IsHeldByPlayer = true;
                 heldObj.GetComponent<Rigidbody>().useGravity = false;
-
-                if (hitInfo.transform.GetComponent<ObjectBehavior>().trait_Sharp)
-                    heldObj.layer = LayerMask.NameToLayer("Default");
 
                 objInRange = !(interacting = true);
                 heldDist = Vector3.Distance(transform.position, heldObj.transform.position);
@@ -206,22 +191,15 @@ public class PCAbilities : MonoBehaviour
         float rayRadius = r.magnitude;
         */
 
-        // Find the blast sound and play it
-        AudioSource[] sounds = GameObject.FindGameObjectWithTag("Player").GetComponentsInChildren<AudioSource>();
-        foreach (AudioSource sound in sounds)
-        {
-            if (sound.clip.name == "Foley_Action_Ghost_Interaction_Blast")
-            {
-                sound.Play();
-                break;
-            }
-        }
+		//Play the blast sound
+		GetComponentInChildren<AudioSource>().PlayOneShot(blastSound);
 
         RaycastHit[] hits = Physics.SphereCastAll(rayOrigin, rayRadius, rayDir, rayRadius, PCSettings.staticRef.interactableObjectsLM);
         foreach (RaycastHit hitInfo in hits)
         {
-            if (hitInfo.transform.GetComponent<ObjectBehavior>() != null && hitInfo.transform.GetComponent<ObjectBehavior>().trait_SpecialInteraction)
-                continue;
+			if(!hitInfo.transform.GetComponent<Interactable>().IsType(Interactable.Movable))
+				continue;
+
             float angle = Vector3.Angle(rayDir, rayOrigin - hitInfo.transform.position);
             float dist = Vector3.Distance(rayOrigin, hitInfo.transform.position);
             if (angle < 180 - coneAngle || angle > 180 + coneAngle || dist > PCSettings.staticRef.blastLength) continue; //  continue if object is not within the specified cone's bounds
@@ -230,10 +208,6 @@ public class PCAbilities : MonoBehaviour
             Vector3 forceV = forceMult * PCSettings.staticRef.blastForce * Vector3.Normalize(hitInfo.transform.position - transform.position);
             hitInfo.transform.GetComponent<Rigidbody>().AddForce(forceV);
             //  print(hitInfo.transform.name + "\t" + angle + "deg" + "\tDist: " + dist + "m" + "\tMaxRange: " + coneHeight + "m\t" + forceMult);
-
-            if (hitInfo.transform.GetComponent<InteractableObject>() != null)
-                // Do any action caused by a blast
-                hitInfo.transform.GetComponent<InteractableObject>().blastInteract();
         }
     }
 
@@ -247,8 +221,7 @@ public class PCAbilities : MonoBehaviour
             heldObj.GetComponent<Rigidbody>().velocity = new Vector3();
             heldObj.GetComponent<Rigidbody>().useGravity = true;
 
-            if (heldObj.GetComponent<ObjectBehavior>() != null && heldObj.GetComponent<ObjectBehavior>().trait_Sharp)
-                heldObj.layer = LayerMask.NameToLayer("Items_Interactable");
+			heldObj.GetComponent<Interactable>().IsHeldByPlayer = false;
 
             heldObj = null;
 
@@ -300,4 +273,20 @@ public class PCAbilities : MonoBehaviour
         interacting = false;
         Debug.Log("THREW EMERGENCY RESET!");
     }
+
+	void highlightColors(RaycastHit hitInfo, Highlighter highlight)
+	{
+		// Activate the highlighting on the object when it is interactable, based on object type
+		if (hitInfo.transform.GetComponent<ObjectTraits>().trait_Severable)
+			highlight.ConstantOn(Color.magenta);
+		else if (hitInfo.transform.GetComponent<ObjectTraits>().trait_Flame)
+			highlight.ConstantOn(Color.red);
+		else if (hitInfo.transform.GetComponent<ObjectTraits>().trait_Electric)
+			highlight.ConstantOn(Color.green);
+		else if (hitInfo.transform.GetComponent<ObjectTraits>().trait_Sharp)
+			highlight.ConstantOn(Color.magenta);
+		else
+			highlight.ConstantOn(Color.yellow);
+		highlight.SeeThroughOff();
+	}
 }
