@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 428072c024aabfc4dadeea9cfe9bc95b
-timeCreated: 1456553428
+timeCreated: 1457019119
 licenseType: Free
 SubstanceImporter:
   serializedVersion: 5
@@ -42,7 +42,7 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: Metal
       value:
-        scalar[0]: .0705882013
+        scalar[0]: 0
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -82,6 +82,20 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+    - name: metRoughAoHeight_selection
+      value:
+        scalar[0]: 1
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: User-Defined_Maps_Metal_Roughness
+      value:
+        scalar[0]: 1
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
     materialInformation:
       serializedVersion: 5
       offset: {x: 0, y: 0}
@@ -112,13 +126,6 @@ SubstanceImporter:
           second:
             texture: {instanceID: 0}
             scale: {x: 1, y: 1}
-            offset: {x: 0, y: 0}
-        data:
-          first:
-            name: _MetallicGlossMap
-          second:
-            texture: {instanceID: 0}
-            scale: {x: 1, y: 5}
             offset: {x: 0, y: 0}
         data:
           first:
@@ -155,6 +162,13 @@ SubstanceImporter:
             texture: {instanceID: 0}
             scale: {x: 1, y: 1}
             offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _MetallicGlossMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 5}
+            offset: {x: 0, y: 0}
       floats:
         data:
           first:
@@ -174,6 +188,10 @@ SubstanceImporter:
           second: 0
         data:
           first:
+            name: _Parallax
+          second: .00499999989
+        data:
+          first:
             name: _ZWrite
           second: 1
         data:
@@ -182,16 +200,8 @@ SubstanceImporter:
           second: .5
         data:
           first:
-            name: _Metallic
-          second: 0
-        data:
-          first:
             name: _BumpScale
           second: 1
-        data:
-          first:
-            name: _Parallax
-          second: .00499999989
         data:
           first:
             name: _OcclusionStrength
@@ -211,6 +221,10 @@ SubstanceImporter:
         data:
           first:
             name: _Mode
+          second: 0
+        data:
+          first:
+            name: _Metallic
           second: 0
       colors:
         data:
@@ -251,19 +265,34 @@ SubstanceImporter:
       filterMode: 1
       aniso: 1
       wrapMode: 0
+    - name: Basement_ColorTexture
+      alphaSource: 6
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Basement_Normal
+      alphaSource: 0
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Basement_Rmetal_Gheight,Bao,Arough
+      alphaSource: 7
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
     textureAssignments:
     - shaderProp:
         name: _MainTex
       material: {instanceID: 0}
-      baseUID: 649094703
+      baseUID: 613437637
     - shaderProp:
         name: _BumpMap
       material: {instanceID: 0}
-      baseUID: 649094701
+      baseUID: 613437635
     - shaderProp:
         name: _MetallicGlossMap
       material: {instanceID: 0}
-      baseUID: 649094697
+      baseUID: 613437633
     buildTargetSettings:
     - serializedVersion: 2
       buildTarget: 
@@ -308,7 +337,7 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: Metal
       value:
-        scalar[0]: .0705882013
+        scalar[0]: 0
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -348,6 +377,20 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+    - name: metRoughAoHeight_selection
+      value:
+        scalar[0]: 1
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: User-Defined_Maps_Metal_Roughness
+      value:
+        scalar[0]: 1
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
     materialInformation:
       serializedVersion: 5
       offset: {x: 0, y: 0}
@@ -375,13 +418,6 @@ SubstanceImporter:
         data:
           first:
             name: _DetailNormalMap
-          second:
-            texture: {instanceID: 0}
-            scale: {x: 1, y: 1}
-            offset: {x: 0, y: 0}
-        data:
-          first:
-            name: _MetallicGlossMap
           second:
             texture: {instanceID: 0}
             scale: {x: 1, y: 1}
@@ -421,6 +457,13 @@ SubstanceImporter:
             texture: {instanceID: 0}
             scale: {x: 1, y: 1}
             offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _MetallicGlossMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
       floats:
         data:
           first:
@@ -436,6 +479,10 @@ SubstanceImporter:
           second: 0
         data:
           first:
+            name: _Parallax
+          second: .00499999989
+        data:
+          first:
             name: _ZWrite
           second: 1
         data:
@@ -444,16 +491,8 @@ SubstanceImporter:
           second: .5
         data:
           first:
-            name: _Metallic
-          second: 0
-        data:
-          first:
             name: _BumpScale
           second: 1
-        data:
-          first:
-            name: _Parallax
-          second: .00499999989
         data:
           first:
             name: _OcclusionStrength
@@ -473,6 +512,10 @@ SubstanceImporter:
         data:
           first:
             name: _Mode
+          second: 0
+        data:
+          first:
+            name: _Metallic
           second: 0
       colors:
         data:
@@ -513,19 +556,34 @@ SubstanceImporter:
       filterMode: 1
       aniso: 1
       wrapMode: 0
+    - name: Bedroom_1_ColorTexture
+      alphaSource: 6
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Bedroom_1_Normal
+      alphaSource: 0
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Bedroom_1_Rmetal_Gheight,Bao,Arough
+      alphaSource: 7
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
     textureAssignments:
     - shaderProp:
         name: _MainTex
       material: {instanceID: 0}
-      baseUID: 649094703
+      baseUID: 613437637
     - shaderProp:
         name: _BumpMap
       material: {instanceID: 0}
-      baseUID: 649094701
+      baseUID: 613437635
     - shaderProp:
         name: _MetallicGlossMap
       material: {instanceID: 0}
-      baseUID: 649094697
+      baseUID: 613437633
     buildTargetSettings:
     - serializedVersion: 2
       buildTarget: 
@@ -570,7 +628,7 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: Metal
       value:
-        scalar[0]: .0705882013
+        scalar[0]: 0
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -610,6 +668,20 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+    - name: metRoughAoHeight_selection
+      value:
+        scalar[0]: 1
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: User-Defined_Maps_Metal_Roughness
+      value:
+        scalar[0]: 1
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
     materialInformation:
       serializedVersion: 5
       offset: {x: 0, y: 0}
@@ -637,13 +709,6 @@ SubstanceImporter:
         data:
           first:
             name: _DetailNormalMap
-          second:
-            texture: {instanceID: 0}
-            scale: {x: 1, y: 1}
-            offset: {x: 0, y: 0}
-        data:
-          first:
-            name: _MetallicGlossMap
           second:
             texture: {instanceID: 0}
             scale: {x: 1, y: 1}
@@ -683,6 +748,13 @@ SubstanceImporter:
             texture: {instanceID: 0}
             scale: {x: 1, y: 1}
             offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _MetallicGlossMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
       floats:
         data:
           first:
@@ -698,6 +770,10 @@ SubstanceImporter:
           second: 0
         data:
           first:
+            name: _Parallax
+          second: .00499999989
+        data:
+          first:
             name: _ZWrite
           second: 1
         data:
@@ -706,16 +782,8 @@ SubstanceImporter:
           second: .5
         data:
           first:
-            name: _Metallic
-          second: 0
-        data:
-          first:
             name: _BumpScale
           second: 1
-        data:
-          first:
-            name: _Parallax
-          second: .00499999989
         data:
           first:
             name: _OcclusionStrength
@@ -735,6 +803,10 @@ SubstanceImporter:
         data:
           first:
             name: _Mode
+          second: 0
+        data:
+          first:
+            name: _Metallic
           second: 0
       colors:
         data:
@@ -775,19 +847,34 @@ SubstanceImporter:
       filterMode: 1
       aniso: 1
       wrapMode: 0
+    - name: Bedroom_2_ColorTexture
+      alphaSource: 6
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Bedroom_2_Normal
+      alphaSource: 0
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Bedroom_2_Rmetal_Gheight,Bao,Arough
+      alphaSource: 7
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
     textureAssignments:
     - shaderProp:
         name: _MainTex
       material: {instanceID: 0}
-      baseUID: 649094703
+      baseUID: 613437637
     - shaderProp:
         name: _BumpMap
       material: {instanceID: 0}
-      baseUID: 649094701
+      baseUID: 613437635
     - shaderProp:
         name: _MetallicGlossMap
       material: {instanceID: 0}
-      baseUID: 649094697
+      baseUID: 613437633
     buildTargetSettings:
     - serializedVersion: 2
       buildTarget: 
@@ -799,7 +886,7 @@ SubstanceImporter:
     name: Brass
     prototypeName: changeName1
     shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-    shaderKeywords: 
+    shaderKeywords: _METALLICGLOSSMAP _NORMALMAP _PARALLAXMAP
     renderQueue: -1
     inputs:
     - name: $outputsize
@@ -872,6 +959,20 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+    - name: metRoughAoHeight_selection
+      value:
+        scalar[0]: 9
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: User-Defined_Maps_Metal_Roughness
+      value:
+        scalar[0]: 1
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
     materialInformation:
       serializedVersion: 5
       offset: {x: 0, y: 0}
@@ -899,13 +1000,6 @@ SubstanceImporter:
         data:
           first:
             name: _DetailNormalMap
-          second:
-            texture: {instanceID: 0}
-            scale: {x: 1, y: 1}
-            offset: {x: 0, y: 0}
-        data:
-          first:
-            name: _MetallicGlossMap
           second:
             texture: {instanceID: 0}
             scale: {x: 1, y: 1}
@@ -945,6 +1039,13 @@ SubstanceImporter:
             texture: {instanceID: 0}
             scale: {x: 1, y: 1}
             offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _MetallicGlossMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
       floats:
         data:
           first:
@@ -960,6 +1061,10 @@ SubstanceImporter:
           second: 0
         data:
           first:
+            name: _Parallax
+          second: .0199999996
+        data:
+          first:
             name: _ZWrite
           second: 1
         data:
@@ -968,16 +1073,8 @@ SubstanceImporter:
           second: .5
         data:
           first:
-            name: _Metallic
-          second: 0
-        data:
-          first:
             name: _BumpScale
           second: 1
-        data:
-          first:
-            name: _Parallax
-          second: .0199999996
         data:
           first:
             name: _OcclusionStrength
@@ -998,15 +1095,19 @@ SubstanceImporter:
           first:
             name: _Mode
           second: 0
+        data:
+          first:
+            name: _Metallic
+          second: 0
       colors:
         data:
           first:
             name: _EmissionColor
-          second: {r: 0, g: 0, b: 0, a: 1}
+          second: {r: 0, g: 0, b: 0, a: 0}
         data:
           first:
             name: _Color
-          second: {r: 1, g: 1, b: 1, a: 1}
+          second: {r: 1, g: .606896579, b: .25, a: 1}
         data:
           first:
             name: _EmissionColorUI
@@ -1027,19 +1128,38 @@ SubstanceImporter:
       filterMode: 1
       aniso: 1
       wrapMode: 0
+    - name: Brass_ColorTexture
+      alphaSource: 6
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Brass_Normal
+      alphaSource: 0
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Brass_Rmetal_Gheight,Bao,Arough
+      alphaSource: 7
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
     textureAssignments:
     - shaderProp:
         name: _MainTex
       material: {instanceID: 0}
-      baseUID: 649094703
+      baseUID: 613437637
     - shaderProp:
         name: _BumpMap
       material: {instanceID: 0}
-      baseUID: 649094701
+      baseUID: 613437635
+    - shaderProp:
+        name: _ParallaxMap
+      material: {instanceID: 0}
+      baseUID: 613437633
     - shaderProp:
         name: _MetallicGlossMap
       material: {instanceID: 0}
-      baseUID: 649094697
+      baseUID: 613437633
     buildTargetSettings:
     - serializedVersion: 2
       buildTarget: 
@@ -1084,7 +1204,7 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: Metal
       value:
-        scalar[0]: .0705882013
+        scalar[0]: 0
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -1124,6 +1244,20 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+    - name: metRoughAoHeight_selection
+      value:
+        scalar[0]: 1
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: User-Defined_Maps_Metal_Roughness
+      value:
+        scalar[0]: 1
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
     materialInformation:
       serializedVersion: 5
       offset: {x: 0, y: 0}
@@ -1151,13 +1285,6 @@ SubstanceImporter:
         data:
           first:
             name: _DetailNormalMap
-          second:
-            texture: {instanceID: 0}
-            scale: {x: 1, y: 1}
-            offset: {x: 0, y: 0}
-        data:
-          first:
-            name: _MetallicGlossMap
           second:
             texture: {instanceID: 0}
             scale: {x: 1, y: 1}
@@ -1197,6 +1324,13 @@ SubstanceImporter:
             texture: {instanceID: 0}
             scale: {x: 1, y: 1}
             offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _MetallicGlossMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
       floats:
         data:
           first:
@@ -1212,6 +1346,10 @@ SubstanceImporter:
           second: 0
         data:
           first:
+            name: _Parallax
+          second: .00499999989
+        data:
+          first:
             name: _ZWrite
           second: 1
         data:
@@ -1220,16 +1358,8 @@ SubstanceImporter:
           second: .5
         data:
           first:
-            name: _Metallic
-          second: 0
-        data:
-          first:
             name: _BumpScale
           second: 1
-        data:
-          first:
-            name: _Parallax
-          second: .00499999989
         data:
           first:
             name: _OcclusionStrength
@@ -1249,6 +1379,10 @@ SubstanceImporter:
         data:
           first:
             name: _Mode
+          second: 0
+        data:
+          first:
+            name: _Metallic
           second: 0
       colors:
         data:
@@ -1289,19 +1423,34 @@ SubstanceImporter:
       filterMode: 1
       aniso: 1
       wrapMode: 0
+    - name: Kitchen_ColorTexture
+      alphaSource: 6
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Kitchen_Normal
+      alphaSource: 0
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Kitchen_Rmetal_Gheight,Bao,Arough
+      alphaSource: 7
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
     textureAssignments:
     - shaderProp:
         name: _MainTex
       material: {instanceID: 0}
-      baseUID: 649094703
+      baseUID: 613437637
     - shaderProp:
         name: _BumpMap
       material: {instanceID: 0}
-      baseUID: 649094701
+      baseUID: 613437635
     - shaderProp:
         name: _MetallicGlossMap
       material: {instanceID: 0}
-      baseUID: 649094697
+      baseUID: 613437633
     buildTargetSettings:
     - serializedVersion: 2
       buildTarget: 
@@ -1346,7 +1495,7 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: Metal
       value:
-        scalar[0]: .0705882013
+        scalar[0]: 0
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -1386,6 +1535,20 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+    - name: metRoughAoHeight_selection
+      value:
+        scalar[0]: 1
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: User-Defined_Maps_Metal_Roughness
+      value:
+        scalar[0]: 1
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
     materialInformation:
       serializedVersion: 5
       offset: {x: 0, y: 0}
@@ -1413,13 +1576,6 @@ SubstanceImporter:
         data:
           first:
             name: _DetailNormalMap
-          second:
-            texture: {instanceID: 0}
-            scale: {x: 1, y: 1}
-            offset: {x: 0, y: 0}
-        data:
-          first:
-            name: _MetallicGlossMap
           second:
             texture: {instanceID: 0}
             scale: {x: 1, y: 1}
@@ -1459,6 +1615,13 @@ SubstanceImporter:
             texture: {instanceID: 0}
             scale: {x: 1, y: 1}
             offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _MetallicGlossMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
       floats:
         data:
           first:
@@ -1474,6 +1637,10 @@ SubstanceImporter:
           second: 0
         data:
           first:
+            name: _Parallax
+          second: .00499999989
+        data:
+          first:
             name: _ZWrite
           second: 1
         data:
@@ -1482,16 +1649,8 @@ SubstanceImporter:
           second: .5
         data:
           first:
-            name: _Metallic
-          second: 0
-        data:
-          first:
             name: _BumpScale
           second: 1
-        data:
-          first:
-            name: _Parallax
-          second: .00499999989
         data:
           first:
             name: _OcclusionStrength
@@ -1511,6 +1670,10 @@ SubstanceImporter:
         data:
           first:
             name: _Mode
+          second: 0
+        data:
+          first:
+            name: _Metallic
           second: 0
       colors:
         data:
@@ -1551,19 +1714,34 @@ SubstanceImporter:
       filterMode: 1
       aniso: 1
       wrapMode: 0
+    - name: Laundry_ColorTexture
+      alphaSource: 6
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Laundry_Normal
+      alphaSource: 0
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Laundry_Rmetal_Gheight,Bao,Arough
+      alphaSource: 7
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
     textureAssignments:
     - shaderProp:
         name: _MainTex
       material: {instanceID: 0}
-      baseUID: 649094703
+      baseUID: 613437637
     - shaderProp:
         name: _BumpMap
       material: {instanceID: 0}
-      baseUID: 649094701
+      baseUID: 613437635
     - shaderProp:
         name: _MetallicGlossMap
       material: {instanceID: 0}
-      baseUID: 649094697
+      baseUID: 613437633
     buildTargetSettings:
     - serializedVersion: 2
       buildTarget: 
@@ -1608,7 +1786,7 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: Metal
       value:
-        scalar[0]: .0705882013
+        scalar[0]: 0
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -1648,6 +1826,20 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+    - name: metRoughAoHeight_selection
+      value:
+        scalar[0]: 1
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: User-Defined_Maps_Metal_Roughness
+      value:
+        scalar[0]: 1
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
     materialInformation:
       serializedVersion: 5
       offset: {x: 0, y: 0}
@@ -1675,13 +1867,6 @@ SubstanceImporter:
         data:
           first:
             name: _DetailNormalMap
-          second:
-            texture: {instanceID: 0}
-            scale: {x: 1, y: 1}
-            offset: {x: 0, y: 0}
-        data:
-          first:
-            name: _MetallicGlossMap
           second:
             texture: {instanceID: 0}
             scale: {x: 1, y: 1}
@@ -1721,6 +1906,13 @@ SubstanceImporter:
             texture: {instanceID: 0}
             scale: {x: 1, y: 1}
             offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _MetallicGlossMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
       floats:
         data:
           first:
@@ -1736,6 +1928,10 @@ SubstanceImporter:
           second: 0
         data:
           first:
+            name: _Parallax
+          second: .00499999989
+        data:
+          first:
             name: _ZWrite
           second: 1
         data:
@@ -1744,16 +1940,8 @@ SubstanceImporter:
           second: .5
         data:
           first:
-            name: _Metallic
-          second: 0
-        data:
-          first:
             name: _BumpScale
           second: 1
-        data:
-          first:
-            name: _Parallax
-          second: .00499999989
         data:
           first:
             name: _OcclusionStrength
@@ -1773,6 +1961,10 @@ SubstanceImporter:
         data:
           first:
             name: _Mode
+          second: 0
+        data:
+          first:
+            name: _Metallic
           second: 0
       colors:
         data:
@@ -1813,19 +2005,34 @@ SubstanceImporter:
       filterMode: 1
       aniso: 1
       wrapMode: 0
+    - name: Lobby_ColorTexture
+      alphaSource: 6
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Lobby_Normal
+      alphaSource: 0
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Lobby_Rmetal_Gheight,Bao,Arough
+      alphaSource: 7
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
     textureAssignments:
     - shaderProp:
         name: _MainTex
       material: {instanceID: 0}
-      baseUID: 649094703
+      baseUID: 613437637
     - shaderProp:
         name: _BumpMap
       material: {instanceID: 0}
-      baseUID: 649094701
+      baseUID: 613437635
     - shaderProp:
         name: _MetallicGlossMap
       material: {instanceID: 0}
-      baseUID: 649094697
+      baseUID: 613437633
     buildTargetSettings:
     - serializedVersion: 2
       buildTarget: 
@@ -1870,7 +2077,7 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: Metal
       value:
-        scalar[0]: .0705882013
+        scalar[0]: 0
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -1910,6 +2117,20 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+    - name: metRoughAoHeight_selection
+      value:
+        scalar[0]: 1
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: User-Defined_Maps_Metal_Roughness
+      value:
+        scalar[0]: 1
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
     materialInformation:
       serializedVersion: 5
       offset: {x: 0, y: 0}
@@ -1937,13 +2158,6 @@ SubstanceImporter:
         data:
           first:
             name: _DetailNormalMap
-          second:
-            texture: {instanceID: 0}
-            scale: {x: 1, y: 1}
-            offset: {x: 0, y: 0}
-        data:
-          first:
-            name: _MetallicGlossMap
           second:
             texture: {instanceID: 0}
             scale: {x: 1, y: 1}
@@ -1983,6 +2197,13 @@ SubstanceImporter:
             texture: {instanceID: 0}
             scale: {x: 1, y: 1}
             offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _MetallicGlossMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
       floats:
         data:
           first:
@@ -1998,6 +2219,10 @@ SubstanceImporter:
           second: 0
         data:
           first:
+            name: _Parallax
+          second: .00499999989
+        data:
+          first:
             name: _ZWrite
           second: 1
         data:
@@ -2006,16 +2231,8 @@ SubstanceImporter:
           second: .5
         data:
           first:
-            name: _Metallic
-          second: 0
-        data:
-          first:
             name: _BumpScale
           second: 1
-        data:
-          first:
-            name: _Parallax
-          second: .00499999989
         data:
           first:
             name: _OcclusionStrength
@@ -2035,6 +2252,10 @@ SubstanceImporter:
         data:
           first:
             name: _Mode
+          second: 0
+        data:
+          first:
+            name: _Metallic
           second: 0
       colors:
         data:
@@ -2075,19 +2296,34 @@ SubstanceImporter:
       filterMode: 1
       aniso: 1
       wrapMode: 0
+    - name: Lobby 6_ColorTexture
+      alphaSource: 6
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Lobby 6_Normal
+      alphaSource: 0
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Lobby 6_Rmetal_Gheight,Bao,Arough
+      alphaSource: 7
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
     textureAssignments:
     - shaderProp:
         name: _MainTex
       material: {instanceID: 0}
-      baseUID: 649094703
+      baseUID: 613437637
     - shaderProp:
         name: _BumpMap
       material: {instanceID: 0}
-      baseUID: 649094701
+      baseUID: 613437635
     - shaderProp:
         name: _MetallicGlossMap
       material: {instanceID: 0}
-      baseUID: 649094697
+      baseUID: 613437633
     buildTargetSettings:
     - serializedVersion: 2
       buildTarget: 
@@ -2132,7 +2368,7 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: Metal
       value:
-        scalar[0]: .0705882013
+        scalar[0]: 0
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -2159,6 +2395,20 @@ SubstanceImporter:
         scalar[3]: 1
         texture: {instanceID: 0}
     - name: roughness_selection
+      value:
+        scalar[0]: 1
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: metRoughAoHeight_selection
+      value:
+        scalar[0]: 1
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: User-Defined_Maps_Metal_Roughness
       value:
         scalar[0]: 1
         scalar[1]: 0
@@ -2198,13 +2448,6 @@ SubstanceImporter:
             offset: {x: 0, y: 0}
         data:
           first:
-            name: _MetallicGlossMap
-          second:
-            texture: {instanceID: 0}
-            scale: {x: 1, y: 1}
-            offset: {x: 0, y: 0}
-        data:
-          first:
             name: _ParallaxMap
           second:
             texture: {instanceID: 0}
@@ -2238,6 +2481,13 @@ SubstanceImporter:
             texture: {instanceID: 0}
             scale: {x: 1, y: 1}
             offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _MetallicGlossMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
       floats:
         data:
           first:
@@ -2253,6 +2503,10 @@ SubstanceImporter:
           second: 0
         data:
           first:
+            name: _Parallax
+          second: .0199999996
+        data:
+          first:
             name: _ZWrite
           second: 1
         data:
@@ -2261,16 +2515,8 @@ SubstanceImporter:
           second: .5
         data:
           first:
-            name: _Metallic
-          second: 0
-        data:
-          first:
             name: _BumpScale
           second: 1
-        data:
-          first:
-            name: _Parallax
-          second: .0199999996
         data:
           first:
             name: _OcclusionStrength
@@ -2290,6 +2536,10 @@ SubstanceImporter:
         data:
           first:
             name: _Mode
+          second: 0
+        data:
+          first:
+            name: _Metallic
           second: 0
       colors:
         data:
@@ -2320,19 +2570,34 @@ SubstanceImporter:
       filterMode: 1
       aniso: 1
       wrapMode: 0
+    - name: noise_ColorTexture
+      alphaSource: 6
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: noise_Normal
+      alphaSource: 0
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: noise_Rmetal_Gheight,Bao,Arough
+      alphaSource: 7
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
     textureAssignments:
     - shaderProp:
         name: _MainTex
       material: {instanceID: 0}
-      baseUID: 649094703
+      baseUID: 613437637
     - shaderProp:
         name: _BumpMap
       material: {instanceID: 0}
-      baseUID: 649094701
+      baseUID: 613437635
     - shaderProp:
         name: _MetallicGlossMap
       material: {instanceID: 0}
-      baseUID: 649094697
+      baseUID: 613437633
     buildTargetSettings:
     - serializedVersion: 2
       buildTarget: 
@@ -2377,7 +2642,7 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: Metal
       value:
-        scalar[0]: .0705882013
+        scalar[0]: 0
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -2417,6 +2682,20 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+    - name: metRoughAoHeight_selection
+      value:
+        scalar[0]: 1
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: User-Defined_Maps_Metal_Roughness
+      value:
+        scalar[0]: 1
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
     materialInformation:
       serializedVersion: 5
       offset: {x: 0, y: 0}
@@ -2444,13 +2723,6 @@ SubstanceImporter:
         data:
           first:
             name: _DetailNormalMap
-          second:
-            texture: {instanceID: 0}
-            scale: {x: 1, y: 1}
-            offset: {x: 0, y: 0}
-        data:
-          first:
-            name: _MetallicGlossMap
           second:
             texture: {instanceID: 0}
             scale: {x: 1, y: 1}
@@ -2490,6 +2762,13 @@ SubstanceImporter:
             texture: {instanceID: 0}
             scale: {x: 1, y: 1}
             offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _MetallicGlossMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
       floats:
         data:
           first:
@@ -2505,6 +2784,10 @@ SubstanceImporter:
           second: 0
         data:
           first:
+            name: _Parallax
+          second: .0199999996
+        data:
+          first:
             name: _ZWrite
           second: 1
         data:
@@ -2513,16 +2796,8 @@ SubstanceImporter:
           second: .5
         data:
           first:
-            name: _Metallic
-          second: 0
-        data:
-          first:
             name: _BumpScale
           second: 1
-        data:
-          first:
-            name: _Parallax
-          second: .0199999996
         data:
           first:
             name: _OcclusionStrength
@@ -2542,6 +2817,10 @@ SubstanceImporter:
         data:
           first:
             name: _Mode
+          second: 0
+        data:
+          first:
+            name: _Metallic
           second: 0
       colors:
         data:
@@ -2582,19 +2861,34 @@ SubstanceImporter:
       filterMode: 1
       aniso: 1
       wrapMode: 0
+    - name: Office_ColorTexture
+      alphaSource: 6
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Office_Normal
+      alphaSource: 0
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Office_Rmetal_Gheight,Bao,Arough
+      alphaSource: 7
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
     textureAssignments:
     - shaderProp:
         name: _MainTex
       material: {instanceID: 0}
-      baseUID: 649094703
+      baseUID: 613437637
     - shaderProp:
         name: _BumpMap
       material: {instanceID: 0}
-      baseUID: 649094701
+      baseUID: 613437635
     - shaderProp:
         name: _MetallicGlossMap
       material: {instanceID: 0}
-      baseUID: 649094697
+      baseUID: 613437633
     buildTargetSettings:
     - serializedVersion: 2
       buildTarget: 
@@ -2679,6 +2973,20 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+    - name: metRoughAoHeight_selection
+      value:
+        scalar[0]: 1
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: User-Defined_Maps_Metal_Roughness
+      value:
+        scalar[0]: 1
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
     materialInformation:
       serializedVersion: 5
       offset: {x: 0, y: 0}
@@ -2706,13 +3014,6 @@ SubstanceImporter:
         data:
           first:
             name: _DetailNormalMap
-          second:
-            texture: {instanceID: 0}
-            scale: {x: 1, y: 1}
-            offset: {x: 0, y: 0}
-        data:
-          first:
-            name: _MetallicGlossMap
           second:
             texture: {instanceID: 0}
             scale: {x: 1, y: 1}
@@ -2752,6 +3053,13 @@ SubstanceImporter:
             texture: {instanceID: 0}
             scale: {x: 1, y: 1}
             offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _MetallicGlossMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
       floats:
         data:
           first:
@@ -2767,6 +3075,10 @@ SubstanceImporter:
           second: 0
         data:
           first:
+            name: _Parallax
+          second: .0199999996
+        data:
+          first:
             name: _ZWrite
           second: 1
         data:
@@ -2775,16 +3087,8 @@ SubstanceImporter:
           second: .5
         data:
           first:
-            name: _Metallic
-          second: 0
-        data:
-          first:
             name: _BumpScale
           second: 1
-        data:
-          first:
-            name: _Parallax
-          second: .0199999996
         data:
           first:
             name: _OcclusionStrength
@@ -2804,6 +3108,10 @@ SubstanceImporter:
         data:
           first:
             name: _Mode
+          second: 0
+        data:
+          first:
+            name: _Metallic
           second: 0
       colors:
         data:
@@ -2834,19 +3142,34 @@ SubstanceImporter:
       filterMode: 1
       aniso: 1
       wrapMode: 0
+    - name: Steel_ColorTexture
+      alphaSource: 6
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Steel_Normal
+      alphaSource: 0
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Steel_Rmetal_Gheight,Bao,Arough
+      alphaSource: 7
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
     textureAssignments:
     - shaderProp:
         name: _MainTex
       material: {instanceID: 0}
-      baseUID: 649094703
+      baseUID: 613437637
     - shaderProp:
         name: _BumpMap
       material: {instanceID: 0}
-      baseUID: 649094701
+      baseUID: 613437635
     - shaderProp:
         name: _MetallicGlossMap
       material: {instanceID: 0}
-      baseUID: 649094697
+      baseUID: 613437633
     buildTargetSettings:
     - serializedVersion: 2
       buildTarget: 
@@ -2931,6 +3254,20 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+    - name: metRoughAoHeight_selection
+      value:
+        scalar[0]: 1
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: User-Defined_Maps_Metal_Roughness
+      value:
+        scalar[0]: 1
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
     materialInformation:
       serializedVersion: 5
       offset: {x: 0, y: 0}
@@ -2958,13 +3295,6 @@ SubstanceImporter:
         data:
           first:
             name: _DetailNormalMap
-          second:
-            texture: {instanceID: 0}
-            scale: {x: 1, y: 1}
-            offset: {x: 0, y: 0}
-        data:
-          first:
-            name: _MetallicGlossMap
           second:
             texture: {instanceID: 0}
             scale: {x: 1, y: 1}
@@ -3004,6 +3334,13 @@ SubstanceImporter:
             texture: {instanceID: 0}
             scale: {x: 1, y: 1}
             offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _MetallicGlossMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
       floats:
         data:
           first:
@@ -3019,6 +3356,10 @@ SubstanceImporter:
           second: 0
         data:
           first:
+            name: _Parallax
+          second: .0199999996
+        data:
+          first:
             name: _ZWrite
           second: 1
         data:
@@ -3027,16 +3368,8 @@ SubstanceImporter:
           second: .5
         data:
           first:
-            name: _Metallic
-          second: 0
-        data:
-          first:
             name: _BumpScale
           second: 1
-        data:
-          first:
-            name: _Parallax
-          second: .0199999996
         data:
           first:
             name: _OcclusionStrength
@@ -3056,6 +3389,10 @@ SubstanceImporter:
         data:
           first:
             name: _Mode
+          second: 0
+        data:
+          first:
+            name: _Metallic
           second: 0
       colors:
         data:
@@ -3086,19 +3423,34 @@ SubstanceImporter:
       filterMode: 1
       aniso: 1
       wrapMode: 0
+    - name: Steel 1_ColorTexture
+      alphaSource: 6
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Steel 1_Normal
+      alphaSource: 0
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Steel 1_Rmetal_Gheight,Bao,Arough
+      alphaSource: 7
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
     textureAssignments:
     - shaderProp:
         name: _MainTex
       material: {instanceID: 0}
-      baseUID: 649094703
+      baseUID: 613437637
     - shaderProp:
         name: _BumpMap
       material: {instanceID: 0}
-      baseUID: 649094701
+      baseUID: 613437635
     - shaderProp:
         name: _MetallicGlossMap
       material: {instanceID: 0}
-      baseUID: 649094697
+      baseUID: 613437633
     buildTargetSettings:
     - serializedVersion: 2
       buildTarget: 
@@ -3183,6 +3535,20 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+    - name: metRoughAoHeight_selection
+      value:
+        scalar[0]: 1
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: User-Defined_Maps_Metal_Roughness
+      value:
+        scalar[0]: 1
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
     materialInformation:
       serializedVersion: 5
       offset: {x: 0, y: 0}
@@ -3213,13 +3579,6 @@ SubstanceImporter:
           second:
             texture: {instanceID: 0}
             scale: {x: 1, y: 1}
-            offset: {x: 0, y: 0}
-        data:
-          first:
-            name: _MetallicGlossMap
-          second:
-            texture: {instanceID: 0}
-            scale: {x: 5, y: 5}
             offset: {x: 0, y: 0}
         data:
           first:
@@ -3256,6 +3615,13 @@ SubstanceImporter:
             texture: {instanceID: 0}
             scale: {x: 1, y: 1}
             offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _MetallicGlossMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 5, y: 5}
+            offset: {x: 0, y: 0}
       floats:
         data:
           first:
@@ -3271,6 +3637,10 @@ SubstanceImporter:
           second: 0
         data:
           first:
+            name: _Parallax
+          second: .0199999996
+        data:
+          first:
             name: _ZWrite
           second: 1
         data:
@@ -3279,16 +3649,8 @@ SubstanceImporter:
           second: .5
         data:
           first:
-            name: _Metallic
-          second: 0
-        data:
-          first:
             name: _BumpScale
           second: .200000003
-        data:
-          first:
-            name: _Parallax
-          second: .0199999996
         data:
           first:
             name: _OcclusionStrength
@@ -3308,6 +3670,10 @@ SubstanceImporter:
         data:
           first:
             name: _Mode
+          second: 0
+        data:
+          first:
+            name: _Metallic
           second: 0
       colors:
         data:
@@ -3338,19 +3704,34 @@ SubstanceImporter:
       filterMode: 1
       aniso: 1
       wrapMode: 0
+    - name: Steel 2_ColorTexture
+      alphaSource: 6
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Steel 2_Normal
+      alphaSource: 0
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Steel 2_Rmetal_Gheight,Bao,Arough
+      alphaSource: 7
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
     textureAssignments:
     - shaderProp:
         name: _MainTex
       material: {instanceID: 0}
-      baseUID: 649094703
+      baseUID: 613437637
     - shaderProp:
         name: _BumpMap
       material: {instanceID: 0}
-      baseUID: 649094701
+      baseUID: 613437635
     - shaderProp:
         name: _MetallicGlossMap
       material: {instanceID: 0}
-      baseUID: 649094697
+      baseUID: 613437633
     buildTargetSettings:
     - serializedVersion: 2
       buildTarget: 
@@ -3395,7 +3776,7 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: Metal
       value:
-        scalar[0]: .0705882013
+        scalar[0]: 0
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -3422,6 +3803,20 @@ SubstanceImporter:
         scalar[3]: 1
         texture: {instanceID: 0}
     - name: roughness_selection
+      value:
+        scalar[0]: 1
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: metRoughAoHeight_selection
+      value:
+        scalar[0]: 1
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: User-Defined_Maps_Metal_Roughness
       value:
         scalar[0]: 1
         scalar[1]: 0
@@ -3461,13 +3856,6 @@ SubstanceImporter:
             offset: {x: 0, y: 0}
         data:
           first:
-            name: _MetallicGlossMap
-          second:
-            texture: {instanceID: 0}
-            scale: {x: 2, y: 2}
-            offset: {x: 0, y: 0}
-        data:
-          first:
             name: _ParallaxMap
           second:
             texture: {instanceID: 0}
@@ -3501,6 +3889,13 @@ SubstanceImporter:
             texture: {instanceID: 0}
             scale: {x: 1, y: 1}
             offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _MetallicGlossMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 2, y: 2}
+            offset: {x: 0, y: 0}
       floats:
         data:
           first:
@@ -3516,6 +3911,10 @@ SubstanceImporter:
           second: 0
         data:
           first:
+            name: _Parallax
+          second: .0199999996
+        data:
+          first:
             name: _ZWrite
           second: 1
         data:
@@ -3524,16 +3923,8 @@ SubstanceImporter:
           second: .5
         data:
           first:
-            name: _Metallic
-          second: 0
-        data:
-          first:
             name: _BumpScale
           second: 1
-        data:
-          first:
-            name: _Parallax
-          second: .0199999996
         data:
           first:
             name: _OcclusionStrength
@@ -3553,6 +3944,10 @@ SubstanceImporter:
         data:
           first:
             name: _Mode
+          second: 0
+        data:
+          first:
+            name: _Metallic
           second: 0
       colors:
         data:
@@ -3583,19 +3978,34 @@ SubstanceImporter:
       filterMode: 1
       aniso: 1
       wrapMode: 0
+    - name: Wood_ColorTexture
+      alphaSource: 6
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Wood_Normal
+      alphaSource: 0
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Wood_Rmetal_Gheight,Bao,Arough
+      alphaSource: 7
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
     textureAssignments:
     - shaderProp:
         name: _MainTex
       material: {instanceID: 0}
-      baseUID: 649094703
+      baseUID: 613437637
     - shaderProp:
         name: _BumpMap
       material: {instanceID: 0}
-      baseUID: 649094701
+      baseUID: 613437635
     - shaderProp:
         name: _MetallicGlossMap
       material: {instanceID: 0}
-      baseUID: 649094697
+      baseUID: 613437633
     buildTargetSettings:
     - serializedVersion: 2
       buildTarget: 
@@ -3640,7 +4050,7 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: Metal
       value:
-        scalar[0]: .0705882013
+        scalar[0]: 0
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -3667,6 +4077,20 @@ SubstanceImporter:
         scalar[3]: 1
         texture: {instanceID: 0}
     - name: roughness_selection
+      value:
+        scalar[0]: 1
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: metRoughAoHeight_selection
+      value:
+        scalar[0]: 1
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: User-Defined_Maps_Metal_Roughness
       value:
         scalar[0]: 1
         scalar[1]: 0
@@ -3706,13 +4130,6 @@ SubstanceImporter:
             offset: {x: 0, y: 0}
         data:
           first:
-            name: _MetallicGlossMap
-          second:
-            texture: {instanceID: 0}
-            scale: {x: -7.67000008, y: 8.90999985}
-            offset: {x: .879999995, y: 2.72000003}
-        data:
-          first:
             name: _ParallaxMap
           second:
             texture: {instanceID: 0}
@@ -3746,6 +4163,13 @@ SubstanceImporter:
             texture: {instanceID: 0}
             scale: {x: 1, y: 1}
             offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _MetallicGlossMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: -7.67000008, y: 8.90999985}
+            offset: {x: .879999995, y: 2.72000003}
       floats:
         data:
           first:
@@ -3761,6 +4185,10 @@ SubstanceImporter:
           second: 0
         data:
           first:
+            name: _Parallax
+          second: .0199999996
+        data:
+          first:
             name: _ZWrite
           second: 1
         data:
@@ -3769,16 +4197,8 @@ SubstanceImporter:
           second: .5
         data:
           first:
-            name: _Metallic
-          second: 0
-        data:
-          first:
             name: _BumpScale
           second: .5
-        data:
-          first:
-            name: _Parallax
-          second: .0199999996
         data:
           first:
             name: _OcclusionStrength
@@ -3798,6 +4218,10 @@ SubstanceImporter:
         data:
           first:
             name: _Mode
+          second: 0
+        data:
+          first:
+            name: _Metallic
           second: 0
       colors:
         data:
@@ -3828,19 +4252,34 @@ SubstanceImporter:
       filterMode: 1
       aniso: 1
       wrapMode: 0
+    - name: Wood 1_ColorTexture
+      alphaSource: 6
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Wood 1_Normal
+      alphaSource: 0
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Wood 1_Rmetal_Gheight,Bao,Arough
+      alphaSource: 7
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
     textureAssignments:
     - shaderProp:
         name: _MainTex
       material: {instanceID: 0}
-      baseUID: 649094703
+      baseUID: 613437637
     - shaderProp:
         name: _BumpMap
       material: {instanceID: 0}
-      baseUID: 649094701
+      baseUID: 613437635
     - shaderProp:
         name: _MetallicGlossMap
       material: {instanceID: 0}
-      baseUID: 649094697
+      baseUID: 613437633
     buildTargetSettings:
     - serializedVersion: 2
       buildTarget: 
@@ -3918,6 +4357,20 @@ SubstanceImporter:
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
+    - name: metRoughAoHeight_selection
+      value:
+        scalar[0]: 1
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
+    - name: User-Defined_Maps_Metal_Roughness
+      value:
+        scalar[0]: 1
+        scalar[1]: 0
+        scalar[2]: 0
+        scalar[3]: 0
+        texture: {instanceID: 0}
     materialInformation:
       serializedVersion: 5
       offset: {x: 0, y: 0}
@@ -3948,13 +4401,6 @@ SubstanceImporter:
           second:
             texture: {instanceID: 0}
             scale: {x: 1, y: 1}
-            offset: {x: 0, y: 0}
-        data:
-          first:
-            name: _MetallicGlossMap
-          second:
-            texture: {instanceID: 0}
-            scale: {x: 5, y: 5}
             offset: {x: 0, y: 0}
         data:
           first:
@@ -3991,6 +4437,13 @@ SubstanceImporter:
             texture: {instanceID: 0}
             scale: {x: 1, y: 1}
             offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _MetallicGlossMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 5, y: 5}
+            offset: {x: 0, y: 0}
       floats:
         data:
           first:
@@ -4006,6 +4459,10 @@ SubstanceImporter:
           second: 0
         data:
           first:
+            name: _Parallax
+          second: .0199999996
+        data:
+          first:
             name: _ZWrite
           second: 1
         data:
@@ -4014,16 +4471,8 @@ SubstanceImporter:
           second: .5
         data:
           first:
-            name: _Metallic
-          second: 0
-        data:
-          first:
             name: _BumpScale
           second: .200000003
-        data:
-          first:
-            name: _Parallax
-          second: .0199999996
         data:
           first:
             name: _OcclusionStrength
@@ -4043,6 +4492,10 @@ SubstanceImporter:
         data:
           first:
             name: _Mode
+          second: 0
+        data:
+          first:
+            name: _Metallic
           second: 0
       colors:
         data:
@@ -4073,19 +4526,34 @@ SubstanceImporter:
       filterMode: 1
       aniso: 1
       wrapMode: 0
+    - name: Wood 2_ColorTexture
+      alphaSource: 6
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Wood 2_Normal
+      alphaSource: 0
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Wood 2_Rmetal_Gheight,Bao,Arough
+      alphaSource: 7
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
     textureAssignments:
     - shaderProp:
         name: _MainTex
       material: {instanceID: 0}
-      baseUID: 649094703
+      baseUID: 613437637
     - shaderProp:
         name: _BumpMap
       material: {instanceID: 0}
-      baseUID: 649094701
+      baseUID: 613437635
     - shaderProp:
         name: _MetallicGlossMap
       material: {instanceID: 0}
-      baseUID: 649094697
+      baseUID: 613437633
     buildTargetSettings:
     - serializedVersion: 2
       buildTarget: 
