@@ -145,7 +145,7 @@ public class LivingMovement : MonoBehaviour {
 		if(settings.fear >=60){
 			nav.speed = settings.terrifiedSpeed;
 		}
-		float delayTime = 1;//waypointSet.delay;
+        float delayTime = waypointSet.delay;
         if (nav.remainingDistance < nav.stoppingDistance) {
             patrolTimer += Time.deltaTime;
             StartPointAnimation();
