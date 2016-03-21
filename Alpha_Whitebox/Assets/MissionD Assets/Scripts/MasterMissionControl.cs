@@ -61,15 +61,7 @@ public class MasterMissionControl : MonoBehaviour {
 		
         switch (index)
         {
-        case 0:
-            frankie.UpgradeFear();
-            break;
-        case 2:
-            frankie.UpgradeFear();
-            break;
-        case 4:
-            frankie.UpgradeFear();
-            break;
+
 		default:
 			break;
         }
