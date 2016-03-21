@@ -21,6 +21,10 @@ public class LivingInterface : MonoBehaviour {
 		movement.AddCommand (new MoveToLocation (this.gameObject, 150.0f, 60, pos));
 	}
 
+	void GoTo(Vector3 pos, int priority){
+		movement.AddCommand (new MoveToLocation (this.gameObject, 150.0f, priority, pos));
+	}
+
 	float GetDistanceFrom(Vector3 pos){
 		return Vector3.Distance (transform.position, pos);
 	}
@@ -85,38 +89,52 @@ public class LivingInterface : MonoBehaviour {
 	bool IsInViewOfPlayer(){
 		return false;
 	}
-	/*
+
 	bool IsInRoom(string roomName){
 		GameObject[] rooms = GameObject.FindGameObjectsWithTag ("Room");
 		foreach (GameObject g in rooms) {
-			room = g.GetComponent<Room>();
-			if(rooms.name.Equals(roomName) && room.Contains(this)){
-				return true;
-			}
+			Room room = g.GetComponent<Room>();
+			//if(rooms.name.Equals(roomName) && room.Contains(this)){
+
 		}
 		return false;
 	}
 
-	string GetRoom(){
+	Room GetRoom(){
 		GameObject[] rooms = GameObject.FindGameObjectsWithTag ("Room");
 		foreach (GameObject g in rooms) {
-			room = g.GetComponent<Room>();
-			if(room.Contains(this)){
-				return room.name;
+			Room room = g.GetComponent<Room>();
+			if(room.Contains(gameObject)){
+				return room;
 			}
 		}
+		return null;
 	}
-	*/
+
 	void Wander(){
+		GameObject[] rooms = GameObject.FindGameObjectsWithTag ("Room");
+		Room[] wanderRoom = new Room[rooms.Length];
+		for(int i  = 0; i< rooms.Length; i++) {
+			wanderRoom[i] = rooms[i].GetComponent<Room>();
+		}
+		int ind = Random.Range (0, rooms.Length - 1);
+		WanderInRoom (wanderRoom [ind]);
 
 	}
 
 	void WanderInCurrentRoom(){
-
+		WanderInRoom (GetRoom ());
 	}
 
 	void WanderInRoom(string roomName){
 
+	}
+
+	void WanderInRoom(Room room){
+		int pointsNum = Random.Range (5, 10);
+		for (int i =0; i< pointsNum; i++) {
+			GoTo(room.GetRandomPoint(),i);
+		}
 	}
 
 	void GoToRoom(string roomName){
