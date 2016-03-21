@@ -44,7 +44,7 @@ public class RoomController : MonoBehaviour
 			}
 		}
 
-		Debug.Log("Current Room not set");
+		//Debug.Log("Current Room not set");
 		return null;
 	}
 }
