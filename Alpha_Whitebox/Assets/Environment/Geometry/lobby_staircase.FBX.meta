@@ -1,0 +1,144 @@
+fileFormatVersion: 2
+guid: 5b4cd2cf1eae4384b96c7ba761040fe1
+timeCreated: 1458404288
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: bottomRailing
+    100002: bottomRailing001
+    100004: Collision
+    100006: column_medium_005
+    100008: column_medium_006
+    100010: column_medium_007
+    100012: column_medium_008
+    100014: hallway_cutout
+    100016: //RootNode
+    100018: mesh
+    100020: Railing002
+    100022: Railing004
+    100024: Railing005
+    100026: Railing006
+    100028: Railing007
+    100030: Railing008
+    400000: bottomRailing
+    400002: bottomRailing001
+    400004: Collision
+    400006: column_medium_005
+    400008: column_medium_006
+    400010: column_medium_007
+    400012: column_medium_008
+    400014: hallway_cutout
+    400016: //RootNode
+    400018: mesh
+    400020: Railing002
+    400022: Railing004
+    400024: Railing005
+    400026: Railing006
+    400028: Railing007
+    400030: Railing008
+    2300000: bottomRailing
+    2300002: bottomRailing001
+    2300004: Collision
+    2300006: column_medium_005
+    2300008: column_medium_006
+    2300010: column_medium_007
+    2300012: column_medium_008
+    2300014: hallway_cutout
+    2300016: mesh
+    2300018: Railing002
+    2300020: Railing004
+    2300022: Railing005
+    2300024: Railing006
+    2300026: //RootNode
+    2300028: Railing007
+    2300030: Railing008
+    3300000: bottomRailing
+    3300002: bottomRailing001
+    3300004: Collision
+    3300006: column_medium_005
+    3300008: column_medium_006
+    3300010: column_medium_007
+    3300012: column_medium_008
+    3300014: hallway_cutout
+    3300016: mesh
+    3300018: Railing002
+    3300020: Railing004
+    3300022: Railing005
+    3300024: Railing006
+    3300026: //RootNode
+    3300028: Railing007
+    3300030: Railing008
+    4300000: hallway_cutout
+    4300002: Collision
+    4300004: mesh
+    4300006: column_medium_005
+    4300008: column_medium_006
+    4300010: column_medium_007
+    4300012: column_medium_008
+    4300014: bottomRailing
+    4300016: bottomRailing001
+    4300018: Railing002
+    4300020: Railing004
+    4300022: Railing005
+    4300024: Railing006
+    4300026: Railing007
+    4300028: Railing008
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

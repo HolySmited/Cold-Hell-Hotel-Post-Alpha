@@ -388,6 +388,8 @@ ModelImporter:
     100760: Torus345
     100762: Torus346
     100764: Torus347
+    100766: chandalier_bottom
+    100768: chandalier_top
     400000: Box005
     400002: Box006
     400004: Box007
@@ -771,6 +773,8 @@ ModelImporter:
     400760: Torus345
     400762: Torus346
     400764: Torus347
+    400766: chandalier_bottom
+    400768: chandalier_top
     2300000: Box005
     2300002: Box006
     2300004: Box007
@@ -1137,6 +1141,8 @@ ModelImporter:
     2300726: Torus345
     2300728: Torus346
     2300730: Torus347
+    2300732: chandalier_bottom
+    2300734: chandalier_top
     3300000: Box005
     3300002: Box006
     3300004: Box007
@@ -1503,6 +1509,8 @@ ModelImporter:
     3300726: Torus345
     3300728: Torus346
     3300730: Torus347
+    3300732: chandalier_bottom
+    3300734: chandalier_top
     4300000: Cylinder004
     4300002: Cylinder005
     4300004: Cylinder001
@@ -1869,6 +1877,8 @@ ModelImporter:
     4300726: Torus002
     4300728: Torus001
     4300730: Torus003
+    4300732: chandalier_bottom
+    4300734: chandalier_top
   materials:
     importMaterials: 1
     materialName: 0
