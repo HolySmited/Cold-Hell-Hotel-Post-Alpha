@@ -20,6 +20,12 @@ public class InteractableObject : MonoBehaviour
 	private float soundDelayThreshold = 0.75f;
 	private float soundDelayer = 0;
 
+	private BarController barController;
+	private ResetController resetController;
+	private RadioController radioController;
+	private FireplaceController fireplaceController;
+	private LightMissionController lightController;
+
 	void Start() 
 	{
 		//set references to the object's traits and collision sound
@@ -30,8 +36,22 @@ public class InteractableObject : MonoBehaviour
 			collisionSound = constantSound.clip;
 
 		// Send this object's transform to the volume controller
-		/*if(behavior.trait_Holdable)
-			GameObject.FindGameObjectWithTag("GameController").GetComponent<VolumeController>().sendTransform(transform);*/
+		if(behavior.trait_Holdable)
+			GameObject.FindGameObjectWithTag("GameController").GetComponent<VolumeController>().sendTransform(transform);
+
+		barController = GameObject.Find("BarController").GetComponent<BarController>();
+		resetController = GameObject.Find("ResetSwitch").GetComponent<ResetController>();
+		radioController = GameObject.FindGameObjectWithTag("Radio").GetComponent<RadioController>();
+		fireplaceController = GameObject.Find("FireplaceController").GetComponent<FireplaceController>();
+
+		try
+		{
+			lightController = transform.parent.GetComponentInChildren<LightMissionController>();
+		}catch
+		{
+
+		}
+
 	}
 
 	void Update()
@@ -86,6 +106,11 @@ public class InteractableObject : MonoBehaviour
 			behavior.trait_Flame = !behavior.trait_Flame;
 			transform.FindChild("Flame").gameObject.SetActive(behavior.trait_Flame);
 			constantSound.PlayOneShot(collisionSound);
+
+			if (gameObject.name == "fireplace")
+			{
+				fireplaceController.CheckFrankie();
+			}
 		}
 
 		// If this object is a power source, toggle it on and off
@@ -93,6 +118,11 @@ public class InteractableObject : MonoBehaviour
 		{
 			// Toggle the power and set any child lights to inactive
 			behavior.trait_Powered = !behavior.trait_Powered;
+
+			//if(lightController != null)
+				//lightController.CheckLights();
+			if(GetComponent<SwitchBase>())
+				GetComponent<SwitchBase>().SwitchToggled();
 
 			if(name != "CircuitBreaker_MDL_PDH")
 			{
@@ -129,6 +159,19 @@ public class InteractableObject : MonoBehaviour
 				constantSound.Stop();
 			}
 
+			if (gameObject.tag == "Radio")
+			{
+				radioController.LureFrankie();
+			}
+		}
+
+		if (gameObject.tag == "BarLightSwitch")
+		{
+			barController.ToggleLights(gameObject);
+		}
+		else if (gameObject.tag == "BarLightResetSwitch")
+		{
+			resetController.ResetBarLights();
 		}
 	}
 

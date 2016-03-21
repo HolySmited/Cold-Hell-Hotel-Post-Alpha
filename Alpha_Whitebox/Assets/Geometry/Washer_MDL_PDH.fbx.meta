@@ -6,10 +6,31 @@ ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
     100000: //RootNode
+    100002: polySurface12
+    100004: polySurface8
+    100006: Washer_MDL_PDH
+    100008: Washer_MDL_PDH1
+    100010: WasherDoor_MDL_PDH
+    100012: WasherHandle_MDL_PDH
     400000: //RootNode
+    400002: polySurface12
+    400004: polySurface8
+    400006: Washer_MDL_PDH
+    400008: Washer_MDL_PDH1
+    400010: WasherDoor_MDL_PDH
+    400012: WasherHandle_MDL_PDH
     2300000: //RootNode
+    2300002: polySurface12
+    2300004: Washer_MDL_PDH1
+    2300006: WasherHandle_MDL_PDH
     3300000: //RootNode
+    3300002: polySurface12
+    3300004: Washer_MDL_PDH1
+    3300006: WasherHandle_MDL_PDH
     4300000: Drier_MDL_PDH
+    4300002: polySurface12
+    4300004: Washer_MDL_PDH1
+    4300006: WasherHandle_MDL_PDH
     9500000: //RootNode
   materials:
     importMaterials: 1
