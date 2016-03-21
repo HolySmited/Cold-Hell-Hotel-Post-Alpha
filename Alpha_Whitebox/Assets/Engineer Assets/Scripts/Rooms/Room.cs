@@ -5,30 +5,30 @@ using HighlightingSystem;
 
 public class Room : MonoBehaviour , IRoom
 {
-	 /*
+	/*
 	 * Jonathon Wigley, 3/9/16
 	 */
-
+	
 	RoomController controller;
-
+	
 	Collider col; // The rooms trigger collider
-
+	
 	// Stores the most recent object to enter/exit
 	public GameObject mostRecentExit;
 	public GameObject mostRecentEnter; 
-
+	
 	// Marked true if an object entered in the last frame
 	// Will then be marked false in the next frame
 	public bool objectJustEntered{get; set;}
 	public bool objectJustExited{get; set;} 
-
+	
 	public List<GameObject> objectsInRoomAtStart; // Stores a list of all objects that were in the room at the start of the game
 	public List<GameObject> objectsInRoom;	// Stores a list of all objects currently in the room
 	bool objectCheck;	// Whether or not all the objects in the room have been checked
-
+	
 	List<Light> lightsInRoom;
 	bool lightCheck;
-
+	
 	void Awake()
 	{
 		// Add this room to the list of rooms in RoomController
@@ -36,14 +36,14 @@ public class Room : MonoBehaviour , IRoom
 		col = GetComponent<Collider>();
 		controller.AddRoom(col);
 	}
-
+	
 	void Start()
 	{
 		objectsInRoomAtStart = new List<GameObject>();
 		objectsInRoom = objectsInRoomAtStart;
 		lightsInRoom = new List<Light>();
 	}
-
+	
 	void Update () 
 	{
 		if(objectJustEntered)
@@ -51,7 +51,7 @@ public class Room : MonoBehaviour , IRoom
 		if(objectJustExited)
 			objectJustExited = false;
 	}
-
+	
 	// Returns true if the given position is within the room
 	public bool Contains(GameObject obj)
 	{
@@ -80,7 +80,7 @@ public class Room : MonoBehaviour , IRoom
 		else
 			return false;
 	}
-
+	
 	// Returns any interactable object that has just left the room
 	public GameObject GetLastObjectExited()
 	{
@@ -107,7 +107,7 @@ public class Room : MonoBehaviour , IRoom
 	{
 		// Total number of light sources in the room
 		int lightsOn = 0, lightsOff = 0;
-
+		
 		// Get the number of lights in the room
 		foreach(GameObject obj in objectsInRoom)
 		{
@@ -119,18 +119,18 @@ public class Room : MonoBehaviour , IRoom
 					lightsOff++;
 			}
 		}
-
+		
 		// Return the percentage of lights in the room turned on
 		return lightsOn / (lightsOn + lightsOff);
 	}
-
+	
 	// Triggers whenever an object stop touching the collider
 	void OnTriggerExit(Collider other)
 	{
 		// Make sure the object is an interactable object
 		if(other.gameObject.layer == LayerMask.NameToLayer("Items_Interactable"))
 		{
-			 /* 
+			/* 
 			 * If the object was not in the room before and is in the room now,
 			 * the object has entered the room
 			 *
@@ -141,21 +141,21 @@ public class Room : MonoBehaviour , IRoom
 			{
 				// Reference to the room the object just left
 				Room otherRoom = other.gameObject.GetComponent<Interactable>().currentRoom.GetComponent<Room>();
-
+				
 				// Remove the object from the room it left
 				otherRoom.RemoveObjectFromRoom(other.gameObject);
-
+				
 				// Tell the other room that this object has just left
 				otherRoom.objectJustExited = true;
 				otherRoom.mostRecentExit = other.gameObject;
-
+				
 				// Set the object's current room as this room
 				other.gameObject.GetComponent<Interactable>().currentRoom = 
 					controller.GetCurrentRoom(other.gameObject);
-
+				
 				// Add the object to this room
 				AddObjectToRoom(other.gameObject);
-
+				
 				// Tell this room an object just entered
 				objectJustEntered = true;
 				mostRecentEnter = other.gameObject;
@@ -163,10 +163,10 @@ public class Room : MonoBehaviour , IRoom
 			else if(!objectsInRoom.Contains(other.gameObject) && 
 			        controller.GetCurrentRoom(other.gameObject) == null)
 			{
-
+				
 				// Reference to the room the object just left
 				Room otherRoom = other.gameObject.GetComponent<Interactable>().currentRoom.GetComponent<Room>();
-
+				
 				// Remove the object from the room it left
 				otherRoom.RemoveObjectFromRoom(other.gameObject);
 				
@@ -183,22 +183,39 @@ public class Room : MonoBehaviour , IRoom
 			}
 		}
 	}
-
+	
 	// Adds an object to the list of objects currently in the room
 	public void AddObjectToRoom(GameObject obj)
 	{
 		objectsInRoom.Add(obj);
 	}
-
+	
 	// Adds an object to the list of objects in the room at the start
 	public void AddObjectToRoomAtStart(GameObject obj)
 	{
 		objectsInRoomAtStart.Add(obj);
 	}
-
+	
 	// Removes an object to the list of objects currently in the room
 	public void RemoveObjectFromRoom(GameObject obj)
 	{
 		objectsInRoom.Remove(obj);
+	}
+	
+	// Gets a random point within the bounds of the room
+	public Vector3 GetRandomPoint()
+	{
+		float xMax = transform.position.x - transform.right.x * transform.localScale.x / 2;
+		float xMin = transform.position.x + transform.right.x * transform.localScale.x / 2;
+		float zMax = transform.position.z - transform.forward.z * transform.localScale.z / 2;
+		float zMin = transform.position.z + transform.forward.z * transform.localScale.z / 2;
+		float y = transform.position.y - transform.up.y * transform.localScale.y / 2;
+		
+		Debug.Log(name + " xMin " + xMin);
+		Debug.Log(name + " xMax " + xMax);
+		Debug.Log(name + " zMin " + zMin);
+		Debug.Log(name + " zMax " + zMax);
+		
+		return new Vector3(Random.Range(xMin, xMax), y, Random.Range(zMin, zMax));
 	}
 }
