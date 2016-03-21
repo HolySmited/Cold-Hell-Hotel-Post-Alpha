@@ -34,7 +34,7 @@ public class MasterMissionControl : MonoBehaviour {
 			if (timer <= 0f)
 			{
 				
-				FindObjectOfType<GameEndScreen>().activateCongratsScreen();
+				//FindObjectOfType<GameEndScreen>().activateCongratsScreen();
 			}
 		}
 	}
