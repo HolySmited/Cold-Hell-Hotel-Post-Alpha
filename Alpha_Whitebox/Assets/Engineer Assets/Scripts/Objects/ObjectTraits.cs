@@ -10,10 +10,10 @@ public class ObjectTraits : MonoBehaviour
 	* Adjusted names of many traits
 	*/
 
-	public const int TRAITS_SIZE = 10;  //  Very Important That This is Accurrate!!!
+	public const int TRAITS_SIZE = 11;  //  Very Important That This is Accurrate!!!
 	//  traitNames can be static as the names of the traits won't vary
 	public static string[] traitNames = new string[TRAITS_SIZE] { "Small", "Medium", "Large",
-		"Severable", "Sharp", "Flame", "Electric", "On", "Moveable", "Flammable Liquid" };
+		"Severable", "Sharp", "Flame", "Electric", "Noisy", "On", "Moveable", "Flammable Liquid" };
 	[SerializeField]
 	bool[] traits = new bool[TRAITS_SIZE];
 	
@@ -39,13 +39,14 @@ public class ObjectTraits : MonoBehaviour
 	// on and off
 	public bool trait_Flame				{ get { return traits[5]; } set { traits[5] = value; } }
 	public bool trait_Electric 			{ get { return traits[6]; } set { traits[6] = value; } }
-	public bool trait_On				{ get { return traits[7]; } set { traits[7] = value; } }
+	public bool trait_Noisy				{ get { return traits[7]; } set { traits[7] = value; } }
+	public bool trait_On				{ get { return traits[8]; } set { traits[8] = value; } }
 
 	// Determines if an object 
 	// can be picked up and blasted
-	public bool trait_Moveable 			{ get { return traits[8]; } set { traits[8] = value; } }
+	public bool trait_Moveable 			{ get { return traits[9]; } set { traits[9] = value; } }
 
 	// Creates a larger flame reaction 
 	// when thrown into fire
-	public bool trait_FlammableLiquid 	{ get { return traits[9]; } set { traits[9] = value; } }
+	public bool trait_FlammableLiquid 	{ get { return traits[10]; } set { traits[10] = value; } }
 }

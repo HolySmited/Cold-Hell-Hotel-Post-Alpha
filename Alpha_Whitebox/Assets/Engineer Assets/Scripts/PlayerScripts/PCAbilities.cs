@@ -93,6 +93,8 @@ public class PCAbilities : MonoBehaviour
                 highlight.Off();
             }
 
+
+
             return (!objectTouchingPlayer);
         }
 
@@ -197,6 +199,8 @@ public class PCAbilities : MonoBehaviour
         RaycastHit[] hits = Physics.SphereCastAll(rayOrigin, rayRadius, rayDir, rayRadius, PCSettings.staticRef.interactableObjectsLM);
         foreach (RaycastHit hitInfo in hits)
         {
+			hitInfo.transform.GetComponent<Interactable>().Blast();
+
 			if(!hitInfo.transform.GetComponent<Interactable>().IsType(Interactable.Movable))
 				continue;
 
@@ -287,6 +291,8 @@ public class PCAbilities : MonoBehaviour
 			highlight.ConstantOn(Color.magenta);
 		else
 			highlight.ConstantOn(Color.yellow);
+
 		highlight.SeeThroughOff();
+
 	}
 }

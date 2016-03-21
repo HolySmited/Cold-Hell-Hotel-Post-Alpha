@@ -21,7 +21,7 @@ public class Interactable : MonoBehaviour, IInteractableObject
 	public GameObject currentRoom;// {get; set;}
 
 	// Names of audio clips and traits
-	public const int Small=0, Medium=1, Large=2, Severable=3, Sharp=4, Flame=5, Electric=6, On=7, Movable=8, FlammableLiquid=9;
+	public const int Small=0, Medium=1, Large=2, Severable=3, Sharp=4, Flame=5, Electric=6, Noisy = 7, On=8, Movable=9, FlammableLiquid=10;
 	public const int SoundCollision=0, SoundBlast=1, SoundInteract=2, SoundOn=3, SoundOff=4;
 
 	// All the different types of sounds an object can have
@@ -78,9 +78,10 @@ public class Interactable : MonoBehaviour, IInteractableObject
 
 		roomController = GameObject.FindGameObjectWithTag("GameController").GetComponent<RoomController>();
 		currentRoom = roomController.GetCurrentRoom(this.gameObject);
-		currentRoom.GetComponent<Room>().AddObjectToRoomAtStart(this.gameObject);
+		if(traits.trait_Moveable)
+			currentRoom.GetComponent<Room>().AddObjectToRoomAtStart(this.gameObject);
 
-		if(IsType(Flame) || IsType(Electric))
+		if(IsType(Flame) || IsType(Electric) || IsType(Noisy))
 		{
 			if(IsType(On))
 				TurnOn(true);
@@ -148,18 +149,36 @@ public class Interactable : MonoBehaviour, IInteractableObject
 	public void TurnOn(bool onOff)
 	{
 		// If this object can be toggled, turn it on
-		if(traits.trait_Flame || traits.trait_Electric)
+		if(traits.trait_Flame || traits.trait_Electric || traits.trait_Noisy)
 		{
 			traits.trait_On = onOff;
 
-			// Enable or Disable all the light components in the object's children
-			foreach(Light light in GetComponentsInChildren<Light>())
+			if(traits.trait_On)
+				SoundPlayOnce(SoundOn);
+			else
+				SoundPlayOnce(SoundOff);
+
+			if(traits.trait_Electric)
 			{
-				light.enabled = traits.trait_On;
+				// Enable or Disable all the light components in the object's children
+				foreach(Light light in GetComponentsInChildren<Light>())
+				{
+					light.enabled = traits.trait_On;
+				}
 			}
 
 			if(traits.trait_Flame)
+			{
 				transform.FindChild("Flame").gameObject.SetActive(traits.trait_On);
+			}
+
+			if(traits.trait_Noisy)
+			{
+				if(!traits.trait_On)
+					audioSource.Stop();
+				else
+					audioSource.Play();
+			}
 
 		}else
 		{
@@ -171,22 +190,47 @@ public class Interactable : MonoBehaviour, IInteractableObject
 	public void Toggle()
 	{
 		// If this object can be toggled, toggle it
-		if(traits.trait_Flame || traits.trait_Electric)
+		if(traits.trait_Flame || traits.trait_Electric || traits.trait_Noisy)
 		{
 			traits.trait_On = !traits.trait_On;
 
-			// Enable or Disable all the light components in the object's children
-			foreach(Light light in GetComponentsInChildren<Light>())
+			if(traits.trait_On)
+				SoundPlayOnce(SoundOn);
+			else
+				SoundPlayOnce(SoundOff);
+			
+			if(traits.trait_Electric)
 			{
-				light.enabled = traits.trait_On;
+				// Enable or Disable all the light components in the object's children
+				foreach(Light light in GetComponentsInChildren<Light>())
+				{
+					light.enabled = traits.trait_On;
+				}
 			}
-
+			
 			if(traits.trait_Flame)
+			{
 				transform.FindChild("Flame").gameObject.SetActive(traits.trait_On);
+			}
+			
+			if(traits.trait_Noisy)
+			{
+				if(!traits.trait_On)
+					audioSource.Stop();
+				else
+					audioSource.Play();
+			}
 
 		}else
 		{
 			Debug.Log("You tried to TOGGLE something that doesn't have an on/off state.");
+		}
+	}
+	public void Blast()
+	{
+		if(traits.trait_Flame)
+		{
+			TurnOn(false);
 		}
 	}
 	
@@ -211,6 +255,7 @@ public class Interactable : MonoBehaviour, IInteractableObject
 		case On: return traits.trait_On; break;
 		case Sharp: return traits.trait_Sharp; break;
 		case Severable: return traits.trait_Severable; break;
+		case Noisy: return traits.trait_Noisy; break;
 		default: return false; break;
 		}
 	}

@@ -62,7 +62,7 @@ public class ObjectSettings : MonoBehaviour
 
     //  List of at least all the holdable items 
     static List<Item> items = null;
-    //  Address of the txt file containing the raw input for the items list
+/*    //  Address of the txt file containing the raw input for the items list
     const string itemStats_TxtFN = "TextFiles/itemStats.txt";
     void Awake()
     {
@@ -80,7 +80,7 @@ public class ObjectSettings : MonoBehaviour
                 items.Insert(items.Count, new Item(itemName, holdTime));
             }
         }
-    }
+    }*/
     void Start()
     {
         maxHoldTime = getItemHoldTime();
