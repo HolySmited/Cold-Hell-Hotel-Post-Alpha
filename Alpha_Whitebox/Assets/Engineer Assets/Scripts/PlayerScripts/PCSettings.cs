@@ -14,9 +14,7 @@ public class PCSettings : MonoBehaviour
     public static PCSettings staticRef;
     void Awake()
     {
-        if (staticRef == null)
-            staticRef = this;
-        initializeAbilityEnergy();
+        staticRef = this;
     }
 
     //  Player Collider Layer
@@ -52,77 +50,14 @@ public class PCSettings : MonoBehaviour
     public float yRotationLimit = 80;
 
     #region Abilities
-    public class AbilityEnergy
-    {
-        #region Properties
-        MonoBehaviour m;
-
-        int _level = 0;
-
-        float[] energyMaxes = { 10, 20, 30, 40, 50 };
-        float _energy = 0, _energyRegen = 0.5f, _energyInUse = 0;
-
-        bool _regenerating = false;
-        #endregion
-
-        public AbilityEnergy(MonoBehaviour _m) { _energy = energyMax; m = _m; regenerating = true; }
-
-        public int level(int levelup = 0) { return (_level = Mathf.Clamp(_level + levelup, 0, 99)); }
-
-        public float energyMax { get { return energyMaxes[_level]; } }
-        public float energyMaxWLimit { get { return energyMaxes[_level] - energyInUse; } }
-
-        public float energy { get { return _energy; } }
-        public float energyRegen { get { return _energyRegen; } }
-        public float energyInUse { get { return _energyInUse; } }
-
-        public float plusminusEnergy(float expending)
-        {
-            return (_energy = Mathf.Clamp(energy - expending, 0, energyMaxWLimit));
-        }
-        public float reduceEnergyMax(float reduction)
-        {
-            reduction = Mathf.Abs(reduction);
-            if (energy < reduction || energyInUse + reduction > energyMaxWLimit)
-                return -1;
-            _energyInUse += reduction;
-            plusminusEnergy(reduction);
-            return energyMaxWLimit;
-        }
-        public float restoreEnergyMax(float accretion)
-        {
-            accretion = -Mathf.Abs(accretion);
-            if (energyInUse - accretion < 0)
-                return -1;
-            _energyInUse -= accretion;
-            return energyMaxWLimit;
-        }
-
-        bool regenerating { get { return _regenerating; } set { if ((_regenerating = value)) m.StartCoroutine(regen()); } }
-        IEnumerator regen()
-        {
-            while (regenerating)
-            {
-                plusminusEnergy(-(Time.deltaTime * energyRegen));
-                yield return new WaitForEndOfFrame();
-            }
-        }
-    }
-    AbilityEnergy _abilityEnergy;
-    public AbilityEnergy abilityEnergy { get { return _abilityEnergy; } }
-    void initializeAbilityEnergy()
-    {
-        _abilityEnergy = new AbilityEnergy(this);
-    }
-    void OnGUI()
-    {
-        GUI.Label(new Rect(Screen.width / 4, Screen.height / 4, 100, 50), "Energy: " + abilityEnergy.energy.ToString());
-    }
 
     //  Interact Settings
     public float interactReach = 5,
                  interactCD = 1f,
-                 breakHoldDist = 3f;
+                 breakHoldDist = 3f,
+                 pickupCost_Light = 10,
+                 pickupCost_Medium = 20,
+                 pickupCost_Heavy = 30;
 
     //  Blast Settings
     public float blastForce = 800,
@@ -130,7 +65,7 @@ public class PCSettings : MonoBehaviour
                  blastAngle = 30,
                  blastCD = 1f,
                  blastDecay = 0.4f,
-                 blastCost = 5;
+                 blastCost = 45;
     #endregion
 
     //  Object Fade Settings

@@ -36,7 +36,7 @@ GameObject:
   - 114: {fileID: 11408728}
   - 114: {fileID: 11456048}
   - 114: {fileID: 11467968}
-  - 114: {fileID: 11421686}
+  - 114: {fileID: 11411066}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -253,7 +253,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocity: {x: 0, y: 0, z: 0}
   velocityMagnitude: 0
---- !u!114 &11421686
+--- !u!114 &11411066
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -268,7 +268,8 @@ MonoBehaviour:
   interacting: 0
   cdTimer_Blast: 0
   cdTimer_Interact: 0
-  heldObj: {fileID: 0}
+  enrgyMtrTex: {fileID: 2800000, guid: 1968fbb0fbb54a24d81ea363d75164f8, type: 3}
+  enrgyMtrBckgrndTex: {fileID: 2800000, guid: de0ac99b77bdd4f4d99b785b4dc5bbe5, type: 3}
 --- !u!114 &11456048
 MonoBehaviour:
   m_ObjectHideFlags: 1
