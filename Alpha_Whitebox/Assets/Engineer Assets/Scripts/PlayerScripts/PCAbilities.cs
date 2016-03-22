@@ -10,7 +10,8 @@ public class PCAbilities : MonoBehaviour
     [SerializeField]
     float cdTimer_Blast = 0, cdTimer_Interact = 0;
 
-    GameObject heldObj = null, lastHit = null;
+    
+    public GameObject heldObj = null, lastHit = null;
     Transform heldObjParent = null;
     float heldDist = 0;
 
