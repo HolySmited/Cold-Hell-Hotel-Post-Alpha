@@ -5,18 +5,23 @@ using System.Collections;
 public class HUDUI : MonoBehaviour
 {
     [SerializeField]
-    Texture reticle;
-    Vector2 screenMid = new Vector2();
+    Texture2D reticle;
+    Rect reticlePos;
 
     void Start()
     {
-        screenMid = new Vector2(Screen.width / 2, Screen.height / 2);
-        GUI.color = Color.blue;
+
     }
+
+    void FixedUpdate()
+    {
+        reticlePos = new Rect((Screen.width - reticle.width) / 2, (Screen.height - reticle.height) / 2, reticle.width, reticle.height);
+    }
+
     void OnGUI()
     {
         if (canDraw())
-            GUI.DrawTexture(new Rect(screenMid.x + reticle.width / 4, screenMid.y + reticle.height / 4, reticle.width / 4, reticle.height / 4), reticle);
+            GUI.DrawTexture(reticlePos, reticle);
     }
 
     public bool hudEnabled = true;

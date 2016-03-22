@@ -76,11 +76,9 @@ public class GameMenuUI : MonoBehaviour {
     #region Buttons
     public void Button_Back()
     {
-        Debug.Log("Back Button: Count - " + menuIDHistory.Count);
         uiSounds.oneshot_Click();
         menuIDHistory.Pop();
         setActive();
-        Debug.Log("Back Button: Count - " + menuIDHistory.Count);
     }
     public void Button_Settings()
     {
@@ -114,7 +112,6 @@ public class GameMenuUI : MonoBehaviour {
     #region Utilities
     void setActive()
     {
-        Debug.Log("Setting menu " + menuIDHistory.Peek() + " active.");
         switch(menuIDHistory.Peek())
         {
             case menuID_Main:
