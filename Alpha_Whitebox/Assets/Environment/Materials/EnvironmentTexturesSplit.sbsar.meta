@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 0756e1832fd83b342836b0f64358bb7b
-timeCreated: 1458567670
+timeCreated: 1458678340
 licenseType: Free
 SubstanceImporter:
   serializedVersion: 5
@@ -212,6 +212,21 @@ SubstanceImporter:
       aniso: 1
       wrapMode: 0
     - name: hardWood_Rmetal_Gheight,Bao,Arough_1
+      alphaSource: 7
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: hardWood_base_diff
+      alphaSource: 6
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: hardWood_base_normal
+      alphaSource: 0
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: hardWood_base_RBG
       alphaSource: 7
       filterMode: 1
       aniso: 1
@@ -447,6 +462,21 @@ SubstanceImporter:
       filterMode: 1
       aniso: 1
       wrapMode: 0
+    - name: hardWood_1_base_diff
+      alphaSource: 6
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: hardWood_1_base_normal
+      alphaSource: 0
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: hardWood_1_base_RBG
+      alphaSource: 7
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
     textureAssignments:
     - shaderProp:
         name: _MainTex
@@ -675,6 +705,21 @@ SubstanceImporter:
       wrapMode: 0
     - name: Metal_Rmetal_Gheight,Bao,Arough_1
       alphaSource: 11
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Metal_base_diff
+      alphaSource: 6
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Metal_base_normal
+      alphaSource: 0
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Metal_base_RBG
+      alphaSource: 7
       filterMode: 1
       aniso: 1
       wrapMode: 0
@@ -909,6 +954,21 @@ SubstanceImporter:
       filterMode: 1
       aniso: 1
       wrapMode: 0
+    - name: Metal_1_base_diff
+      alphaSource: 6
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Metal_1_base_normal
+      alphaSource: 0
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Metal_1_base_RBG
+      alphaSource: 7
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
     textureAssignments:
     - shaderProp:
         name: _MainTex
@@ -933,7 +993,7 @@ SubstanceImporter:
     name: Metal_2
     prototypeName: Metal
     shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-    shaderKeywords: _DETAIL_MULX2 _METALLICGLOSSMAP _NORMALMAP
+    shaderKeywords: _METALLICGLOSSMAP _NORMALMAP
     renderQueue: -1
     inputs:
     - name: $outputsize
@@ -973,9 +1033,9 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: metal_color
       value:
-        scalar[0]: .727941155
-        scalar[1]: .727941155
-        scalar[2]: .727941155
+        scalar[0]: .992647052
+        scalar[1]: 1
+        scalar[2]: 1
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: metal_roughness
@@ -988,7 +1048,7 @@ SubstanceImporter:
     materialInformation:
       serializedVersion: 5
       offset: {x: 0, y: 0}
-      scale: {x: 3, y: 1}
+      scale: {x: 1, y: 1}
       generateMipmaps: 1
       generateAllOutputs: 0
       animationUpdateRate: 0
@@ -1000,7 +1060,7 @@ SubstanceImporter:
             name: _MainTex
           second:
             texture: {instanceID: 0}
-            scale: {x: 3, y: 1}
+            scale: {x: 1, y: 1}
             offset: {x: 0, y: 0}
         data:
           first:
@@ -1137,6 +1197,21 @@ SubstanceImporter:
       wrapMode: 0
     - name: Metal_2_Rmetal_Gheight,Bao,Arough_1
       alphaSource: 11
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Metal_2_base_diff
+      alphaSource: 6
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Metal_2_base_normal
+      alphaSource: 0
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Metal_2_base_RBG
+      alphaSource: 7
       filterMode: 1
       aniso: 1
       wrapMode: 0
@@ -1371,6 +1446,21 @@ SubstanceImporter:
       filterMode: 1
       aniso: 1
       wrapMode: 0
+    - name: Metal_3_base_diff
+      alphaSource: 6
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Metal_3_base_normal
+      alphaSource: 0
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Metal_3_base_RBG
+      alphaSource: 7
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
     textureAssignments:
     - shaderProp:
         name: _MainTex
@@ -1602,6 +1692,21 @@ SubstanceImporter:
       filterMode: 1
       aniso: 1
       wrapMode: 0
+    - name: Metal_4_base_diff
+      alphaSource: 6
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Metal_4_base_normal
+      alphaSource: 0
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Metal_4_base_RBG
+      alphaSource: 7
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
     textureAssignments:
     - shaderProp:
         name: _MainTex
@@ -1626,7 +1731,7 @@ SubstanceImporter:
     name: Staircase
     prototypeName: Wood
     shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-    shaderKeywords: _DETAIL_MULX2 _METALLICGLOSSMAP _NORMALMAP
+    shaderKeywords: _METALLICGLOSSMAP _NORMALMAP
     renderQueue: -1
     inputs:
     - name: $outputsize
@@ -1755,7 +1860,7 @@ SubstanceImporter:
         data:
           first:
             name: _OcclusionStrength
-          second: 1
+          second: .662
         data:
           first:
             name: _DetailNormalMapScale
@@ -1805,6 +1910,21 @@ SubstanceImporter:
       filterMode: 1
       aniso: 1
       wrapMode: 0
+    - name: Staircase_base_diff
+      alphaSource: 6
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Staircase_base_normal
+      alphaSource: 0
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Staircase_base_RBG
+      alphaSource: 7
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
     textureAssignments:
     - shaderProp:
         name: _MainTex
@@ -1814,6 +1934,10 @@ SubstanceImporter:
         name: _BumpMap
       material: {instanceID: 0}
       baseUID: 1597459476
+    - shaderProp:
+        name: _OcclusionMap
+      material: {instanceID: 0}
+      baseUID: 1597459478
     - shaderProp:
         name: _MetallicGlossMap
       material: {instanceID: 0}
@@ -2004,6 +2128,21 @@ SubstanceImporter:
       aniso: 1
       wrapMode: 0
     - name: Staircase 1_Rmetal_Gheight,Bao,Arough_1
+      alphaSource: 7
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Staircase 1_base_diff
+      alphaSource: 6
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Staircase 1_base_normal
+      alphaSource: 0
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Staircase 1_base_RBG
       alphaSource: 7
       filterMode: 1
       aniso: 1
@@ -2267,6 +2406,21 @@ SubstanceImporter:
       filterMode: 1
       aniso: 1
       wrapMode: 0
+    - name: Tiles_base_diff
+      alphaSource: 6
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Tiles_base_normal
+      alphaSource: 0
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Tiles_base_RBG
+      alphaSource: 7
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
     textureAssignments:
     - shaderProp:
         name: _MainTex
@@ -2526,6 +2680,21 @@ SubstanceImporter:
       filterMode: 1
       aniso: 1
       wrapMode: 0
+    - name: Tiles_1_base_diff
+      alphaSource: 6
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Tiles_1_base_normal
+      alphaSource: 0
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Tiles_1_base_RBG
+      alphaSource: 7
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
     textureAssignments:
     - shaderProp:
         name: _MainTex
@@ -2725,6 +2894,21 @@ SubstanceImporter:
       aniso: 1
       wrapMode: 0
     - name: Walls_Rmetal_Gheight,Bao,Arough_1
+      alphaSource: 7
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Walls_base_diff
+      alphaSource: 6
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Walls_base_normal
+      alphaSource: 0
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Walls_base_RBG
       alphaSource: 7
       filterMode: 1
       aniso: 1
@@ -2932,6 +3116,21 @@ SubstanceImporter:
       filterMode: 1
       aniso: 1
       wrapMode: 0
+    - name: Wood_base_diff
+      alphaSource: 6
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Wood_base_normal
+      alphaSource: 0
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Wood_base_RBG
+      alphaSource: 7
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
     textureAssignments:
     - shaderProp:
         name: _MainTex
@@ -3135,6 +3334,21 @@ SubstanceImporter:
       filterMode: 1
       aniso: 1
       wrapMode: 0
+    - name: Wood_1_base_diff
+      alphaSource: 6
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Wood_1_base_normal
+      alphaSource: 0
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Wood_1_base_RBG
+      alphaSource: 7
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
     textureAssignments:
     - shaderProp:
         name: _MainTex
@@ -3334,6 +3548,21 @@ SubstanceImporter:
       aniso: 1
       wrapMode: 0
     - name: Wood_2_Rmetal_Gheight,Bao,Arough_1
+      alphaSource: 7
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Wood_2_base_diff
+      alphaSource: 6
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Wood_2_base_normal
+      alphaSource: 0
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: Wood_2_base_RBG
       alphaSource: 7
       filterMode: 1
       aniso: 1
