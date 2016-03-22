@@ -10,7 +10,6 @@ GameObject:
   - 4: {fileID: 468174}
   - 33: {fileID: 3372706}
   - 23: {fileID: 2355500}
-  - 64: {fileID: 6482504}
   m_Layer: 0
   m_Name: RotaryPhone01_MDL_cjp
   m_TagString: Untagged
@@ -24,8 +23,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 176674}
-  m_LocalRotation: {x: 0, y: -.382947534, z: 0, w: .92377013}
-  m_LocalPosition: {x: -5.55299997, y: -.609000027, z: 18.9740009}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 24.7660007, y: 1.10899997, z: 24.3409996}
   m_LocalScale: {x: .00999999978, y: .00999999978, z: .00999999978}
   m_Children: []
   m_Father: {fileID: 0}
@@ -40,7 +39,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: -1835797696, guid: 0756e1832fd83b342836b0f64358bb7b, type: 3}
+  - {fileID: 2100000, guid: eb59005d9e0511c47bbd06170f63df45, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -60,18 +59,6 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 176674}
-  m_Mesh: {fileID: 4300000, guid: 7b0855380b45a7649a8c226e0eb2543d, type: 3}
---- !u!64 &6482504
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 176674}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
   m_Mesh: {fileID: 4300000, guid: 7b0855380b45a7649a8c226e0eb2543d, type: 3}
 --- !u!1001 &100100000
 Prefab:

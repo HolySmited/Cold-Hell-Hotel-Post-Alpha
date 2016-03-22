@@ -9,14 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400420}
   - 95: {fileID: 9592768}
-  - 64: {fileID: 6415116}
-  - 82: {fileID: 8219994}
-  - 114: {fileID: 11481934}
-  - 114: {fileID: 11498176}
-  - 114: {fileID: 11442210}
-  - 114: {fileID: 11495636}
-  - 54: {fileID: 5457082}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: LiquidBottle01_MDL_mxy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33,8 +26,7 @@ GameObject:
   - 4: {fileID: 449802}
   - 33: {fileID: 3387876}
   - 23: {fileID: 2395422}
-  - 64: {fileID: 6467992}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: pCube3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,8 +43,7 @@ GameObject:
   - 4: {fileID: 454574}
   - 33: {fileID: 3394244}
   - 23: {fileID: 2396290}
-  - 64: {fileID: 6470300}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: pCylinder3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,8 +60,7 @@ GameObject:
   - 4: {fileID: 401776}
   - 33: {fileID: 3390970}
   - 23: {fileID: 2323784}
-  - 64: {fileID: 6446322}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: polySurface3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,8 +74,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 120170}
   m_LocalRotation: {x: 0, y: -.499999255, z: 0, w: .866025805}
-  m_LocalPosition: {x: -13.3130875, y: 1.21774817, z: 17.2589588}
-  m_LocalScale: {x: .405328453, y: .405328393, z: .405328363}
+  m_LocalPosition: {x: 36.7970009, y: 1.56400001, z: 28.3640003}
+  m_LocalScale: {x: .249999985, y: .25, z: .249999985}
   m_Children:
   - {fileID: 449802}
   - {fileID: 454574}
@@ -221,138 +211,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 150196}
   m_Mesh: {fileID: 4300010, guid: 3f13856909a23584f89dc2cf2f08093f, type: 3}
---- !u!54 &5457082
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 120170}
-  serializedVersion: 2
-  m_Mass: 3
-  m_Drag: 0
-  m_AngularDrag: .0500000007
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &6415116
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 120170}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 1
-  m_Mesh: {fileID: 0}
---- !u!64 &6446322
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 185606}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 1
-  m_Mesh: {fileID: 4300008, guid: 3f13856909a23584f89dc2cf2f08093f, type: 3}
---- !u!64 &6467992
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 131384}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 1
-  m_Mesh: {fileID: 4300006, guid: 3f13856909a23584f89dc2cf2f08093f, type: 3}
---- !u!64 &6470300
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 150196}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 1
-  m_Mesh: {fileID: 4300010, guid: 3f13856909a23584f89dc2cf2f08093f, type: 3}
---- !u!82 &8219994
-AudioSource:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 120170}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 20
-  Pan2D: 0
-  rolloffMode: 1
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
 --- !u!95 &9592768
 Animator:
   serializedVersion: 3
@@ -370,71 +228,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11442210
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 120170}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67d4de287b46eb34e83a61e4f9115070, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &11481934
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 120170}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3c470c6fd5e3ec449c8a90679499a09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  traits: 0000000000000000000100
---- !u!114 &11495636
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 120170}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 513c5871ee031cf43b5ca808a7912040, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentRoom: {fileID: 0}
-  collisionSound: {fileID: 8300000, guid: 373e6a2df3c622244a2a86c3e25d315c, type: 3}
-  blastSound: {fileID: 0}
-  interactSound: {fileID: 0}
-  onSound: {fileID: 0}
-  offSound: {fileID: 0}
---- !u!114 &11498176
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 120170}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37edbd045ec3bf943a018eced510d873, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  heldSpeed: 5
-  maxHoldTime: 0
-  defaultHoldTime: Infinity
-  fallBreakDist: 10
-  catchingFire: 0
-  soaking: 0
-  timer_CatchFire: 0
-  timer_Soaking: 0
-  timer_Absorb: 0
-  time_OnFire: 0
-  time_Soaked: 0
-  itemName: 
-  getHoldTime: 0
-  holdTime: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

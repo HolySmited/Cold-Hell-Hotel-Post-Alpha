@@ -24,7 +24,7 @@ public class VolumeReset : MonoBehaviour
 	private Collider triggerVolume;
 	private VolumeController volController;
 	private VolumeReset volReset;
-	private PlayerInteractor playerInteract;
+	private PCAbilities playerInteract;
 
 	void Awake()
 	{
@@ -40,7 +40,7 @@ public class VolumeReset : MonoBehaviour
 	{
 		// Set references to the player object and this volume's trigger volume
 		player = GameObject.FindGameObjectWithTag("Player");
-		playerInteract = player.GetComponent<PlayerInteractor>();
+		playerInteract = player.GetComponent<PCAbilities>();
 		triggerVolume = GetComponent<Collider>();
 	}
 

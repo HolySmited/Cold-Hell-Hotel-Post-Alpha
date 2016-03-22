@@ -78,7 +78,7 @@ public class Interactable : MonoBehaviour, IInteractableObject
 
 		roomController = GameObject.FindGameObjectWithTag("GameController").GetComponent<RoomController>();
 		currentRoom = roomController.GetCurrentRoom(this.gameObject);
-		if(traits.trait_Moveable)
+		if(traits.trait_Movable)
 			currentRoom.GetComponent<Room>().AddObjectToRoomAtStart(this.gameObject);
 
 		if(IsType(Flame) || IsType(Electric) || IsType(Noisy))
@@ -251,7 +251,7 @@ public class Interactable : MonoBehaviour, IInteractableObject
 		case Small: return traits.trait_Small; break;
 		case Medium: return traits.trait_Medium; break;
 		case Large: return traits.trait_Large; break;
-		case Movable: return traits.trait_Moveable; break;
+		case Movable: return traits.trait_Movable; break;
 		case On: return traits.trait_On; break;
 		case Sharp: return traits.trait_Sharp; break;
 		case Severable: return traits.trait_Severable; break;

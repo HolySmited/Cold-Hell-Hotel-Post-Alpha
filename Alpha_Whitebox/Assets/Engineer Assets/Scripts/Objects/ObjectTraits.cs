@@ -44,7 +44,7 @@ public class ObjectTraits : MonoBehaviour
 
 	// Determines if an object 
 	// can be picked up and blasted
-	public bool trait_Moveable 			{ get { return traits[9]; } set { traits[9] = value; } }
+	public bool trait_Movable 			{ get { return traits[9]; } set { traits[9] = value; } }
 
 	// Creates a larger flame reaction 
 	// when thrown into fire
