@@ -110,6 +110,42 @@ ModelImporter:
     100204: transform7
     100206: transform8
     100208: transform9
+    100210: CircuitBreaker_MDL_PDH
+    100212: CircuitBreaker_MDL_PDH 1
+    100214: CircuitBreakerHandle_MDL_PDH
+    100216: CircuitBreakerSwitch_MDL_PDH
+    100218: CircuitBreakerSwitch_MDL_PDH1
+    100220: CircuitBreakerSwitch_MDL_PDH10
+    100222: CircuitBreakerSwitch_MDL_PDH11
+    100224: CircuitBreakerSwitch_MDL_PDH2
+    100226: CircuitBreakerSwitch_MDL_PDH3
+    100228: CircuitBreakerSwitch_MDL_PDH4
+    100230: CircuitBreakerSwitch_MDL_PDH5
+    100232: CircuitBreakerSwitch_MDL_PDH6
+    100234: CircuitBreakerSwitch_MDL_PDH7
+    100236: CircuitBreakerSwitch_MDL_PDH8
+    100238: CircuitBreakerSwitch_MDL_PDH9
+    100240: polySurface1
+    100242: polySurface10
+    100244: polySurface14
+    100246: polySurface15
+    100248: polySurface16
+    100250: polySurface17
+    100252: polySurface18
+    100254: polySurface19
+    100256: polySurface20
+    100258: polySurface21
+    100260: polySurface22
+    100262: polySurface23
+    100264: polySurface24
+    100266: polySurface25
+    100268: polySurface26
+    100270: polySurface27
+    100272: polySurface28
+    100274: polySurface5
+    100276: polySurface6
+    100278: polySurface8
+    100280: polySurface9
     400000: Breaker1
     400002: Breaker10
     400004: Breaker11
@@ -215,12 +251,89 @@ ModelImporter:
     400204: transform7
     400206: transform8
     400208: transform9
+    400210: CircuitBreaker_MDL_PDH
+    400212: CircuitBreaker_MDL_PDH 1
+    400214: CircuitBreakerHandle_MDL_PDH
+    400216: CircuitBreakerSwitch_MDL_PDH
+    400218: CircuitBreakerSwitch_MDL_PDH1
+    400220: CircuitBreakerSwitch_MDL_PDH10
+    400222: CircuitBreakerSwitch_MDL_PDH11
+    400224: CircuitBreakerSwitch_MDL_PDH2
+    400226: CircuitBreakerSwitch_MDL_PDH3
+    400228: CircuitBreakerSwitch_MDL_PDH4
+    400230: CircuitBreakerSwitch_MDL_PDH5
+    400232: CircuitBreakerSwitch_MDL_PDH6
+    400234: CircuitBreakerSwitch_MDL_PDH7
+    400236: CircuitBreakerSwitch_MDL_PDH8
+    400238: CircuitBreakerSwitch_MDL_PDH9
+    400240: polySurface1
+    400242: polySurface10
+    400244: polySurface14
+    400246: polySurface15
+    400248: polySurface16
+    400250: polySurface17
+    400252: polySurface18
+    400254: polySurface19
+    400256: polySurface20
+    400258: polySurface21
+    400260: polySurface22
+    400262: polySurface23
+    400264: polySurface24
+    400266: polySurface25
+    400268: polySurface26
+    400270: polySurface27
+    400272: polySurface28
+    400274: polySurface5
+    400276: polySurface6
+    400278: polySurface8
+    400280: polySurface9
     2300000: CircuitBreakerDoor_MDL_PDH
     2300002: //RootNode
+    2300004: CircuitBreaker_MDL_PDH 1
+    2300006: CircuitBreakerHandle_MDL_PDH
+    2300008: CircuitBreakerSwitch_MDL_PDH
+    2300010: CircuitBreakerSwitch_MDL_PDH1
+    2300012: CircuitBreakerSwitch_MDL_PDH10
+    2300014: CircuitBreakerSwitch_MDL_PDH11
+    2300016: CircuitBreakerSwitch_MDL_PDH2
+    2300018: CircuitBreakerSwitch_MDL_PDH3
+    2300020: CircuitBreakerSwitch_MDL_PDH4
+    2300022: CircuitBreakerSwitch_MDL_PDH5
+    2300024: CircuitBreakerSwitch_MDL_PDH6
+    2300026: CircuitBreakerSwitch_MDL_PDH7
+    2300028: CircuitBreakerSwitch_MDL_PDH8
+    2300030: CircuitBreakerSwitch_MDL_PDH9
     3300000: CircuitBreakerDoor_MDL_PDH
     3300002: //RootNode
+    3300004: CircuitBreaker_MDL_PDH 1
+    3300006: CircuitBreakerHandle_MDL_PDH
+    3300008: CircuitBreakerSwitch_MDL_PDH
+    3300010: CircuitBreakerSwitch_MDL_PDH1
+    3300012: CircuitBreakerSwitch_MDL_PDH10
+    3300014: CircuitBreakerSwitch_MDL_PDH11
+    3300016: CircuitBreakerSwitch_MDL_PDH2
+    3300018: CircuitBreakerSwitch_MDL_PDH3
+    3300020: CircuitBreakerSwitch_MDL_PDH4
+    3300022: CircuitBreakerSwitch_MDL_PDH5
+    3300024: CircuitBreakerSwitch_MDL_PDH6
+    3300026: CircuitBreakerSwitch_MDL_PDH7
+    3300028: CircuitBreakerSwitch_MDL_PDH8
+    3300030: CircuitBreakerSwitch_MDL_PDH9
     4300000: CircuitBreakerDoor_MDL_PDH
     4300002: CircuitBreaker_MDL_PDH
+    4300004: CircuitBreakerHandle_MDL_PDH
+    4300006: CircuitBreakerSwitch_MDL_PDH
+    4300008: CircuitBreakerSwitch_MDL_PDH1
+    4300010: CircuitBreakerSwitch_MDL_PDH2
+    4300012: CircuitBreakerSwitch_MDL_PDH3
+    4300014: CircuitBreakerSwitch_MDL_PDH4
+    4300016: CircuitBreakerSwitch_MDL_PDH5
+    4300018: CircuitBreakerSwitch_MDL_PDH6
+    4300020: CircuitBreakerSwitch_MDL_PDH7
+    4300022: CircuitBreakerSwitch_MDL_PDH8
+    4300024: CircuitBreakerSwitch_MDL_PDH9
+    4300026: CircuitBreakerSwitch_MDL_PDH10
+    4300028: CircuitBreakerSwitch_MDL_PDH11
     9500000: //RootNode
   materials:
     importMaterials: 0
