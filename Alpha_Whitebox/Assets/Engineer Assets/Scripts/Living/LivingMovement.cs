@@ -21,6 +21,7 @@ public class LivingMovement : MonoBehaviour {
 		settings = GetComponent<LivingSettings> ();
 		nav = GetComponent<NavMeshAgent> ();
 		commands = new ArrayList ();
+		settings.moveState = LivingSettings.MoveState.waiting;
 
     }
 
@@ -33,8 +34,9 @@ public class LivingMovement : MonoBehaviour {
 
 	void UpdateCommand(){
 		if (currAction != null) {
-			if(currAction.started){
+			if(currAction.started && !currAction.ended){
 				currAction.Update();
+				Debug.Log(currAction.ended);
 			}else if(currAction.ended){
 				currAction.End ();
 				currAction = PopCommand();
@@ -186,6 +188,10 @@ public class LivingMovement : MonoBehaviour {
 	}
 
 	public void AddCommand(Command comm){
+		if (currAction == null) {
+			currAction = comm;
+			return;
+		}
 		Command temp;
 		if (currAction.priority < comm.priority) {
 			temp = currAction;
@@ -205,6 +211,10 @@ public class LivingMovement : MonoBehaviour {
 		} else {
 			return null;
 		}
+	}
+
+	public void ClearQueue(){
+		commands.Clear ();
 	}
 
 

@@ -5,16 +5,22 @@ using System.Collections;
 public class LivingState : MonoBehaviour {
 	
 	private LivingSettings settings;
-
+	private AudioSource source;
 	private float calmCounter;
 	
+
 	void Start() {
 		settings = GetComponent<LivingSettings> ();
-
+		settings.stress = 40;
+		source = this.GetComponent<AudioSource> ();
+		source.loop = true;
+		source.clip = settings.heartbeat;
+		source.Play ();
 	}
 
 	void Update(){
-		UpdateCalm ();
+		//UpdateCalm ();
+
 	}
 
 	void UpdateCalm(){
@@ -44,7 +50,15 @@ public class LivingState : MonoBehaviour {
 
 	public void AddFear(int i){
 		settings.stress += i;
+		if (settings.stress >= settings.terrified) {
+			settings.fearState = LivingSettings.FearState.terrified;
+			source.Stop();
+			source.clip = settings.scream;
+			source.Play();
+		}
 	}
+
+
 
 
 }

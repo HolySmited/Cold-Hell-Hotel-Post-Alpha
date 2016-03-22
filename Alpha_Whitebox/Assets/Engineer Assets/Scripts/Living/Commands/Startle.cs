@@ -14,7 +14,6 @@ public class Startle : Command {
 		this.move.Pause ();
 		started = true;
 		this.anim.StartAnimation ("Startled");
-		settings.moveState = LivingSettings.MoveState.interrupted;
 		
 	}
 	
@@ -26,8 +25,8 @@ public class Startle : Command {
 	}
 	
 	public override void End () {
-		this.anim.EndAnimation ("Startled");
-		this.move.Resume();
 
+		this.move.Resume();
+		this.anim.EndAnimation ("Startled");
 	}
 }

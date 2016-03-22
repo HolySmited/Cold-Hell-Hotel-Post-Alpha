@@ -34,4 +34,13 @@ public class LivingSettings : MonoBehaviour {
 	public float damageTime;
 
 	public int health;
+
+	public float sightDist;
+	public int sightFear;
+	public float sightTimer;
+	public float viewAngle;
+
+	public AudioClip scream;
+	public AudioClip heartbeat;
+
 }

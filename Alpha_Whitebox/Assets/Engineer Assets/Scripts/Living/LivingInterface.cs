@@ -152,5 +152,9 @@ public class LivingInterface : MonoBehaviour {
 	public void AddFear(int i){
 		state.AddFear (i);
 	}
+
+	public void Break(){
+		movement.ClearQueue ();
+	}
 	
 }
