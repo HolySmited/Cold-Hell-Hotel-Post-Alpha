@@ -9,11 +9,29 @@ public class UISounds : MonoBehaviour
     [SerializeField]
     AudioClip menuBackground, clickSound, scrollSound;
     static AudioSource audiosource;
+    public static UISounds uiSounds = null;
 
     void Awake()
     {
         //  Cache Components at Awake so Sound can be Played @ Start
+        if (uiSounds != null)
+        {
+            print("Destroying duplicate UISounds");
+            Destroy(this.gameObject);
+            return;
+        }
+        uiSounds = GetComponent<UISounds>();
         audiosource = GetComponent<AudioSource>();
+        GameObject.DontDestroyOnLoad(this);
+    }
+    public bool startfade = false;
+    void Update()
+    {
+        if (startfade)
+        {
+            startfade = false;
+            uiSounds.startFadeout();
+        }
     }
 
     #region Predefined Audio OneShots
@@ -30,47 +48,37 @@ public class UISounds : MonoBehaviour
     public void loopMenuBackground()
     {
         stopFading = true;
+
         audiosource.loop = true;
         audiosource.clip = menuBackground;
         audiosource.Play();
     }
     #endregion
 
-    #region Play Audio Methods
-    public void oneshot(AudioClip clip)
-    {
-        audiosource.PlayOneShot(clip);
-    }
-    public void audioclip(AudioClip clip, bool loop = false)
-    {
-        stopFading = true;
-        audiosource.loop = loop;
-        audiosource.clip = clip;
-        audiosource.Play();
-    }
-    #endregion
-
     #region Audio Source Utility
-    public void loop(bool b)
+    public void startFadeout(float endVolume = 1)
     {
-        audiosource.loop = b;
-    }
-    public static void stop()
-    {
-        audiosource.Stop();
+        StartCoroutine(fadeout(endVolume));
     }
 
-    public static bool stopFading = false, fading = false;
-    public static IEnumerator fadeout()
+    static bool fading = false, stopFading = false;
+    static IEnumerator fadeout(float endVolume)
     {
-        while (fading) yield return null;
-        fading = true;  //  checkout function
-        float startTime = Time.time, fadePeriod = 5f, volume = audiosource.volume;
-        while ((audiosource.volume = 1 - (Time.unscaledTime - startTime) / fadePeriod) > 0 && !stopFading) yield return null;
-        if (!stopFading) stop();  //  If the fade out was canceled, don't stop the audio.
+        if (fading) yield break;
+        fading = true;  //  checkout fade to prevent multiple concurrent fades
         stopFading = false;
-        fading = false; //  checkin function
-        audiosource.volume = volume;
+
+        float timer = 0, fadePeriod = 5f;
+        while ((audiosource.volume = 1 - (timer += Time.unscaledDeltaTime) / fadePeriod) > 0) yield return null;
+
+        //  If interrupted fade, continue to play audio. Else, don't.
+        if (!stopFading)
+            audiosource.Stop();
+        stopFading = false;
+
+        audiosource.volume = endVolume; //  reset volume to given value (default is 1, or max)
+
+        fading = false; //  checkin fade
     }
     #endregion
 }

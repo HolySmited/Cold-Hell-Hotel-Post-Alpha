@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class GameMenuUI : MonoBehaviour {
 
-    #region Properties
+    #region Attributes
     [SerializeField]
     Sprite screen_MenuMain, screen_MenuGameExit, screen_MenuControlInfo, screen_MenuSettings;
     Sprite activeImage;
@@ -21,14 +21,14 @@ public class GameMenuUI : MonoBehaviour {
     UISounds uiSounds;
 
     [SerializeField]
-    bool _enabled = false;
+    bool _enabled = true;
     public bool menuEnabled { get { return _enabled; } set { if (!(_enabled = value)) { close(); } } }
     #endregion
     
     void Start()
     {
-        uiSounds = GetComponent<UISounds>();
-        menuEnabled = false;
+        uiSounds = UISounds.uiSounds;
+        close();
     }
     void Update()
     {
@@ -36,7 +36,7 @@ public class GameMenuUI : MonoBehaviour {
     }
     void inputPoll()
     {
-        if (menuEnabled && PCSettings.staticRef != null && Input.GetKeyDown(KeyCode.Escape))
+        if (menuEnabled && Input.GetKeyDown(KeyCode.Escape))
         {
             if (menuIDHistory.Peek() == menuID_Close)
                 open();
@@ -53,7 +53,7 @@ public class GameMenuUI : MonoBehaviour {
 
         UIManager.pause();
         UIManager.unlockCursor();
-        PCSettings.staticRef.canControlPlayer = false;
+        PCSettings.pcSettings.canControlPlayer = false;
 
         menuIDHistory.Push(menuID_Main);
         setActive();
@@ -63,8 +63,8 @@ public class GameMenuUI : MonoBehaviour {
         UIManager.unpause();
         UIManager.lockCursor();
 
-        if (PCSettings.staticRef != null)
-            PCSettings.staticRef.canControlPlayer = true;
+        if (PCSettings.pcSettings != null)
+            PCSettings.pcSettings.canControlPlayer = true;
 
         menuIDHistory.Clear();
         menuIDHistory.Push(menuID_Close);
@@ -102,7 +102,7 @@ public class GameMenuUI : MonoBehaviour {
     {
         uiSounds.oneshot_Click();
         close();
-        GetComponent<UIManager>().levelManager.loadTitle();
+        LevelManager.levelManager.loadTitle();
     }
     public void Button_DontExit()
     {
@@ -176,7 +176,6 @@ public class GameMenuUI : MonoBehaviour {
         button_ConfirmExit.gameObject.SetActive(false);
         button_DontExit.gameObject.SetActive(false);
         button_Back1.gameObject.SetActive(false);
-
     }
     #endregion
 }

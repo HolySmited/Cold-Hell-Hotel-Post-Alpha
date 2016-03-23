@@ -5,13 +5,10 @@ using System;
 
 public class LevelManager : MonoBehaviour
 {
-    #region Properties
+    #region Attributes
     public const int sceneID_GameStart = 0, sceneID_LoadingScreen = 1, sceneID_TitleScreen = 2, sceneID_TestLevel = 3, sceneID_MainLevel = 5;
 
     public static LevelManager levelManager;
-
-    [SerializeField]
-    GameObject playerUI;
     #endregion
 
     void Awake()
@@ -21,12 +18,8 @@ public class LevelManager : MonoBehaviour
             GameObject.Destroy(this.gameObject);
             return;
         }
-        GameObject.DontDestroyOnLoad(this);
         levelManager = this;
-    }
-    void Start()
-    {
-        loadTitle();
+        GameObject.DontDestroyOnLoad(this);
     }
 
     #region Utilities
@@ -38,29 +31,12 @@ public class LevelManager : MonoBehaviour
     public static void restart()
     {
         Debug.Log("Restarting Game");
-        Application.LoadLevel(sceneID_GameStart);
+        Application.LoadLevel(sceneID_TitleScreen);
     }
     public static void exit()
     {
         Debug.Log("Exiting Game");
         Application.Quit();
-    }
-    public void switchLevelUIs(int levelID)
-    {
-        playerUI.GetComponent<UIManager>().closeAll();
-        switch (levelID)
-        {
-            case sceneID_TestLevel:
-            case sceneID_MainLevel:
-                playerUI.GetComponent<UIManager>().initializeGameUI();
-                break;
-            case sceneID_TitleScreen:
-                playerUI.GetComponent<UIManager>().initializeTitleUI();
-                break;
-            default:
-                //  playerUI.GetComponent<UIManager>().CloseAll();
-                break;
-        }
     }
     #endregion
 
@@ -71,12 +47,10 @@ public class LevelManager : MonoBehaviour
     }
     public void loadLevel_Test()
     {
-        playerUI.GetComponent<TitleUI>().hideScreen();
         StartCoroutine(loadLevel(sceneID_TestLevel, true));
     }
     public void loadLevel_Main()
     {
-        playerUI.GetComponent<TitleUI>().hideScreen();
         StartCoroutine(loadLevel(sceneID_MainLevel, true));
     }
     #endregion
@@ -85,12 +59,12 @@ public class LevelManager : MonoBehaviour
     int asyncLevelLoadCount = 0;
     public IEnumerator loadLevel(int levelID, bool useLS = false)
     {
-        Application.LoadLevel(sceneID_LoadingScreen);    //  Load an empty scene.
+        Application.LoadLevel(sceneID_LoadingScreen);    //  Load empty scene
 
         //  Activate Loading Screen
         if (useLS)
         {
-            playerUI.GetComponent<LoadingScreenUI>().open_Fade();
+            GetComponent<LoadingScreenUI>().open_Fade();
             yield return new WaitForSeconds(1);
         }
 
@@ -127,12 +101,8 @@ public class LevelManager : MonoBehaviour
         //  Close Loading Screen
         if (useLS)
         {
-            playerUI.GetComponent<LoadingScreenUI>().close_Fade();
+            GetComponent<LoadingScreenUI>().close_Fade();
             yield return new WaitForSeconds(1);
         }
-
-        //  Enable Level-Dependent GUIs
-        switchLevelUIs(levelID);
     }
-
 }
