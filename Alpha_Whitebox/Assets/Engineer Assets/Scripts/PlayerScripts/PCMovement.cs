@@ -29,7 +29,7 @@ public class PCMovement : MonoBehaviour
         //  Deceleration
         if (dir == 0)
         {
-            if (forward.magnitude <= PCSettings.staticRef.accel * Time.deltaTime)
+            if (forward.magnitude <= PCSettings.pcSettings.accel * Time.deltaTime)
             {
                 forward = new Vector3();
                 forwardSpeed = 0;
@@ -42,16 +42,16 @@ public class PCMovement : MonoBehaviour
             dir = -(int)(Mathf.Round((Mathf.Abs(forwardSpeed) / forwardSpeed)));    //  Determine Residual Velocity's Direction
         }
         //  Change of Direction
-        else if (PCSettings.staticRef.instantDirChange && dir == -(int)(Mathf.Round((Mathf.Abs(forwardSpeed) / forwardSpeed))))
+        else if (PCSettings.pcSettings.instantDirChange && dir == -(int)(Mathf.Round((Mathf.Abs(forwardSpeed) / forwardSpeed))))
             forwardSpeed = 0;   //  Instantly stop (not decelerate) to proceed in new direction without slowing down
 
         //  Accelerate to a Max Speed
-        forwardSpeed += dir * PCSettings.staticRef.accel * Time.deltaTime;
-        if (Mathf.Abs(forwardSpeed) > PCSettings.staticRef.speed)
-            forwardSpeed = dir * PCSettings.staticRef.speed;
+        forwardSpeed += dir * PCSettings.pcSettings.accel * Time.deltaTime;
+        if (Mathf.Abs(forwardSpeed) > PCSettings.pcSettings.speed)
+            forwardSpeed = dir * PCSettings.pcSettings.speed;
 
         //  Lock Velocity to XZ-Plane if Altitude-Soft-Locked
-        if (PCSettings.staticRef.walkMode)
+        if (PCSettings.pcSettings.walkMode)
             forward = forwardSpeed * Vector3.Normalize(new Vector3(transform.forward.x, 0, transform.forward.z));
         else
             forward = forwardSpeed * new Vector3(transform.forward.x, transform.forward.y, transform.forward.z);
@@ -64,7 +64,7 @@ public class PCMovement : MonoBehaviour
         //  Deceleration
         if (dir == 0)
         {
-            if (rightward.magnitude <= PCSettings.staticRef.accel * Time.deltaTime)
+            if (rightward.magnitude <= PCSettings.pcSettings.accel * Time.deltaTime)
             {
                 rightward = new Vector3();
                 rightwardSpeed = 0;
@@ -76,13 +76,13 @@ public class PCMovement : MonoBehaviour
             }
             dir = -(int)(Mathf.Round((Mathf.Abs(rightwardSpeed) / rightwardSpeed)));    //  Determine Residual Velocity's Direction
         }
-        else if (PCSettings.staticRef.instantDirChange && dir == -(int)(Mathf.Round((Mathf.Abs(rightwardSpeed) / rightwardSpeed))))
+        else if (PCSettings.pcSettings.instantDirChange && dir == -(int)(Mathf.Round((Mathf.Abs(rightwardSpeed) / rightwardSpeed))))
             rightwardSpeed = 0;   //  Instantly stop (not decelerate) to proceed in new direction without slowing down
 
         //  Accelerate to a Max Speed
-        rightwardSpeed += dir * PCSettings.staticRef.accel * Time.deltaTime;
-        if (Mathf.Abs(rightwardSpeed) > PCSettings.staticRef.speed)
-            rightwardSpeed = dir * PCSettings.staticRef.speed;
+        rightwardSpeed += dir * PCSettings.pcSettings.accel * Time.deltaTime;
+        if (Mathf.Abs(rightwardSpeed) > PCSettings.pcSettings.speed)
+            rightwardSpeed = dir * PCSettings.pcSettings.speed;
         
         //  Strafing is Always Locked to the Current Altitude
         rightward = rightwardSpeed * new Vector3(transform.right.x, 0, transform.right.z);
@@ -93,10 +93,10 @@ public class PCMovement : MonoBehaviour
     {
         if (dir == 0)
         {
-            if (PCSettings.staticRef.walkMode)
+            if (PCSettings.pcSettings.walkMode)
                 return;
             //  Decelerate to a Halt
-            if (upward.magnitude <= PCSettings.staticRef.accel * Time.deltaTime)
+            if (upward.magnitude <= PCSettings.pcSettings.accel * Time.deltaTime)
             {
                 upward = new Vector3();
                 upwardSpeed = 0;
@@ -109,16 +109,16 @@ public class PCMovement : MonoBehaviour
             dir = -(int)(Mathf.Round((Mathf.Abs(upwardSpeed) / upwardSpeed)));  //  Determine Residual Velocity's Direction
         }
         else {
-            PCSettings.staticRef.walkMode = false;  //  Cancel Altitude Soft-Lock if Manually Vertically Moe
+            PCSettings.pcSettings.walkMode = false;  //  Cancel Altitude Soft-Lock if Manually Vertically Moe
 
-            if (PCSettings.staticRef.instantDirChange && dir == -(int)(Mathf.Round((Mathf.Abs(upwardSpeed) / upwardSpeed))))
+            if (PCSettings.pcSettings.instantDirChange && dir == -(int)(Mathf.Round((Mathf.Abs(upwardSpeed) / upwardSpeed))))
                 upwardSpeed = 0;   //  Instantly stop (not decelerate) to proceed in new direction without slowing down
         }
 
         //  Accelerate to a Max Speed
-        upwardSpeed += dir * PCSettings.staticRef.accel * Time.deltaTime;
-        if (Mathf.Abs(upwardSpeed) > PCSettings.staticRef.speed)
-            upwardSpeed = dir * PCSettings.staticRef.speed;
+        upwardSpeed += dir * PCSettings.pcSettings.accel * Time.deltaTime;
+        if (Mathf.Abs(upwardSpeed) > PCSettings.pcSettings.speed)
+            upwardSpeed = dir * PCSettings.pcSettings.speed;
 
         //  Rising is Only Ever Vertical
         upward = upwardSpeed * new Vector3(0, 1, 0);
@@ -130,7 +130,7 @@ public class PCMovement : MonoBehaviour
     void setVelocity()
     {
         float fallSpeed = 0;
-        if (PCSettings.staticRef.walkMode)
+        if (PCSettings.pcSettings.walkMode)
         {
             fallSpeed = rbody.velocity.y;
             upwardSpeed = 0;
@@ -139,8 +139,8 @@ public class PCMovement : MonoBehaviour
 
         //  Cap the Velocity's Magnitude
         Vector3 velocity = (forward + rightward + upward);
-        if (velocity.magnitude > PCSettings.staticRef.speed)
-            velocity = PCSettings.staticRef.speed * Vector3.Normalize(velocity);
+        if (velocity.magnitude > PCSettings.pcSettings.speed)
+            velocity = PCSettings.pcSettings.speed * Vector3.Normalize(velocity);
 
         //  Don't Normalize Falling Speed
         if (fallSpeed != 0)

@@ -3,13 +3,6 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using System.Collections;
 
-[RequireComponent(typeof(UISounds))]
-[RequireComponent(typeof(TitleUI))]
-[RequireComponent(typeof(GameEndUI))]
-[RequireComponent(typeof(GameHintsUI))]
-[RequireComponent(typeof(GameMenuUI))]
-[RequireComponent(typeof(LoadingScreenUI))]
-
 public class UIManager : MonoBehaviour
 {
     #region Properties

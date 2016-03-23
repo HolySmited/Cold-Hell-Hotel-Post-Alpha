@@ -20,11 +20,11 @@ public class MouseLook : MonoBehaviour {
         if (mouseDeltaX != 0) tX = 0.5f * Mathf.Abs(lastDeltaX / mouseDeltaX);
         if (mouseDeltaY != 0) tY = 0.5f * Mathf.Abs(lastDeltaY / mouseDeltaY);
 
-        rotationX += PCSettings.staticRef.lookSensitivity.x * Mathf.Lerp(mouseDeltaX, lastDeltaX, tX);
-        rotationY += PCSettings.staticRef.lookSensitivity.y * Mathf.Lerp(mouseDeltaY, lastDeltaY, tY);
+        rotationX += PCSettings.pcSettings.lookSensitivity.x * Mathf.Lerp(mouseDeltaX, lastDeltaX, tX);
+        rotationY += PCSettings.pcSettings.lookSensitivity.y * Mathf.Lerp(mouseDeltaY, lastDeltaY, tY);
         lastDeltaX = mouseDeltaX;
         lastDeltaY = mouseDeltaY;
-        rotationY = Mathf.Clamp(rotationY, -PCSettings.staticRef.yRotationLimit, PCSettings.staticRef.yRotationLimit);
+        rotationY = Mathf.Clamp(rotationY, -PCSettings.pcSettings.yRotationLimit, PCSettings.pcSettings.yRotationLimit);
         transform.localRotation = Quaternion.AngleAxis(rotationX, Vector3.up) * Quaternion.AngleAxis(rotationY, -Vector3.right);
     }
 }
