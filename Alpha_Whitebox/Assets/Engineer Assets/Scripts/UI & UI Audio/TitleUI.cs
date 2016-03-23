@@ -6,7 +6,7 @@ using System.Collections;
 
 public class TitleUI : MonoBehaviour
 {
-    #region Properties
+    #region Attributes
     [SerializeField]
     Sprite titleScreen_Title, titleScreen_Narrative, titleScreen_ControlInfo;
     Sprite activeImage;
@@ -16,7 +16,7 @@ public class TitleUI : MonoBehaviour
     [SerializeField]
     Button buttonStartGame, buttonExitGame, buttonNext, buttonBack;
 
-    UISounds uisounds;
+    UISounds uiSounds;
 
     public const int titleScreenID_Close = -1, titleScreenID_Title = 0, titleScreenID_Narrative = 1, titleScreenID_ControlInfo = 2;
 
@@ -42,21 +42,26 @@ public class TitleUI : MonoBehaviour
         }
     }
     #endregion
-
-    void Awake()
-    {
-        uisounds = GetComponent<UISounds>();
-    }
+    
     void FixedUpdate()
     {
         debugUpdate();
     }
     void Update()
     {
-        if (activeImage == titleScreen_Title && uiScreen.gameObject.activeSelf)
-            updateTextField();
+        updateTextField();
     }
-    void OnGUI() { }
+    void Start()
+    {
+        uiSounds = UISounds.uiSounds;
+        open();
+
+        UIManager.unpause();
+        UIManager.unlockCursor();
+
+        transform.GetChild(0).gameObject.SetActive(false);
+        transform.GetChild(0).gameObject.SetActive(true);
+    }
 
     #region Hidden String Parser
     string inputString = "";
@@ -64,12 +69,13 @@ public class TitleUI : MonoBehaviour
     void updateTextField()
     {
         if (Input.GetKey(KeyCode.Backspace))
+        {
             if (inputString.Length > 0 && (Time.time - inputTimer > 0.1f || Input.GetKeyDown(KeyCode.Backspace)))
             {
                 inputString = inputString.Remove(inputString.Length - 1);
                 inputTimer = Time.time;
             }
-            else;
+        }
         else if (Input.GetKeyDown(KeyCode.Escape))
             inputString = "";
         else
@@ -83,12 +89,15 @@ public class TitleUI : MonoBehaviour
                     inputTimer = Time.time;
                 }
             }
-            catch (System.IndexOutOfRangeException e) { }
+            catch { }   //  Don't need to do anything when catching here
     }
     void parseInputString()
     {
         if (getBits(inputString.ToLower()) == "1101010110100111001111100111110110011001011110011")
-            GetComponent<UIManager>().levelManager.loadLevel_Test();
+        {
+            FindObjectOfType<LevelManager>().loadLevel_Test();
+            uiSounds.startFadeout();
+        }
         inputString = "";
     }
     public string getBits(string input)
@@ -99,7 +108,7 @@ public class TitleUI : MonoBehaviour
         return sb.ToString();
     }
 
-    void guiTextBox()
+    void OnGUI()
     {
         if (inputString.Length > 0)
             GUI.Label(new Rect(Screen.width / 8, Screen.height / 8, 400, 50), "> " + inputString);
@@ -114,7 +123,7 @@ public class TitleUI : MonoBehaviour
     #region Buttons
     public void Button_Next()
     {
-        uisounds.oneshot_Click();
+        uiSounds.oneshot_Click();
         switch (currentScreenID)
         {
             case titleScreenID_Title:
@@ -135,7 +144,7 @@ public class TitleUI : MonoBehaviour
     }
     public void Button_Back()
     {
-        uisounds.oneshot_Click();
+        uiSounds.oneshot_Click();
         switch (currentScreenID)
         {
             case titleScreenID_Title:
@@ -165,7 +174,7 @@ public class TitleUI : MonoBehaviour
                 activeImage = titleScreen_Title;
                 currentScreenID = titleScreenID_Title;
                 enableTitleButtons();
-                uisounds.loopMenuBackground();
+                uiSounds.loopMenuBackground();
                 break;
             case titleScreenID_Narrative:
                 activeImage = titleScreen_Narrative;
@@ -182,7 +191,7 @@ public class TitleUI : MonoBehaviour
                 activeImage = null;
                 currentScreenID = titleScreenID_Close;
                 hideScreen();
-                if (!UISounds.fading) StartCoroutine(UISounds.fadeout());
+                uiSounds.startFadeout();
                 return;
         }
         //  Immediate Display Option

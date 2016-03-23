@@ -51,40 +51,37 @@ public class PCAbilities : MonoBehaviour
         //  Utilizes a Raycast
         Vector3 rayOrigin = transform.position;
         Vector3 rayDir = transform.forward;
-        float rayDist = PCSettings.staticRef.interactReach;
+        float rayDist = PCSettings.pcSettings.interactReach;
 
         RaycastHit hitInfo;
-        if (Physics.Raycast(rayOrigin, rayDir, out hitInfo, rayDist, PCSettings.staticRef.interactableObjectsLM))
+        if (Physics.Raycast(rayOrigin, rayDir, out hitInfo, rayDist, PCSettings.pcSettings.interactableObjectsLM))
         {
             //  Cache HighLighter Component of Current Hit
             Highlighter highlight = hitInfo.transform.GetComponent<Highlighter>();
 
-            //  Disable Last Hit's Highlighter
+            //  Disable Last Hit's Highlighter if not current hit
             if (lastHit != null && lastHit.GetComponent<Highlighter>() != highlight)
                 lastHit.GetComponent<Highlighter>().Off();
-
-            //  Set Hit's Outline Color
-            if (hitInfo.transform.GetComponent<ObjectBehavior>().trait_Severable || hitInfo.transform.GetComponent<ObjectBehavior>().trait_Sharp)
-                highlight.ConstantOn(Color.magenta);
-            else if (hitInfo.transform.GetComponent<ObjectBehavior>().trait_Flammable || hitInfo.transform.GetComponent<ObjectBehavior>().trait_Flame)
-                highlight.ConstantOn(Color.red);
-            else if (hitInfo.transform.GetComponent<ObjectBehavior>().trait_PowerSource)
-                highlight.ConstantOn(Color.green);
-            else
-                highlight.ConstantOn(Color.yellow);
-            highlight.SeeThroughOff();
-
-            //check to see if the object is touching the player collider
-            bool objectTouchingPlayer = hitInfo.transform.GetComponent<Collider>().bounds.Contains(GetComponent<Collider>().ClosestPointOnBounds(hitInfo.transform.position));
-            if (objectTouchingPlayer)
+            //  Don't do anything if inside the object
+            bool outsideObj = !hitInfo.transform.GetComponent<Collider>().bounds.Contains(GetComponent<Collider>().ClosestPointOnBounds(hitInfo.transform.position));
+            if (outsideObj)
             {
-                highlight.Off();
                 lastHit = hitInfo.transform.gameObject;
+                //  Set Hit's Outline Color
+                if (hitInfo.transform.GetComponent<ObjectBehavior>().trait_Severable || hitInfo.transform.GetComponent<ObjectBehavior>().trait_Sharp)
+                    highlight.ConstantOn(Color.magenta);
+                else if (hitInfo.transform.GetComponent<ObjectBehavior>().trait_Flammable || hitInfo.transform.GetComponent<ObjectBehavior>().trait_Flame)
+                    highlight.ConstantOn(Color.red);
+                else if (hitInfo.transform.GetComponent<ObjectBehavior>().trait_PowerSource)
+                    highlight.ConstantOn(Color.green);
+                else
+                    highlight.ConstantOn(Color.yellow);
+                highlight.SeeThroughOff();
             }
             else
                 lastHit = null;
 
-            return !objectTouchingPlayer;
+            return outsideObj;
         }
         //  Disable Last Hit's Highlighter
         else if (lastHit != null)
@@ -94,34 +91,26 @@ public class PCAbilities : MonoBehaviour
     }
 
     //  Interact with the Interactable Object Immediately Before the Player
-    bool hasEnergyToPickup(int type)
-    {
-        return (abilityEnergy.levelReadable >= type) && ((type == 1 && abilityEnergy.energy < PCSettings.staticRef.pickupCost_Light) || (type == 2 && abilityEnergy.energy < PCSettings.staticRef.pickupCost_Medium) || (type == 3 && abilityEnergy.energy < PCSettings.staticRef.pickupCost_Heavy));
-    }
     public void interactWithObject()
     {
-
-        if (!objInRange || interacting || cdTimer_Interact > 0)
+        if (cdTimer_Interact > 0)
             return;
 
-        Vector3 rayOrigin = transform.position;
-        Vector3 rayDir = transform.forward;
-        float rayDist = PCSettings.staticRef.interactReach;
+        Vector3 rayOrigin = transform.position, rayDir = transform.forward;
+        float rayDist = PCSettings.pcSettings.interactReach;
         RaycastHit hitInfo;
 
         if (heldObj != null)
-            if (Physics.Raycast(rayOrigin, rayDir, out hitInfo, rayDist, PCSettings.staticRef.interactableObjectsLM))
-            {
-                // Special Interact
+            if (Physics.Raycast(rayOrigin, rayDir, out hitInfo, rayDist, PCSettings.pcSettings.interactableObjectsLM))
                 if (hitInfo.transform.GetComponent<ObjectBehavior>().trait_SpecialInteraction)
                     hitInfo.transform.GetComponent<InteractableObject>().specialInteract(heldObj);
                 else
                     dropObject();
-            }
             else
                 dropObject();
-
-        if (Physics.Raycast(rayOrigin, rayDir, out hitInfo, rayDist, PCSettings.staticRef.interactableObjectsLM))
+        else if (interacting || !objInRange)
+            return;
+        else if (Physics.Raycast(rayOrigin, rayDir, out hitInfo, rayDist, PCSettings.pcSettings.interactableObjectsLM))
         {
             ObjectBehavior ob = hitInfo.transform.GetComponent<ObjectBehavior>();
             if (ob == null) return;
@@ -133,24 +122,16 @@ public class PCAbilities : MonoBehaviour
             else if (hitInfo.transform.GetComponent<ObjectBehavior>().trait_Holdable)
             {
                 if (ob.trait_Light)
-                {
-                    if (abilityEnergy.energy < PCSettings.staticRef.pickupCost_Light) return;
-                    abilityEnergy.expendEnergy(PCSettings.staticRef.pickupCost_Light);
-                }
+                    if (abilityEnergy.energy < PCSettings.pcSettings.pickupCost_Light) return;
+                    else abilityEnergy.expendEnergy(PCSettings.pcSettings.pickupCost_Light);
                 else if (ob.trait_Medium)
-                {
-                    if (abilityEnergy.energy < PCSettings.staticRef.pickupCost_Medium || abilityEnergy.levelReadable < 2) return;
-                    abilityEnergy.expendEnergy(PCSettings.staticRef.pickupCost_Medium);
-                }
+                    if (abilityEnergy.energy < PCSettings.pcSettings.pickupCost_Medium || abilityEnergy.levelReadable < 2) return;
+                    else abilityEnergy.expendEnergy(PCSettings.pcSettings.pickupCost_Medium);
                 else if (ob.trait_Heavy)
-                {
-                    if (abilityEnergy.energy < PCSettings.staticRef.pickupCost_Heavy || abilityEnergy.levelReadable < 3) return;
-                    abilityEnergy.expendEnergy(PCSettings.staticRef.pickupCost_Heavy);
-                }
+                    if (abilityEnergy.energy < PCSettings.pcSettings.pickupCost_Heavy || abilityEnergy.levelReadable < 3) return;
+                    else abilityEnergy.expendEnergy(PCSettings.pcSettings.pickupCost_Heavy);
                 else
-                {
                     Debug.Log("WARNING: PICKING UP OBJECT W/O WEIGHT");
-                }
 
                 heldObj = hitInfo.transform.gameObject;
                 heldObj.GetComponent<Rigidbody>().useGravity = false;
@@ -162,7 +143,7 @@ public class PCAbilities : MonoBehaviour
                 heldObjParent = heldObj.transform.parent;
                 heldObj.transform.parent = transform;
 
-                cdTimer_Interact = PCSettings.staticRef.interactCD;
+                cdTimer_Interact = PCSettings.pcSettings.interactCD;
             }
         }
     }
@@ -170,10 +151,10 @@ public class PCAbilities : MonoBehaviour
     //  Use the Blast Ability
     public void blastAbility()
     {
-        if (cdTimer_Blast > 0 || PCSettings.staticRef.blastCost > abilityEnergy.energy) return;
+        if (cdTimer_Blast > 0 || PCSettings.pcSettings.blastCost > abilityEnergy.energy) return;
         dropObject();
 
-        abilityEnergy.expendEnergy(PCSettings.staticRef.blastCost);
+        abilityEnergy.expendEnergy(PCSettings.pcSettings.blastCost);
         createBlastWave();
 
         // Turn off last hit highlighting
@@ -181,8 +162,8 @@ public class PCAbilities : MonoBehaviour
             lastHit.GetComponent<Highlighter>().Off();
 
         //  Apply Cool Downs
-        cdTimer_Blast = PCSettings.staticRef.blastCD;
-        cdTimer_Interact = PCSettings.staticRef.interactCD;
+        cdTimer_Blast = PCSettings.pcSettings.blastCD;
+        cdTimer_Interact = PCSettings.pcSettings.interactCD;
     }
 
     //  Apply a Force Vector to All Objects in the Blast's Path
@@ -192,21 +173,21 @@ public class PCAbilities : MonoBehaviour
 
         //  RayCast Variables for a SphereCastAll and Detecting which Objects are in the Cone
         Vector3 rayOrigin = transform.position, rayDir = transform.forward;
-        float coneAngle = PCSettings.staticRef.blastAngle;
+        float coneAngle = PCSettings.pcSettings.blastAngle;
         //  Bell-Curve Cone
-        float rayRadius = PCSettings.staticRef.blastLength;
+        float rayRadius = PCSettings.pcSettings.blastLength;
 
-        RaycastHit[] hits = Physics.SphereCastAll(rayOrigin, rayRadius, rayDir, rayRadius, PCSettings.staticRef.interactableObjectsLM);
+        RaycastHit[] hits = Physics.SphereCastAll(rayOrigin, rayRadius, rayDir, rayRadius, PCSettings.pcSettings.interactableObjectsLM);
         foreach (RaycastHit hitInfo in hits)
         {
             if (hitInfo.transform.GetComponent<ObjectBehavior>() != null && hitInfo.transform.GetComponent<ObjectBehavior>().trait_SpecialInteraction)
                 continue;
             float angle = Vector3.Angle(rayDir, rayOrigin - hitInfo.transform.position);
             float dist = Vector3.Distance(rayOrigin, hitInfo.transform.position);
-            if (angle < 180 - coneAngle || angle > 180 + coneAngle || dist > PCSettings.staticRef.blastLength) continue; //  continue if object is not within the specified cone's bounds
+            if (angle < 180 - coneAngle || angle > 180 + coneAngle || dist > PCSettings.pcSettings.blastLength) continue; //  continue if object is not within the specified cone's bounds
 
-            float forceMult = Mathf.Pow(1 - dist / PCSettings.staticRef.blastLength, PCSettings.staticRef.blastDecay);  //  exponentially scale the force's power according to distance
-            Vector3 forceV = forceMult * PCSettings.staticRef.blastForce * Vector3.Normalize(hitInfo.transform.position - transform.position);
+            float forceMult = Mathf.Pow(1 - dist / PCSettings.pcSettings.blastLength, PCSettings.pcSettings.blastDecay);  //  exponentially scale the force's power according to distance
+            Vector3 forceV = forceMult * PCSettings.pcSettings.blastForce * Vector3.Normalize(hitInfo.transform.position - transform.position);
             hitInfo.transform.GetComponent<Rigidbody>().AddForce(forceV);
 
             hitInfo.transform.GetComponent<InteractableObject>().blastInteract();
@@ -238,7 +219,7 @@ public class PCAbilities : MonoBehaviour
         //  Break Interaction if Object is Too Far Away
         Vector3 restPoint = transform.position + heldDist * transform.forward;
         float dist = Vector3.Distance(heldObj.transform.position, restPoint);
-        float distPercent = dist / PCSettings.staticRef.breakHoldDist;
+        float distPercent = dist / PCSettings.pcSettings.breakHoldDist;
         if (distPercent > 1)
         {
             dropObject();
@@ -266,19 +247,19 @@ public class PCAbilities : MonoBehaviour
 
     public class AbilityEnergy
     {
-        #region Properties
+        #region Attributes
         MonoBehaviour m;
 
         int _level = 0;
 
         float[] energyMaxes = { 20, 40, 60 };
-        float _energy = 0, _energyRegen = 2f, _energyInUse = 0;
+        float _energy = 0, _energyInUse = 0;
 
         bool _regenerating = false;
 
         Texture enrgyMtrTex, enrgyMtrBckgrndTex;
         Color guiColor = new Color(255,255,255,255);
-        float enrgyMtrBlockL = 100f, enrgyMtrBlockH = 31.25f, screenscalePosX = 0.6f, screenscalePosY = 0.9f;
+        float enrgyMtrBlockL = 100f, enrgyMtrBlockH = 31.25f, screenscalePosX = 0.9f, screenscalePosY = 0.8f;
         #endregion
 
         public AbilityEnergy(MonoBehaviour _m, Texture t1, Texture t2)
@@ -297,7 +278,6 @@ public class PCAbilities : MonoBehaviour
         public float energyMaxWLimit { get { return energyMaxes[_level] - energyInUse; } }
 
         public float energy { get { return _energy; } }
-        public float energyRegen { get { return _energyRegen; } }
         public float energyInUse { get { return _energyInUse; } }
 
         public float expendEnergy(float expending)
@@ -325,24 +305,28 @@ public class PCAbilities : MonoBehaviour
         bool regenerating { get { return _regenerating; } set { if ((_regenerating = value)) m.StartCoroutine(regen()); } }
         IEnumerator regen()
         {
+            yield return null;  //  Need to wait a frame before starting energy regeneration
             while (regenerating)
             {
-                expendEnergy(-(Time.deltaTime * energyRegen));
+                expendEnergy(-(Time.deltaTime * PCSettings.pcSettings.energyRegenRate));
                 yield return new WaitForEndOfFrame();
             }
         }
 
         public void setGUIColor(Color c) { guiColor = c; }
+
+        float barL = 0;
         public void drawEnergyBarValues()
         {
-            GUI.color = Color.gray;
-            GUI.Label(new Rect(Screen.width * screenscalePosX, Screen.height * screenscalePosY - 30, 200, 50), "Energy: " + energy.ToString());
+            GUI.color = Color.cyan;
+            GUI.Label(new Rect(Screen.width * screenscalePosX - barL, Screen.height * screenscalePosY - 30, 200, 50), "Energy: " + energy.ToString());
         }
         public void drawEnergyBar()
         {
             GUI.color = guiColor;
-            GUI.DrawTexture(new Rect(Screen.width * screenscalePosX, Screen.height * screenscalePosY, levelReadable * enrgyMtrBlockL, enrgyMtrBlockH), enrgyMtrBckgrndTex);
-            GUI.DrawTexture(new Rect(Screen.width * screenscalePosX, Screen.height * screenscalePosY, levelReadable * enrgyMtrBlockL * energy / energyMax, enrgyMtrBlockH), enrgyMtrTex);
+            barL = levelReadable * enrgyMtrBlockL;
+            GUI.DrawTexture(new Rect(Screen.width * screenscalePosX, Screen.height * screenscalePosY, -barL, enrgyMtrBlockH), enrgyMtrBckgrndTex);
+            GUI.DrawTexture(new Rect(Screen.width * screenscalePosX, Screen.height * screenscalePosY, -barL * energy / energyMax, enrgyMtrBlockH), enrgyMtrTex);
         }
     }
     AbilityEnergy _abilityEnergy;

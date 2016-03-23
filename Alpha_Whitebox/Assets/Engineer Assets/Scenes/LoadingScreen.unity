@@ -87,3 +87,53 @@ NavMeshSettings:
     cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &980333031
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 421210, guid: d41534c7d263ee84285ed7a82c6bb670, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 451.899963
+      objectReference: {fileID: 0}
+    - target: {fileID: 421210, guid: d41534c7d263ee84285ed7a82c6bb670, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 217
+      objectReference: {fileID: 0}
+    - target: {fileID: 421210, guid: d41534c7d263ee84285ed7a82c6bb670, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 421210, guid: d41534c7d263ee84285ed7a82c6bb670, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 421210, guid: d41534c7d263ee84285ed7a82c6bb670, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 421210, guid: d41534c7d263ee84285ed7a82c6bb670, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 421210, guid: d41534c7d263ee84285ed7a82c6bb670, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 421210, guid: d41534c7d263ee84285ed7a82c6bb670, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 131644, guid: d41534c7d263ee84285ed7a82c6bb670, type: 2}
+      propertyPath: m_Name
+      value: NonPlayerAudioListener
+      objectReference: {fileID: 0}
+    - target: {fileID: 131644, guid: d41534c7d263ee84285ed7a82c6bb670, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: d41534c7d263ee84285ed7a82c6bb670, type: 2}
+  m_IsPrefabParent: 0

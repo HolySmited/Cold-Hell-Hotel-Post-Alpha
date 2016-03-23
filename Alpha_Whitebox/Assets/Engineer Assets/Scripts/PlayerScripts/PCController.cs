@@ -59,7 +59,7 @@ public class PCController : MonoBehaviour
     }
     void Update()
     {
-        if (PCSettings.staticRef.canControlPlayer)
+        if (PCSettings.pcSettings.canControlPlayer)
             playerControlInput();
     }
 
@@ -67,7 +67,7 @@ public class PCController : MonoBehaviour
     {
         //  Ignore Collision from Everything Marked in the IgnoreCollisionLayerMask
         int playerLayer = LayerMask.NameToLayer("Player");
-        uint bitstring = (uint)PCSettings.staticRef.ignoredCollisionsLM.value;
+        uint bitstring = (uint)PCSettings.pcSettings.ignoredCollisionsLM.value;
         for (int i = 31; bitstring > 0; i--)
             if ((bitstring >> i) > 0)
             {
@@ -125,6 +125,6 @@ public class PCController : MonoBehaviour
 
         //  Altitude Soft-Locking
         if (Input.GetKeyDown(KeyCode.F))
-            PCSettings.staticRef.walkMode = !PCSettings.staticRef.walkMode;
+            PCSettings.pcSettings.walkMode = !PCSettings.pcSettings.walkMode;
     }
 }

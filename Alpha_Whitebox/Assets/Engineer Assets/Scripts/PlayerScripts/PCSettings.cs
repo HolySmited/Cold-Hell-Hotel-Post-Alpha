@@ -11,10 +11,10 @@ using System.Collections;
 
 public class PCSettings : MonoBehaviour
 {
-    public static PCSettings staticRef;
+    public static PCSettings pcSettings;
     void Awake()
     {
-        staticRef = this;
+        pcSettings = this;
     }
 
     //  Player Collider Layer
@@ -50,6 +50,7 @@ public class PCSettings : MonoBehaviour
     public float yRotationLimit = 80;
 
     #region Abilities
+    public float energyRegenRate = 5;
 
     //  Interact Settings
     public float interactReach = 5,
